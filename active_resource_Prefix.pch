@@ -1,0 +1,8 @@
+//
+// Prefix header for all source files of the 'active_resource' target in the 'active_resource' project
+//
+
+#ifdef __OBJC__
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#endif

@@ -1,0 +1,185 @@
+  [4;36;1mSQL (0.000361)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000245)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.002731)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.004085)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.000487)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000210)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateDogs (20080821214658)
+  [4;36;1mSQL (0.000143)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.002810)[0m   [0mCREATE TABLE "dogs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.002811)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20080821214658')[0m
+  [4;35;1mSQL (0.000371)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000352)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000086)[0m   [0mPRAGMA index_list("dogs")[0m
+  [4;36;1mDog Load (0.000398)[0m   [0;1mSELECT * FROM "dogs" [0m
+  [4;35;1mDog Create (0.000595)[0m   [0mINSERT INTO "dogs" ("name", "updated_at", "created_at") VALUES('fuzzball', '2008-08-21 21:57:46', '2008-08-21 21:57:46')[0m
+  [4;36;1mDog Load (0.000522)[0m   [0;1mSELECT * FROM "dogs" [0m
+
+
+Processing DogsController#index (for 127.0.0.1 at 2008-08-21 18:04:36) [GET]
+  Session ID: 1805746d7a870154394bbe7df7eeb2dc
+  Parameters: {"format"=>"xml", "(null)"=>nil, "action"=>"index", "controller"=>"dogs"}
+  [4;36;1mDog Load (0.000656)[0m   [0;1mSELECT * FROM "dogs" [0m
+Completed in 0.11218 (8 reqs/sec) | Rendering: 0.10531 (93%) | DB: 0.00066 (0%) | 200 OK [http://localhost/dogs.xml?(null)]
+
+
+Processing DogsController#index (for 127.0.0.1 at 2008-08-21 18:16:56) [GET]
+  Session ID: 890177706cec496a16c6d1fcbc09b089
+  Parameters: {"format"=>"xml", "(null)"=>nil, "action"=>"index", "controller"=>"dogs"}
+  [4;35;1mDog Load (0.000503)[0m   [0mSELECT * FROM "dogs" [0m
+Completed in 0.00933 (107 reqs/sec) | Rendering: 0.00324 (34%) | DB: 0.00050 (5%) | 200 OK [http://localhost/dogs.xml?(null)]
+
+
+Processing DogsController#index (for 127.0.0.1 at 2008-08-21 18:18:13) [GET]
+  Session ID: 5d68c437b063224b677b217dd7dff981
+  Parameters: {"format"=>"xml", "(null)"=>nil, "action"=>"index", "controller"=>"dogs"}
+  [4;36;1mDog Load (0.000557)[0m   [0;1mSELECT * FROM "dogs" [0m
+Completed in 0.01002 (99 reqs/sec) | Rendering: 0.00372 (37%) | DB: 0.00056 (5%) | 200 OK [http://localhost/dogs.xml?(null)]
+
+
+Processing DogsController#index (for 127.0.0.1 at 2008-08-21 18:18:39) [GET]
+  Session ID: f40eca8eb9e75e40f063f8672fa5c56d
+  Parameters: {"format"=>"xml", "(null)"=>nil, "action"=>"index", "controller"=>"dogs"}
+  [4;35;1mDog Load (0.000520)[0m   [0mSELECT * FROM "dogs" [0m
+Completed in 0.01092 (91 reqs/sec) | Rendering: 0.00387 (35%) | DB: 0.00052 (4%) | 200 OK [http://localhost/dogs.xml?(null)]
+
+
+Processing DogsController#index (for 127.0.0.1 at 2008-08-21 18:18:58) [GET]
+  Session ID: 09f3827db52aaebcb2475c0f4120fa0b
+  Parameters: {"format"=>"xml", "(null)"=>nil, "action"=>"index", "controller"=>"dogs"}
+  [4;36;1mDog Load (0.000546)[0m   [0;1mSELECT * FROM "dogs" [0m
+Completed in 0.01009 (99 reqs/sec) | Rendering: 0.00313 (30%) | DB: 0.00055 (5%) | 200 OK [http://localhost/dogs.xml?(null)]
+
+
+Processing DogsController#index (for 127.0.0.1 at 2008-08-21 18:20:58) [GET]
+  Session ID: 21fc17a0c3a522402b01c112a43a07ec
+  Parameters: {"format"=>"xml", "(null)"=>nil, "action"=>"index", "controller"=>"dogs"}
+  [4;35;1mDog Load (0.000616)[0m   [0mSELECT * FROM "dogs" [0m
+Completed in 0.03400 (29 reqs/sec) | Rendering: 0.02499 (73%) | DB: 0.00062 (1%) | 200 OK [http://localhost/dogs.xml?(null)]
+
+
+Processing DogsController#index (for 127.0.0.1 at 2008-08-21 18:21:01) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--b153e522dc482325fda374199ab30ee4e4508970
+  Parameters: {"format"=>"xml", "(null)"=>nil, "action"=>"index", "controller"=>"dogs"}
+  [4;36;1mDog Load (0.000480)[0m   [0;1mSELECT * FROM "dogs" [0m
+Completed in 0.00873 (114 reqs/sec) | Rendering: 0.00295 (33%) | DB: 0.00048 (5%) | 200 OK [http://localhost/dogs.xml?(null)]
+
+
+Processing DogsController#index (for 127.0.0.1 at 2008-08-21 18:22:36) [GET]
+  Session ID: 03c8ecca8b25e0abe29d07d9b2e2fad7
+  Parameters: {"format"=>"xml", "(null)"=>nil, "action"=>"index", "controller"=>"dogs"}
+  [4;35;1mDog Load (0.000493)[0m   [0mSELECT * FROM "dogs" [0m
+Completed in 0.01043 (95 reqs/sec) | Rendering: 0.00461 (44%) | DB: 0.00049 (4%) | 200 OK [http://localhost/dogs.xml?(null)]
+
+
+Processing DogsController#create (for 127.0.0.1 at 2008-08-21 18:22:39) [POST]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--b153e522dc482325fda374199ab30ee4e4508970
+  Parameters: {"format"=>"xml", "(null)"=>nil, "action"=>"create", "dog"=>{"name"=>"fluffy"}, "controller"=>"dogs"}
+  [4;36;1mDog Create (0.000469)[0m   [0;1mINSERT INTO "dogs" ("name", "updated_at", "created_at") VALUES('fluffy', '2008-08-21 22:22:39', '2008-08-21 22:22:39')[0m
+Completed in 0.01433 (69 reqs/sec) | Rendering: 0.00217 (15%) | DB: 0.00047 (3%) | 201 Created [http://localhost/dogs.xml?(null)]
+
+
+Processing DogsController#index (for 127.0.0.1 at 2008-08-21 18:22:39) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsGOgtub3RpY2UiIkRvZyB3YXMgc3VjY2Vzc2Z1bGx5IGNyZWF0ZWQu
+BjoKQHVzZWR7BjsGRg==--0bb4c2dd2ab22453f8f60671708a6a4f9574bb31
+  Parameters: {"format"=>"xml", "(null)"=>nil, "action"=>"index", "controller"=>"dogs"}
+  [4;35;1mDog Load (0.000657)[0m   [0mSELECT * FROM "dogs" [0m
+Completed in 0.00947 (105 reqs/sec) | Rendering: 0.00354 (37%) | DB: 0.00066 (6%) | 200 OK [http://localhost/dogs.xml?(null)]
+
+
+Processing DogsController#index (for 127.0.0.1 at 2008-08-21 18:22:42) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsGOgtub3RpY2UiIkRvZyB3YXMgc3VjY2Vzc2Z1bGx5IGNyZWF0ZWQu
+BjoKQHVzZWR7BjsGVA==--dadc635f38cfb96bf7f9802f5acb0c496cebd798
+  Parameters: {"format"=>"xml", "(null)"=>nil, "action"=>"index", "controller"=>"dogs"}
+  [4;36;1mDog Load (0.000641)[0m   [0;1mSELECT * FROM "dogs" [0m
+Completed in 0.02088 (47 reqs/sec) | Rendering: 0.00641 (30%) | DB: 0.00064 (3%) | 200 OK [http://localhost/dogs.xml?(null)]
+
+
+Processing DogsController#create (for 127.0.0.1 at 2008-08-21 18:22:57) [POST]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--b153e522dc482325fda374199ab30ee4e4508970
+  Parameters: {"format"=>"xml", "(null)"=>nil, "action"=>"create", "dog"=>{"name"=>"asdfasdf"}, "controller"=>"dogs"}
+  [4;35;1mDog Create (0.000477)[0m   [0mINSERT INTO "dogs" ("name", "updated_at", "created_at") VALUES('asdfasdf', '2008-08-21 22:22:57', '2008-08-21 22:22:57')[0m
+Completed in 0.02135 (46 reqs/sec) | Rendering: 0.00216 (10%) | DB: 0.00048 (2%) | 201 Created [http://localhost/dogs.xml?(null)]
+
+
+Processing DogsController#index (for 127.0.0.1 at 2008-08-21 18:22:57) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsGOgtub3RpY2UiIkRvZyB3YXMgc3VjY2Vzc2Z1bGx5IGNyZWF0ZWQu
+BjoKQHVzZWR7BjsGRg==--0bb4c2dd2ab22453f8f60671708a6a4f9574bb31
+  Parameters: {"format"=>"xml", "(null)"=>nil, "action"=>"index", "controller"=>"dogs"}
+  [4;36;1mDog Load (0.000710)[0m   [0;1mSELECT * FROM "dogs" [0m
+Completed in 0.10624 (9 reqs/sec) | Rendering: 0.00467 (4%) | DB: 0.00071 (0%) | 200 OK [http://localhost/dogs.xml?(null)]
+
+
+Processing DogsController#index (for 127.0.0.1 at 2008-08-21 18:24:51) [GET]
+  Session ID: b4304d18a7ef8c564491a8add40960a7
+  Parameters: {"format"=>"xml", "(null)"=>nil, "action"=>"index", "controller"=>"dogs"}
+  [4;35;1mDog Load (0.000650)[0m   [0mSELECT * FROM "dogs" [0m
+Completed in 0.01090 (91 reqs/sec) | Rendering: 0.00456 (41%) | DB: 0.00065 (5%) | 200 OK [http://localhost/dogs.xml?(null)]
+
+
+Processing DogsController#create (for 127.0.0.1 at 2008-08-21 18:25:08) [POST]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--b153e522dc482325fda374199ab30ee4e4508970
+  Parameters: {"format"=>"xml", "(null)"=>nil, "action"=>"create", "dog"=>{"name"=>"foobar"}, "controller"=>"dogs"}
+  [4;36;1mDog Create (0.000462)[0m   [0;1mINSERT INTO "dogs" ("name", "updated_at", "created_at") VALUES('foobar', '2008-08-21 22:25:08', '2008-08-21 22:25:08')[0m
+Completed in 0.03201 (31 reqs/sec) | Rendering: 0.00146 (4%) | DB: 0.00046 (1%) | 201 Created [http://localhost/dogs.xml?(null)]
+
+
+Processing DogsController#index (for 127.0.0.1 at 2008-08-21 18:25:08) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsGOgtub3RpY2UiIkRvZyB3YXMgc3VjY2Vzc2Z1bGx5IGNyZWF0ZWQu
+BjoKQHVzZWR7BjsGRg==--0bb4c2dd2ab22453f8f60671708a6a4f9574bb31
+  Parameters: {"format"=>"xml", "(null)"=>nil, "action"=>"index", "controller"=>"dogs"}
+  [4;35;1mDog Load (0.000743)[0m   [0mSELECT * FROM "dogs" [0m
+Completed in 0.01112 (89 reqs/sec) | Rendering: 0.00505 (45%) | DB: 0.00074 (6%) | 200 OK [http://localhost/dogs.xml?(null)]
+
+
+Processing DogsController#create (for 127.0.0.1 at 2008-08-21 18:25:14) [POST]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsGOgtub3RpY2UiIkRvZyB3YXMgc3VjY2Vzc2Z1bGx5IGNyZWF0ZWQu
+BjoKQHVzZWR7BjsGVA==--dadc635f38cfb96bf7f9802f5acb0c496cebd798
+  Parameters: {"format"=>"xml", "(null)"=>nil, "action"=>"create", "dog"=>{"name"=>"milo!!!!!"}, "controller"=>"dogs"}
+  [4;36;1mDog Create (0.000408)[0m   [0;1mINSERT INTO "dogs" ("name", "updated_at", "created_at") VALUES('milo!!!!!', '2008-08-21 22:25:14', '2008-08-21 22:25:14')[0m
+Completed in 0.01323 (75 reqs/sec) | Rendering: 0.00217 (16%) | DB: 0.00041 (3%) | 201 Created [http://localhost/dogs.xml?(null)]
+
+
+Processing DogsController#index (for 127.0.0.1 at 2008-08-21 18:25:15) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsGOgtub3RpY2UiIkRvZyB3YXMgc3VjY2Vzc2Z1bGx5IGNyZWF0ZWQu
+BjoKQHVzZWR7BjsGRg==--0bb4c2dd2ab22453f8f60671708a6a4f9574bb31
+  Parameters: {"format"=>"xml", "(null)"=>nil, "action"=>"index", "controller"=>"dogs"}
+  [4;35;1mDog Load (0.000815)[0m   [0mSELECT * FROM "dogs" [0m
+Completed in 0.01212 (82 reqs/sec) | Rendering: 0.00602 (49%) | DB: 0.00081 (6%) | 200 OK [http://localhost/dogs.xml?(null)]
+
+
+Processing DogsController#create (for 127.0.0.1 at 2008-08-21 18:25:21) [POST]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsGOgtub3RpY2UiIkRvZyB3YXMgc3VjY2Vzc2Z1bGx5IGNyZWF0ZWQu
+BjoKQHVzZWR7BjsGVA==--dadc635f38cfb96bf7f9802f5acb0c496cebd798
+  Parameters: {"format"=>"xml", "(null)"=>nil, "action"=>"create", "dog"=>{"name"=>"Milo"}, "controller"=>"dogs"}
+  [4;36;1mDog Create (0.000375)[0m   [0;1mINSERT INTO "dogs" ("name", "updated_at", "created_at") VALUES('Milo', '2008-08-21 22:25:21', '2008-08-21 22:25:21')[0m
+Completed in 0.01275 (78 reqs/sec) | Rendering: 0.00219 (17%) | DB: 0.00038 (2%) | 201 Created [http://localhost/dogs.xml?(null)]
+
+
+Processing DogsController#index (for 127.0.0.1 at 2008-08-21 18:25:21) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsGOgtub3RpY2UiIkRvZyB3YXMgc3VjY2Vzc2Z1bGx5IGNyZWF0ZWQu
+BjoKQHVzZWR7BjsGRg==--0bb4c2dd2ab22453f8f60671708a6a4f9574bb31
+  Parameters: {"format"=>"xml", "(null)"=>nil, "action"=>"index", "controller"=>"dogs"}
+  [4;35;1mDog Load (0.000909)[0m   [0mSELECT * FROM "dogs" [0m
+Completed in 0.01312 (76 reqs/sec) | Rendering: 0.00682 (51%) | DB: 0.00091 (6%) | 200 OK [http://localhost/dogs.xml?(null)]

@@ -1,0 +1,29 @@
+//
+//  Dog.m
+//  active_resource
+//
+//  Created by vickeryj on 8/21/08.
+//  Copyright 2008 Joshua Vickery. All rights reserved.
+//
+
+#import "Dog.h"
+
+
+@implementation Dog
+
+@synthesize name;
+
+static NSString *site = @"http://localhost:3000/";
+
++ (NSString *)getSite {
+	return site;
+}
+
+- (void) dealloc
+{
+	[name release];
+	[super dealloc];
+}
+
+
+@end
