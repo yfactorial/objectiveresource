@@ -50,8 +50,8 @@ static NSString *_activeResourcePassword = nil;
 }
 
 + (NSString *)elementName {
-	[NSStringFromClass(self) lowercaseString];
-	return [NSStringFromClass([self class]) lowercaseString];
+	return [[NSStringFromClass([self class]) stringByReplacingCharactersInRange:NSMakeRange(0, 1) 
+			withString:[[NSStringFromClass([self class]) substringWithRange:NSMakeRange(0,1)] lowercaseString]] underscore];
 }
 
 + (NSString *)collectionName {
@@ -62,8 +62,8 @@ static NSString *_activeResourcePassword = nil;
 	return @".xml";
 }
 
-+ (NSString *)elementPath {
-	return [[[self getSite] stringByAppendingString:[self elementName]] stringByAppendingString:[self protocolExtension]];
++ (NSString *)elementPath:(NSString *)elementId {
+	return [NSString stringWithFormat:@"%@%@/%@%@", [self getSite], [self collectionName], elementId, [self protocolExtension]];
 }
 
 + (NSString *)collectionPath {
@@ -88,12 +88,68 @@ static NSString *_activeResourcePassword = nil;
 	return [[self class] collectionPath];
 }
 
+#pragma mark default equals methods for id and class based equality
+- (BOOL)isEqual:(id)anObject {
+	return 	[NSStringFromClass([self class]) isEqualToString:NSStringFromClass([anObject class])] &&
+		[anObject respondsToSelector:@selector(getId)] && [[anObject getId] isEqualToString:[self getId]];
+}
+- (NSUInteger)hash {
+	return [[self getId] intValue] + [NSStringFromClass([self class]) hash];
+}
+
+#pragma mark Instance-specific methods
+- (id)getId {
+	id result = nil;
+	@try {
+		SEL idMethodSelector = NSSelectorFromString([NSString stringWithFormat:@"%@Id",
+													 [NSStringFromClass([self class]) stringByReplacingCharactersInRange:NSMakeRange(0, 1) 
+													  withString:[[NSStringFromClass([self class]) substringWithRange:NSMakeRange(0,1)] lowercaseString]]]);
+		result = [self performSelector:idMethodSelector];
+	}
+	@catch (NSException *e) {
+	}
+	return result;
+}
+
+- (void)createAtPath:(NSString *)path {
+	Response *res = [Connection post:[self toXMLElement] to:path withUser:[[self class]  getUser] andPassword:[[self class]  getPassword]];
+	NSDictionary *newProperties = [[[self class] fromXMLData:res.body] properties];
+	[self setProperties:newProperties];
+}
+
 - (void)create {
-	[Connection post:[self toXMLElement] to:[self collectionPath] withUser:[[self class]  getUser] andPassword:[[self class]  getPassword]];
+	[self createAtPath:[self collectionPath]];
 }
 
 - (void)createWithParameters:(NSDictionary *)parameters {
-	[Connection post:[self toXMLElement] to:[[self class] collectionPathWithParameters:parameters] withUser:[[self class]  getUser] andPassword:[[self class]  getPassword]];
+	[self createAtPath:[[self class] collectionPathWithParameters:parameters]];
 }
+
+- (void)destroy {
+	id myId = [self getId];
+	if (nil != myId) {
+		[Connection delete:[[self class] elementPath:myId] withUser:[[self class]  getUser] andPassword:[[self class]  getPassword]];
+	}
+}
+
+- (void)update {
+	id myId = [self getId];
+	if (nil != myId) {
+		[Connection put:[self toXMLElement] 
+					  to:[[self class] elementPath:myId] 
+				withUser:[[self class]  getUser] andPassword:[[self class]  getPassword]];
+	}
+}
+
+- (void)save {
+	id myId = [self getId];
+	if (nil == myId) {
+		[self create];
+	}
+	else {
+		[self update];
+	}
+}
+
 	
 @end

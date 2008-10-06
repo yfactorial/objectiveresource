@@ -72,4 +72,11 @@
 	return [self sendRequest:request withUser:user andPassword:password];
 }
 
++ (Response *)delete:(NSString *)url withUser:(NSString *)user andPassword:(NSString *)password {
+	NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url] cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:5.0];
+	[request setHTTPMethod:@"DELETE"];
+	[request setValue:@"application/xml" forHTTPHeaderField:@"Content-Type"];
+	return [self sendRequest:request withUser:user andPassword:password];
+}
+
 @end

@@ -21,19 +21,24 @@
 
 // Finders
 + (NSArray *)findAll;
++ (NSArray *)findAllTimed;
 
 // URL construction accessors
 + (NSString *)elementName;
 + (NSString *)collectionName;
 + (NSString *)protocolExtension;
-+ (NSString *)elementPath;
++ (NSString *)elementPath:(NSString *)elementId;
 + (NSString *)collectionPath;
 + (NSString *)collectionPathWithParameters:(NSDictionary *)parameters;
 + (NSString *)populatePath:(NSString *)path withParameters:(NSDictionary *)parameters;
 
 // Instance-specific methods
+- (id)getId;
 - (void)create;
 - (void)createWithParameters:(NSDictionary *)parameters;
+- (void)destroy;
+- (void)update;
+- (void)save;
 
 // Instance helpers for getting at commonly used class-level values
 - (NSString *)collectionPath;

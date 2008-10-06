@@ -30,6 +30,8 @@
 		return @"decimal";
 	} else if ([value isKindOfClass:[NSNumber class]]) {
 		return @"integer";
+	} else if ([value isKindOfClass:[NSArray class]]) {
+		return @"array";
 	} else {
 		return nil;
 	}

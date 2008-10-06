@@ -30,19 +30,22 @@
 
 
 - (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict
-{
-	//start of a collection of objects,
-	if ([elementName isEqualToString:[[self.targetClass xmlElementName] stringByAppendingString:@"s"]]) {
+{	
+	if ([@"nil-classes" isEqualToString:elementName]) {
+		//empty result set, do nothing
+	}
+	
+	//Start of an array type
+	else if ([@"array" isEqualToString:[attributeDict objectForKey:@"type"]]) {
 		self.parsedObject = [NSMutableArray array];
-		[self.unclosedProperties addObject:self.parsedObject];
+		[self.unclosedProperties addObject:[NSArray arrayWithObjects:[elementName camelize], self.parsedObject, nil]];
 		self.currentPropertyName = [elementName camelize];
 	}
 	
-	// We're at the beginning of an object definition, so create an instance as the current
-	// parent object
-    else if ([elementName isEqualToString:[self.targetClass xmlElementName]]) {
+	//Start of the root object
+    else if (parsedObject == nil && [elementName isEqualToString:[self.targetClass xmlElementName]]) {
         self.parsedObject = [[[self.targetClass alloc] init] autorelease];
-		[self.unclosedProperties addObject:self.parsedObject];
+		[self.unclosedProperties addObject:[NSArray arrayWithObjects:[elementName camelize], self.parsedObject, nil]];
 		self.currentPropertyName = [elementName camelize];
     }
 	
@@ -55,7 +58,7 @@
 			if (elementClass != nil) {
 				//classname matches, instantiate a new instance of the class and set it as the current parent object
 				self.parsedObject = [[[elementClass alloc] init] autorelease];
-				[self.unclosedProperties addObject:self.parsedObject];
+				[self.unclosedProperties addObject:[NSArray arrayWithObjects:self.currentPropertyName, self.parsedObject, nil]];
 			}
 		}
 		
@@ -105,9 +108,8 @@
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName
 {    
 	if(self.contentOfCurrentProperty != nil && self.currentPropertyName != nil) {
-		
-		[self.parsedObject setValue:
-		 [self convertProperty:self.contentOfCurrentProperty toType:self.currentPropertyType]  
+		[self.parsedObject 
+		 setValue:[self convertProperty:self.contentOfCurrentProperty toType:self.currentPropertyType]  
 		 forKey:self.currentPropertyName];
 	}
 	else if ([self.currentPropertyName isEqualToString:[elementName camelize]]) {
@@ -116,26 +118,21 @@
 		//check for a parent object on the stack
 		if ([self.unclosedProperties count] > 0) {
 			//handle arrays as a special case
-			if ([[self.unclosedProperties lastObject] isKindOfClass:[NSArray class]]) {
-				[[self.unclosedProperties lastObject] addObject:self.parsedObject];
+			if ([[[self.unclosedProperties lastObject] objectAtIndex:1] isKindOfClass:[NSArray class]]) {
+				[[[self.unclosedProperties lastObject] objectAtIndex:1] addObject:self.parsedObject];
 			}
 			else {
-				[[self.unclosedProperties lastObject] setValue:self.parsedObject forKey:[elementName camelize]];
+				[[[self.unclosedProperties lastObject] objectAtIndex:1] setValue:self.parsedObject forKey:[elementName camelize]];
 			}
-			self.parsedObject = [self.unclosedProperties lastObject];
+			self.parsedObject = [[self.unclosedProperties lastObject] objectAtIndex:1];
 		}
 	}
 	
 	self.contentOfCurrentProperty = nil;
 	
-	//set the parent object, if one exists, as teh current element
+	//set the parent object, if one exists, as the current element
 	if ([self.unclosedProperties count] > 0) {
-		if ([[self.unclosedProperties lastObject] isKindOfClass:[NSArray class]]) {
-			self.currentPropertyName = [[self.targetClass xmlElementName] stringByAppendingString:@"s"];
-		}
-		else {
-			self.currentPropertyName = [[self.parsedObject class] xmlElementName];
-		}
+		self.currentPropertyName = [[self.unclosedProperties lastObject] objectAtIndex:0];
 	}
 }
 
@@ -148,6 +145,7 @@
 	[currentPropertyName release];
 	[contentOfCurrentProperty release];
 	[unclosedProperties release];
+	[currentPropertyType release];
 	[super dealloc];
 }
 
