@@ -100,13 +100,11 @@ static NSString *_activeResourcePassword = nil;
 #pragma mark Instance-specific methods
 - (id)getId {
 	id result = nil;
-	@try {
-		SEL idMethodSelector = NSSelectorFromString([NSString stringWithFormat:@"%@Id",
-													 [NSStringFromClass([self class]) stringByReplacingCharactersInRange:NSMakeRange(0, 1) 
-													  withString:[[NSStringFromClass([self class]) substringWithRange:NSMakeRange(0,1)] lowercaseString]]]);
+	SEL idMethodSelector = NSSelectorFromString([NSString stringWithFormat:@"%@Id",
+												 [NSStringFromClass([self class]) stringByReplacingCharactersInRange:NSMakeRange(0, 1) 
+												  withString:[[NSStringFromClass([self class]) substringWithRange:NSMakeRange(0,1)] lowercaseString]]]);
+	if ([self respondsToSelector:idMethodSelector]) {
 		result = [self performSelector:idMethodSelector];
-	}
-	@catch (NSException *e) {
 	}
 	return result;
 }

@@ -21,7 +21,6 @@
 
 // Finders
 + (NSArray *)findAll;
-+ (NSArray *)findAllTimed;
 
 // URL construction accessors
 + (NSString *)elementName;
