@@ -24,6 +24,10 @@
 	return self;
 }
 
+- (BOOL)isSuccess {
+	return statusCode >= 200 && statusCode < 400;
+}
+
 #pragma mark cleanup
 
 - (void) dealloc

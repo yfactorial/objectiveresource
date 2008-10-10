@@ -109,43 +109,55 @@ static NSString *_activeResourcePassword = nil;
 	return result;
 }
 
-- (void)createAtPath:(NSString *)path {
+- (BOOL)createAtPath:(NSString *)path {
 	Response *res = [Connection post:[self toXMLElement] to:path withUser:[[self class]  getUser] andPassword:[[self class]  getPassword]];
-	NSDictionary *newProperties = [[[self class] fromXMLData:res.body] properties];
-	[self setProperties:newProperties];
-}
-
-- (void)create {
-	[self createAtPath:[self collectionPath]];
-}
-
-- (void)createWithParameters:(NSDictionary *)parameters {
-	[self createAtPath:[[self class] collectionPathWithParameters:parameters]];
-}
-
-- (void)destroy {
-	id myId = [self getId];
-	if (nil != myId) {
-		[Connection delete:[[self class] elementPath:myId] withUser:[[self class]  getUser] andPassword:[[self class]  getPassword]];
-	}
-}
-
-- (void)update {
-	id myId = [self getId];
-	if (nil != myId) {
-		[Connection put:[self toXMLElement] 
-					  to:[[self class] elementPath:myId] 
-				withUser:[[self class]  getUser] andPassword:[[self class]  getPassword]];
-	}
-}
-
-- (void)save {
-	id myId = [self getId];
-	if (nil == myId) {
-		[self create];
+	if ([res isSuccess]) {
+		NSDictionary *newProperties = [[[self class] fromXMLData:res.body] properties];
+		[self setProperties:newProperties];
+		return YES;
 	}
 	else {
-		[self update];
+		return NO;
+	}
+}
+
+- (BOOL)create {
+	return [self createAtPath:[self collectionPath]];
+}
+
+- (BOOL)createWithParameters:(NSDictionary *)parameters {
+	return [self createAtPath:[[self class] collectionPathWithParameters:parameters]];
+}
+
+- (BOOL)destroy {
+	id myId = [self getId];
+	if (nil != myId) {
+		return [[Connection delete:[[self class] elementPath:myId] withUser:[[self class]  getUser] andPassword:[[self class]  getPassword]] isSuccess];
+	}
+	else {
+		return NO;
+	}
+}
+
+- (BOOL)update {
+	id myId = [self getId];
+	if (nil != myId) {
+		return [[Connection put:[self toXMLElement] 
+					  to:[[self class] elementPath:myId] 
+					   withUser:[[self class]  getUser] andPassword:[[self class]  getPassword]] isSuccess];
+	}
+	else {
+		return NO;
+	}
+}
+
+- (BOOL)save {
+	id myId = [self getId];
+	if (nil == myId) {
+		return [self create];
+	}
+	else {
+		return [self update];
 	}
 }
 

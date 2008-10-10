@@ -33,11 +33,11 @@
 
 // Instance-specific methods
 - (id)getId;
-- (void)create;
-- (void)createWithParameters:(NSDictionary *)parameters;
-- (void)destroy;
-- (void)update;
-- (void)save;
+- (BOOL)create;
+- (BOOL)createWithParameters:(NSDictionary *)parameters;
+- (BOOL)destroy;
+- (BOOL)update;
+- (BOOL)save;
 
 // Instance helpers for getting at commonly used class-level values
 - (NSString *)collectionPath;

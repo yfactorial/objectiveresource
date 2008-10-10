@@ -18,5 +18,5 @@
 
 + (id)responseFrom:(NSHTTPURLResponse *)response withBody:(NSData *)data;
 - (id)initFrom:(NSHTTPURLResponse *)response withBody:(NSData *)data;
-
+- (BOOL)isSuccess;
 @end
