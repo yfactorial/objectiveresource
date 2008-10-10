@@ -29,7 +29,14 @@
 	} else if ([value isKindOfClass:[NSDecimalNumber class]]) {
 		return @"decimal";
 	} else if ([value isKindOfClass:[NSNumber class]]) {
-		return @"integer";
+		if (0 == strcmp("f",[(NSNumber *)value objCType]) ||
+			0 == strcmp("d",[(NSNumber *)value objCType])) 
+		{
+			return @"decimal";
+		}
+		else {
+			return @"integer";
+		}
 	} else if ([value isKindOfClass:[NSArray class]]) {
 		return @"array";
 	} else {
