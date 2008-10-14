@@ -43,25 +43,19 @@
 	[self loadDogs];
 }
 
-#pragma mark UITableViewDataSource methods
-
 - (void)setEditing:(BOOL)editing animated:(BOOL)animated {
   
   [super setEditing:editing animated:animated];
-  
   [tableView setEditing:editing animated:YES];
-  
   if (editing) {
-   
     addButton.enabled = NO;
-    
   } else {
-    
     addButton.enabled = YES;
-    
   }
   
 }
+
+#pragma mark UITableViewDataSource methods
 
 - (NSInteger)tableView:(UITableView *)table numberOfRowsInSection:(NSInteger)section {
 	return [dogs count];
@@ -93,6 +87,8 @@
   if (editingStyle == UITableViewCellEditingStyleDelete) { 
 
     [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:YES]; 
+
+    // Deletes the object on the resource , if the deletion is successfull YES is returned
     [(Dog *)[dogs objectAtIndex:indexPath.row] destroy];
     [dogs removeObjectAtIndex:indexPath.row];
   } 

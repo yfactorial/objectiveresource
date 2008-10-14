@@ -49,6 +49,8 @@
 - (BOOL)textFieldShouldReturn:(UITextField *)textField { 
   [textField resignFirstResponder];
   dog.name = textField.text;
+  
+  // converts the object to xml and submits it to the resource
   [dog update];
   aViewController.dog = dog;
   [self.navigationController popViewControllerAnimated:YES];
