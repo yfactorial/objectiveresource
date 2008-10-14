@@ -9,3 +9,11 @@ build/*
 
 # old skool
 .svn
+
+#rails
+sample_rails_app/log/*.log
+sample_rails_app/tmp/**/*
+sample_rails_app/doc/api
+sample_rails_app/doc/app
+
+
