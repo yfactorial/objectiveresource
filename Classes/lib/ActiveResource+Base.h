@@ -8,7 +8,7 @@
 
 #import "ActiveResource.h"
 
-@interface ActiveResource (Base)
+@interface ActiveResource (Base) 
 
 // Resource configuration
 + (NSString *)getSite;

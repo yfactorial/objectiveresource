@@ -69,7 +69,13 @@
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
     }
-    cell.text = dog.name;
+  
+    NSDateFormatter *dateFormatter = [[[NSDateFormatter alloc] init]  autorelease];
+    [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
+    [dateFormatter setTimeStyle:NSDateFormatterNoStyle];
+  
+  
+    cell.text = [dateFormatter stringFromDate:dog.createdAt];
     // Configure the cell
     return cell;
 }

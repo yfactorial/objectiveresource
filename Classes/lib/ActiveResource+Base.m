@@ -18,6 +18,7 @@ static NSString *_activeResourcePassword = nil;
 
 @implementation ActiveResource (Base)
 
+
 + (NSString *)getSite {
 	return _activeResourceSite;
 }
@@ -165,6 +166,13 @@ static NSString *_activeResourcePassword = nil;
 	else {
 		return [self update];
 	}
+}
+
+- (void) dealloc
+{
+  [createdAt release];
+	[updatedAt release];
+	[super dealloc];
 }
 
 	
