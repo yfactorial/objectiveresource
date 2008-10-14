@@ -21,7 +21,6 @@
 
 @property (nonatomic , retain) UIBarButtonItem * editDogButton;
 @property (nonatomic , retain) Dog * dog;
-@property (nonatomic , retain) UITableView * tableView;
 
 
 

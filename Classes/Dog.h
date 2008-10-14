@@ -12,8 +12,13 @@
 	
 	NSString *name;
   NSString *dogId;
+  NSDate   * updatedAt;
+  NSDate   * createdAt;
+  
 }
 
+@property (nonatomic , retain) NSDate * createdAt;
+@property (nonatomic , retain) NSDate * updatedAt;
 @property (nonatomic , retain) NSString  *dogId;
 @property (nonatomic , retain) NSString *name;
 @end

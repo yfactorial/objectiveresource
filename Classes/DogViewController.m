@@ -20,7 +20,7 @@
 
 @implementation DogViewController
 
-@synthesize dogs, addController, tableView;
+@synthesize dogs, addController, tableView , addButton;
 
 - (IBAction) addDogButtonClicked:(id) sender {
 	[self.navigationController pushViewController:addController animated:YES];
@@ -35,6 +35,7 @@
 
 - (void)viewDidLoad {
 	self.addController = [[[AddDogViewController alloc] initWithNibName:@"AddDogView" bundle:nil] autorelease];
+  self.navigationItem.leftBarButtonItem = self.editButtonItem;
 }
 
 
@@ -43,6 +44,24 @@
 }
 
 #pragma mark UITableViewDataSource methods
+
+- (void)setEditing:(BOOL)editing animated:(BOOL)animated {
+  
+  [super setEditing:editing animated:animated];
+  
+  [tableView setEditing:editing animated:YES];
+  
+  if (editing) {
+   
+    addButton.enabled = NO;
+    
+  } else {
+    
+    addButton.enabled = YES;
+    
+  }
+  
+}
 
 - (NSInteger)tableView:(UITableView *)table numberOfRowsInSection:(NSInteger)section {
 	return [dogs count];
@@ -53,6 +72,7 @@
 	UITableViewCell *cell = [aTableView dequeueReusableCellWithIdentifier:cellId];
 	if (cell == nil) {
 		cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero] autorelease];
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 	}
 	cell.text = ((Dog *)[dogs objectAtIndex:indexPath.row]).name;
 	return cell;
@@ -67,16 +87,27 @@
   
 }
 
+- (void)tableView:(UITableView *)aTableView  commitEditingStyle:(UITableViewCellEditingStyle)editingStyle 
+                                            forRowAtIndexPath:(NSIndexPath *)indexPath { 
+  [tableView beginUpdates]; 
+  if (editingStyle == UITableViewCellEditingStyleDelete) { 
 
-
-
+    [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:YES]; 
+    [(Dog *)[dogs objectAtIndex:indexPath.row] destroy];
+    [dogs removeObjectAtIndex:indexPath.row];
+  } 
+  [tableView endUpdates];   
+}
 
 #pragma mark cleanup
 - (void)dealloc {
+  
+  [addButton release];
 	[tableView release];
 	[addController release];
 	[dogs release];
 	[super dealloc];
+
 }
 
 

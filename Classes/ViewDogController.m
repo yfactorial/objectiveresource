@@ -16,7 +16,7 @@
 
 @implementation ViewDogController
 
-@synthesize dog , tableView , editDogButton;
+@synthesize dog , editDogButton;
 
 - (id)initWithStyle:(UITableViewStyle)style {
     // Override initWithStyle: if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
@@ -38,7 +38,6 @@
   [super viewDidLoad];
 }
 
-
 -(void) editDogButtonPressed {
  
   EditDogViewController * aEditDogViewController = [[EditDogViewController alloc] 
@@ -52,7 +51,7 @@
 
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    return 4;
 }
 
 
@@ -74,8 +73,22 @@
     [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
     [dateFormatter setTimeStyle:NSDateFormatterNoStyle];
   
-  
-    cell.text = [dateFormatter stringFromDate:dog.createdAt];
+    switch (indexPath.section) {
+      case 0:
+        cell.text = dog.name;
+        break;
+      case 1:
+        cell.text = dog.dogId;
+        break;
+      case 2:
+        cell.text = [dateFormatter stringFromDate:dog.createdAt];
+        break;
+      case 3:
+        cell.text = [dateFormatter stringFromDate:dog.updatedAt];
+        break;        
+      default:
+        break;
+    }
     // Configure the cell
     return cell;
 }
@@ -84,7 +97,23 @@
   
   // The header for the section is the region name -- get this from the dictionary at the section index
   
-  return @"Name";
+  switch (section) {
+    case 0:
+      return @"Dog's Name";
+      break;
+    case 1:
+      return @"Model Id";
+      break;
+    case 2:
+      return @"Created At";
+      break;
+    case 3:
+      return @"Updated At";
+      break;        
+    default:
+      return @"";
+      break;
+  }
   
 }
 
@@ -92,7 +121,6 @@
 - (void)dealloc {
   [dog release];
   [editDogButton release];
-  [tableView release];
   [super dealloc];
 }
 

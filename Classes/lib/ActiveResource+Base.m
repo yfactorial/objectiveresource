@@ -117,7 +117,7 @@ static NSString *_activeResourcePassword = nil;
 }
 
 - (BOOL)createAtPath:(NSString *)path {
-	Response *res = [Connection post:[self toXMLElement] to:path withUser:[[self class]  getUser] andPassword:[[self class]  getPassword]];
+	Response *res = [Connection post:[self toXMLElementExcluding:[NSArray arrayWithObject:[self classIdName]]] to:path withUser:[[self class]  getUser] andPassword:[[self class]  getPassword]];
 	if ([res isSuccess]) {
 		NSDictionary *newProperties = [[[self class] fromXMLData:res.body] properties];
 		[self setProperties:newProperties];
@@ -170,8 +170,6 @@ static NSString *_activeResourcePassword = nil;
 
 - (void) dealloc
 {
-  [createdAt release];
-	[updatedAt release];
 	[super dealloc];
 }
 

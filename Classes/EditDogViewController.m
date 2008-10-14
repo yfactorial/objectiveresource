@@ -52,6 +52,8 @@
   [dog update];
   aViewController.dog = dog;
   [self.navigationController popViewControllerAnimated:YES];
+  aViewController.title = dog.name;
+  [ aViewController.tableView reloadData];
   return YES; 
 } 
 
