@@ -67,6 +67,10 @@
 	return [self toXMLElementAs:[[self class] xmlElementName] excludingInArray:[NSArray array] withTranslations:[NSDictionary dictionary]];
 }
 
+- (NSString *)toXMLElementExcluding:(NSArray *)exclusions {
+	return [self toXMLElementAs:[[self class] xmlElementName] excludingInArray:exclusions withTranslations:[NSDictionary dictionary]];  
+}
+
 - (NSString *)toXMLElementAs:(NSString *)rootName {
 	return [self toXMLElementAs:rootName excludingInArray:[NSArray array] withTranslations:[NSDictionary dictionary]];
 }

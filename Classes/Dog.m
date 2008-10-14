@@ -11,7 +11,7 @@
 
 @implementation Dog
 
-@synthesize name;
+@synthesize name, dogId;
 
 static NSString *site = @"http://localhost:3000/";
 
@@ -21,6 +21,7 @@ static NSString *site = @"http://localhost:3000/";
 
 - (void) dealloc
 {
+  [dogId release];
 	[name release];
 	[super dealloc];
 }

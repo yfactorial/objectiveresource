@@ -26,6 +26,15 @@
  */
 - (NSString *)toXMLElement;
 
+
+/**
+ * Gets the full representation of this object minus the elements in the exclusions array
+ *
+ *
+ *
+ */
+- (NSString *)toXMLElementExcluding:(NSArray *)exclusions;
+
 /**
  * Get the full XML representation of this object (minus the xml directive)
  * using the given element name:

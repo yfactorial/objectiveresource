@@ -11,9 +11,9 @@
 @interface Dog : ActiveResource {
 	
 	NSString *name;
-
+  NSString *dogId;
 }
 
-@property (nonatomic, retain) NSString *name;
-
+@property (nonatomic , retain) NSString  *dogId;
+@property (nonatomic , retain) NSString *name;
 @end

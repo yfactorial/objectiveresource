@@ -9,6 +9,7 @@
 #import "DogViewController.h"
 #import "Dog.h"
 #import "AddDogViewController.h"
+#import "ViewDogController.h"
 
 @interface DogViewController (Private)
 
@@ -56,6 +57,16 @@
 	cell.text = ((Dog *)[dogs objectAtIndex:indexPath.row]).name;
 	return cell;
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+  
+  ViewDogController * aViewDogController = [[ViewDogController alloc] initWithStyle:UITableViewStyleGrouped];
+  aViewDogController.dog = [dogs objectAtIndex:indexPath.row];
+  [self.navigationController pushViewController:aViewDogController animated:YES];
+  [aViewDogController release];
+  
+}
+
 
 
 
