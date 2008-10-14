@@ -10,6 +10,4 @@
 
 @implementation ActiveResource
 
-@synthesize updatedAt , createdAt;
-
 @end

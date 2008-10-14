@@ -11,7 +11,7 @@
 
 @implementation Dog
 
-@synthesize name, dogId;
+@synthesize name, dogId , createdAt , updatedAt;
 
 static NSString *site = @"http://localhost:3000/";
 
