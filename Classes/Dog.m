@@ -21,6 +21,8 @@ static NSString *site = @"http://localhost:3000/";
 
 - (void) dealloc
 {
+  [createdAt release];
+  [updatedAt release];
   [dogId release];
 	[name release];
 	[super dealloc];
