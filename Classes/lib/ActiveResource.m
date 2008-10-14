@@ -9,4 +9,7 @@
 #import "ActiveResource.h"
 
 @implementation ActiveResource
+
+@synthesize updatedAt , createdAt;
+
 @end

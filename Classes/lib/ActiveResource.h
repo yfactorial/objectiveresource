@@ -6,5 +6,14 @@
 //  Copyright 2008 yFactorial, LLC. All rights reserved.
 //
 
-@interface ActiveResource : NSObject
+@interface ActiveResource : NSObject {
+  
+  NSDate * updatedAt;
+  NSDate * createdAt;
+  
+}
+
+@property (nonatomic , retain) NSDate * createdAt;
+@property (nonatomic , retain) NSDate * updatedAt;
+
 @end
