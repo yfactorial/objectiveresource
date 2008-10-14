@@ -2286,3 +2286,8 @@ BjoKQHVzZWR7BjsGRg==--0bb4c2dd2ab22453f8f60671708a6a4f9574bb31
   Parameters: {"format"=>"xml", "(null)"=>nil, "action"=>"index", "controller"=>"dogs"}
   [4;36;1mDog Load (0.000693)[0m   [0;1mSELECT * FROM "dogs" [0m
 Completed in 0.12622 (7 reqs/sec) | Rendering: 0.11999 (95%) | DB: 0.00069 (0%) | 200 OK [http://localhost/dogs.xml?(null)]
+  [4;36;1mDog Load (0.001021)[0m   [0;1mSELECT * FROM "dogs" [0m
+  [4;35;1mDog Load (0.000729)[0m   [0mSELECT * FROM "dogs" [0m
+  [4;36;1mDog Destroy (0.000584)[0m   [0;1m DELETE FROM "dogs"
+ WHERE "id" = 13
+[0m
