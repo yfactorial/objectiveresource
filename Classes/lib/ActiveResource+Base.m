@@ -100,13 +100,19 @@ static NSString *_activeResourcePassword = nil;
 #pragma mark Instance-specific methods
 - (id)getId {
 	id result = nil;
-	SEL idMethodSelector = NSSelectorFromString([NSString stringWithFormat:@"%@Id",
-												 [NSStringFromClass([self class]) stringByReplacingCharactersInRange:NSMakeRange(0, 1) 
-												  withString:[[NSStringFromClass([self class]) substringWithRange:NSMakeRange(0,1)] lowercaseString]]]);
+	SEL idMethodSelector = NSSelectorFromString([self classIdName]);
 	if ([self respondsToSelector:idMethodSelector]) {
 		result = [self performSelector:idMethodSelector];
 	}
 	return result;
+}
+
+- (NSString *)classIdName {
+  
+  return [NSString stringWithFormat:@"%@Id",
+          [NSStringFromClass([self class]) stringByReplacingCharactersInRange:NSMakeRange(0, 1) 
+           withString:[[NSStringFromClass([self class]) substringWithRange:NSMakeRange(0,1)] lowercaseString]]];
+  
 }
 
 - (BOOL)createAtPath:(NSString *)path {
@@ -142,7 +148,7 @@ static NSString *_activeResourcePassword = nil;
 - (BOOL)update {
 	id myId = [self getId];
 	if (nil != myId) {
-		return [[Connection put:[self toXMLElement] 
+		return [[Connection put:[self toXMLElementExcluding:[NSArray arrayWithObject:[self classIdName]]] 
 					  to:[[self class] elementPath:myId] 
 					   withUser:[[self class]  getUser] andPassword:[[self class]  getPassword]] isSuccess];
 	}

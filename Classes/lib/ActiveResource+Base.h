@@ -33,6 +33,7 @@
 
 // Instance-specific methods
 - (id)getId;
+- (NSString *)classIdName;
 - (BOOL)create;
 - (BOOL)createWithParameters:(NSDictionary *)parameters;
 - (BOOL)destroy;

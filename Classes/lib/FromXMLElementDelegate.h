@@ -8,9 +8,9 @@
 
 @interface FromXMLElementDelegate : NSObject {
 	Class targetClass;
-    id parsedObject;
+  id parsedObject;
 	NSString *currentPropertyName;
-    NSMutableString *contentOfCurrentProperty;
+  NSMutableString *contentOfCurrentProperty;
 	NSMutableArray *unclosedProperties;
 	NSString *currentPropertyType;
 }
@@ -27,5 +27,11 @@
 - (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
 - (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string;
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+
+@end
+
+@interface FromXMLElementDelegate ()
+
+- (NSString *)convertElementName:(NSString *)anElementName;
 
 @end

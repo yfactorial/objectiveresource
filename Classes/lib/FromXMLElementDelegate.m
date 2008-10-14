@@ -64,9 +64,11 @@
 		
 		// If we recognize an element that corresponds to a known property of the current parent object, or if the
 		// current parent is an array then start collecting content for this child element
+    
+    
 		if (([self.parsedObject isKindOfClass:[NSArray class]]) ||
-			([[[self.parsedObject class] propertyNames] containsObject:[elementName camelize]])) {
-			self.currentPropertyName = [elementName camelize];
+        ([[[self.parsedObject class] propertyNames] containsObject:[[self convertElementName:elementName] camelize]])) {
+			self.currentPropertyName = [[self convertElementName:elementName] camelize];
 			self.contentOfCurrentProperty = [NSMutableString string];
 			self.currentPropertyType = [attributeDict objectForKey:@"type"];
 		} else {
@@ -103,6 +105,25 @@
 	}
 }
 
+// Converts the Id element to modelNameId
+- (NSString *) convertElementName:(NSString *)anElementName {
+ 
+  if([anElementName isEqualToString:@"id"]) {
+   
+    return [NSString stringWithFormat:@"%@_%@" , [NSStringFromClass([self.parsedObject class]) 
+                                                 stringByReplacingCharactersInRange:NSMakeRange(0, 1) 
+                                                 withString:[[NSStringFromClass([self.parsedObject class]) 
+                                                              substringWithRange:NSMakeRange(0,1)] 
+                                                              lowercaseString]], anElementName];
+  }
+  else {
+    
+    return anElementName;
+    
+  }
+
+}
+
 // We're done receiving the value of a particular element, so take the value we've collected and
 // set it on the current object
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName
@@ -112,7 +133,7 @@
 		 setValue:[self convertProperty:self.contentOfCurrentProperty toType:self.currentPropertyType]  
 		 forKey:self.currentPropertyName];
 	}
-	else if ([self.currentPropertyName isEqualToString:[elementName camelize]]) {
+	else if ([self.currentPropertyName isEqualToString:[self convertElementName:[elementName camelize]]]) {
 		//element is closed, pop it from the stack
 		[self.unclosedProperties removeLastObject];
 		//check for a parent object on the stack
@@ -122,7 +143,7 @@
 				[[[self.unclosedProperties lastObject] objectAtIndex:1] addObject:self.parsedObject];
 			}
 			else {
-				[[[self.unclosedProperties lastObject] objectAtIndex:1] setValue:self.parsedObject forKey:[elementName camelize]];
+				[[[self.unclosedProperties lastObject] objectAtIndex:1] setValue:self.parsedObject forKey:[self convertElementName:[elementName camelize]]];
 			}
 			self.parsedObject = [[self.unclosedProperties lastObject] objectAtIndex:1];
 		}
