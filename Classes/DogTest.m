@@ -36,7 +36,6 @@ NSUInteger shouldBe = 0;
   
   STAssertEquals(shouldBe , [dogs count], @"Should have %d dogs , %d found" , 
                  shouldBe, [dogs count]);
-  [dogs release];
   
 }
 
@@ -57,7 +56,6 @@ NSUInteger shouldBe = 0;
   STAssertEquals(shouldBe , [dogs count], @"Should have %d dogs , %d found" , 
                  shouldBe, [dogs count]);
   
-  [dogs release];
   [aDog release];
 }
 
@@ -77,7 +75,6 @@ NSUInteger shouldBe = 0;
   STAssertEquals(shouldBe , [dogs count], @"Should have %d dogs , %d found" , 
                  shouldBe, [dogs count]);
   
-  [dogs release];
 }
 
 -(void) testDogDelete {
@@ -88,13 +85,10 @@ NSUInteger shouldBe = 0;
   
   [(Dog *)[dogs objectAtIndex:0] destroy];
   
-  [dogs release];
-  
   dogs = [Dog findAll];
   STAssertEquals(shouldBe , [dogs count], @"Should have %d dogs , %d found" , 
                  shouldBe ,[dogs count]);
   
-  [dogs release];
 }
 
   

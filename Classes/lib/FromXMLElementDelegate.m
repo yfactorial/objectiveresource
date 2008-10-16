@@ -164,7 +164,8 @@
 
 - (void)dealloc {
 	[targetClass release];
-  [currentPropertyName release];
+	[currentPropertyName release];
+	[parsedObject release];
 	[contentOfCurrentProperty release];
 	[unclosedProperties release];
 	[currentPropertyType release];
