@@ -82,7 +82,7 @@
 		239D4FE70EA6906100318802 /* GTMIPhoneUnitTestDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTMIPhoneUnitTestDelegate.h; path = google_toolbar/UnitTesting/GTMIPhoneUnitTestDelegate.h; sourceTree = SOURCE_ROOT; };
 		239D4FE80EA6906100318802 /* GTMIPhoneUnitTestDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTMIPhoneUnitTestDelegate.m; path = google_toolbar/UnitTesting/GTMIPhoneUnitTestDelegate.m; sourceTree = SOURCE_ROOT; };
 		239D4FE90EA6906100318802 /* GTMIPhoneUnitTestMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTMIPhoneUnitTestMain.m; path = google_toolbar/UnitTesting/GTMIPhoneUnitTestMain.m; sourceTree = SOURCE_ROOT; };
-		239D4FF40EA6907E00318802 /* Unit Tests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "Unit Tests.app"; path = "build/Debug-iphonesimulator/Unit Tests.app"; sourceTree = "<group>"; };
+		239D4FF40EA6907E00318802 /* Unit Tests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Unit Tests.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		239D4FF60EA6907E00318802 /* Unit Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Unit Tests-Info.plist"; sourceTree = "<group>"; };
 		239D4FFA0EA690BC00318802 /* GTMSenTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTMSenTestCase.h; path = google_toolbar/UnitTesting/GTMSenTestCase.h; sourceTree = SOURCE_ROOT; };
 		239D4FFB0EA690BC00318802 /* GTMSenTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTMSenTestCase.m; path = google_toolbar/UnitTesting/GTMSenTestCase.m; sourceTree = SOURCE_ROOT; };
@@ -459,7 +459,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "~/Documents/Projects/iphone/objectiveresource/rails_boot_strap.rb\n~/Documents/Projects/iphone/objectiveresource/google_toolbar/UnitTesting/RunIPhoneUnitTest.sh\n";
+			shellScript = "./rails_boot_strap.rb\n./google_toolbar/UnitTesting/RunIPhoneUnitTest.sh\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

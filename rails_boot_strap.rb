@@ -1,11 +1,15 @@
 #! /usr/bin/ruby
 #
-#  boot_strap.rb
+#  rails_boot_strap.rb
 #  active_resource
 #
 #  Created by James Burka on 10/15/08.
 #  Copyright (c) 2008 Burkaprojects. All rights reserved.
 #
+#  populate.rake  is located in RAILS_ROOT/lib/tasks 
+#  it requires the gems : populator , faker
+
+
 
 RAILS_ENV = "test"
 RAILS_APP_DIR = "sample_rails_app"
@@ -19,16 +23,13 @@ class RailsBootStrap
 
   def setup()
     
-    run_command("rake db:drop RAILS_ENV=#{RAILS_ENV}")
-    run_command("rake db:create RAILS_ENV=#{RAILS_ENV}")
-    run_command("rake db:migrate RAILS_ENV=#{RAILS_ENV}")
-    run_command("rake db:fixtures:load RAILS_ENV=#{RAILS_ENV}")
+    run_command("rake db:populate RAILS_ENV=#{RAILS_ENV}")
 
   end
   
   def launch()
   
-    run_command("script/server -e #{RAILS_ENV} &")
+    #run_command("script/server -e #{RAILS_ENV} &")
   
   end
   

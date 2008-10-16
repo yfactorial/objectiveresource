@@ -12,6 +12,9 @@
 @interface DogTest : SenTestCase 
 
 -(void) testDogProperties;
+-(void) testDogCount;
+-(void) testDogSave;
+-(void) testDogUpdate;
 
 
 @end
