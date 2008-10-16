@@ -8,6 +8,7 @@
 
 #import "Connection.h"
 #import "Response.h"
+#import "NSData+Additions.h"
 
 @implementation Connection
 
@@ -23,6 +24,14 @@
 }
 
 + (Response *)sendRequest:(NSMutableURLRequest *)request withUser:(NSString *)user andPassword:(NSString *)password {
+	
+	//lots of servers fail to implement http basic authentication correctly, so we pass the credentials even if they are not asked for
+	//TODO make this configurable?
+	NSString *authString = [[[NSString stringWithFormat:@"%@:%@",user, password] dataUsingEncoding:NSUTF8StringEncoding] base64Encoding];
+	[request addValue:[NSString stringWithFormat:@"Basic %@", authString] forHTTPHeaderField:@"Authorization"]; 
+	[request addValue:@"application/xml" forHTTPHeaderField:@"Accept"];
+
+	
 	NSString *escapedUser = (NSString *)CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault, 
 								(CFStringRef)user, NULL, (CFStringRef)@"@.:", kCFStringEncodingUTF8);
 	NSString *escapedPassword = (NSString *)CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault, 
