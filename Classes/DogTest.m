@@ -17,7 +17,7 @@ NSUInteger shouldBe = 0;
 -(void) testDogProperties {
  
   Dog * aDog = [[Dog alloc] init];
-  STAssertTrue([aDog respondsToSelector: @selector(dogId)],@"Din't find dogId");
+  STAssertTrue([aDog respondsToSelector: @selector(dogId)],@"Didn't find dogId");
   [aDog release];
   
 }
