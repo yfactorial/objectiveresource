@@ -31,13 +31,14 @@
 
 - (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict
 {	
+
 	if ([@"nil-classes" isEqualToString:elementName]) {
 		//empty result set, do nothing
 	}
 	
 	//Start of an array type
 	else if ([@"array" isEqualToString:[attributeDict objectForKey:@"type"]]) {
-		self.parsedObject = [NSMutableArray array];
+    self.parsedObject = [NSMutableArray array];
 		[self.unclosedProperties addObject:[NSArray arrayWithObjects:[elementName camelize], self.parsedObject, nil]];
 		self.currentPropertyName = [elementName camelize];
 	}
@@ -162,8 +163,8 @@
 
 - (void)dealloc {
 	[targetClass release];
-	[parsedObject release];
 	[currentPropertyName release];
+	[parsedObject release];
 	[contentOfCurrentProperty release];
 	[unclosedProperties release];
 	[currentPropertyType release];
