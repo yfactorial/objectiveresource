@@ -51,6 +51,9 @@
 		350421870E5E1BF200493366 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 350421860E5E1BF200493366 /* CoreGraphics.framework */; };
 		350421CB0E5E1E0900493366 /* AddDogView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 350421CA0E5E1E0900493366 /* AddDogView.xib */; };
 		350421CF0E5E1EC500493366 /* AddDogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 350421CE0E5E1EC500493366 /* AddDogViewController.m */; };
+		3506000D0EA7FCCA0085CBDF /* NSData+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3506000C0EA7FCCA0085CBDF /* NSData+Additions.m */; };
+		350600100EA7FCDF0085CBDF /* NSData+Additions.h in Sources */ = {isa = PBXBuildFile; fileRef = 3506000B0EA7FCCA0085CBDF /* NSData+Additions.h */; };
+		350600110EA7FCDF0085CBDF /* NSData+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3506000C0EA7FCCA0085CBDF /* NSData+Additions.m */; };
 		357A91B30E9A55EF0025D9AF /* ActiveResource+Base.m in Sources */ = {isa = PBXBuildFile; fileRef = 357A91940E9A55EF0025D9AF /* ActiveResource+Base.m */; };
 		357A91B40E9A55EF0025D9AF /* ActiveResource+XMLSerializableSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 357A91960E9A55EF0025D9AF /* ActiveResource+XMLSerializableSupport.m */; };
 		357A91B50E9A55EF0025D9AF /* ActiveResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 357A91980E9A55EF0025D9AF /* ActiveResource.m */; };
@@ -101,6 +104,8 @@
 		350421CA0E5E1E0900493366 /* AddDogView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddDogView.xib; sourceTree = "<group>"; };
 		350421CD0E5E1EC500493366 /* AddDogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddDogViewController.h; sourceTree = "<group>"; };
 		350421CE0E5E1EC500493366 /* AddDogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddDogViewController.m; sourceTree = "<group>"; };
+		3506000B0EA7FCCA0085CBDF /* NSData+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+Additions.h"; path = "lib/NSData+Additions.h"; sourceTree = "<group>"; };
+		3506000C0EA7FCCA0085CBDF /* NSData+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData+Additions.m"; path = "lib/NSData+Additions.m"; sourceTree = "<group>"; };
 		357A91930E9A55EF0025D9AF /* ActiveResource+Base.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ActiveResource+Base.h"; path = "lib/ActiveResource+Base.h"; sourceTree = "<group>"; };
 		357A91940E9A55EF0025D9AF /* ActiveResource+Base.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "ActiveResource+Base.m"; path = "lib/ActiveResource+Base.m"; sourceTree = "<group>"; };
 		357A91950E9A55EF0025D9AF /* ActiveResource+XMLSerializableSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ActiveResource+XMLSerializableSupport.h"; path = "lib/ActiveResource+XMLSerializableSupport.h"; sourceTree = "<group>"; };
@@ -287,6 +292,8 @@
 		357A91410E9A436E0025D9AF /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				3506000B0EA7FCCA0085CBDF /* NSData+Additions.h */,
+				3506000C0EA7FCCA0085CBDF /* NSData+Additions.m */,
 				357A91470E9A436E0025D9AF /* Inflections */,
 				357A91990E9A55EF0025D9AF /* ActiveResourceSupport.h */,
 				357A919C0E9A55EF0025D9AF /* CoreSupport.h */,
@@ -489,6 +496,7 @@
 				357A91C00E9A55EF0025D9AF /* Response.m in Sources */,
 				23829E0C0EA393700070F0BF /* EditDogViewController.m in Sources */,
 				23829F010EA39B3B0070F0BF /* ViewDogController.m in Sources */,
+				3506000D0EA7FCCA0085CBDF /* NSData+Additions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -498,6 +506,8 @@
 			files = (
 				239D501A0EA691AC00318802 /* DogViewController.m in Sources */,
 				239D501B0EA691AC00318802 /* Dog.m in Sources */,
+				350600100EA7FCDF0085CBDF /* NSData+Additions.h in Sources */,
+				350600110EA7FCDF0085CBDF /* NSData+Additions.m in Sources */,
 				239D501C0EA691AC00318802 /* AddDogViewController.m in Sources */,
 				239D501D0EA691AC00318802 /* ActiveResource+Base.m in Sources */,
 				239D501E0EA691AC00318802 /* ActiveResource+XMLSerializableSupport.m in Sources */,
