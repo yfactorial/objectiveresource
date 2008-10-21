@@ -11,9 +11,11 @@
 
 @implementation ActiveResource (XMLSerializableSupport)
 
+
 - (NSString *)toXMLElementAs:(NSString *)rootName excludingInArray:(NSArray *)exclusions
 			withTranslations:(NSDictionary *)keyTranslations {
 	return [[self properties] toXMLElementAs:rootName excludingInArray:exclusions withTranslations:keyTranslations];
 }
+
 
 @end

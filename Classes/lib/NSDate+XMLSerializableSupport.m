@@ -7,25 +7,20 @@
 //
 
 #import "NSDate+XMLSerializableSupport.h"
+#import "ObjectiveResourceDateFormatter.h"
 
 @implementation NSDate (XMLSerializableSupport)
 
 //FIXME we should have one formatter for the entire app
 
 - (NSString *)toXMLValue {
-	NSDateFormatter *formatter = [[[NSDateFormatter alloc] init] autorelease];
-	[formatter setFormatterBehavior:NSDateFormatterBehavior10_4];
-	[formatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss'Z'"];
-	[formatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"GMT"]];
-	return [formatter stringFromDate:self];
+	return [ ObjectiveResourceDateFormatter formatDate:self]; 
 }
 
 + (NSDate *)fromXMLString:(NSString *)xmlString {
-	NSDateFormatter *formatter = [[[NSDateFormatter alloc] init] autorelease];
-	[formatter setFormatterBehavior:NSDateFormatterBehavior10_4];
-	[formatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss'Z'"];
-	[formatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"GMT"]];
-	return [formatter dateFromString:xmlString];
+	return [ ObjectiveResourceDateFormatter parseDate:xmlString];
 }
+
+
 
 @end
