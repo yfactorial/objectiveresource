@@ -10,17 +10,23 @@
 #import "Response.h"
 #import "NSData+Additions.h"
 
+
+//#define debugLog(...) NSLog(__VA_ARGS__)
+#ifndef debugLog(...)
+	#define debugLog(...)
+#endif
+
 @implementation Connection
 
 + (void)logRequest:(NSURLRequest *)request to:(NSString *)url {
-	NSLog(@"%@ -> %@", [request HTTPMethod], url);
+	debugLog(@"%@ -> %@", [request HTTPMethod], url);
 	if([request HTTPBody]) {
-		NSLog([[[NSString alloc] initWithData:[request HTTPBody] encoding:NSUTF8StringEncoding] autorelease]);
+		debugLog([[[NSString alloc] initWithData:[request HTTPBody] encoding:NSUTF8StringEncoding] autorelease]);
 	}
 }
 
 + (void)logResponse:(NSHTTPURLResponse *)response withBody:(NSData *)body {
-	NSLog(@"<= %@", [[[NSString alloc] initWithData:body encoding:NSUTF8StringEncoding] autorelease]);
+	debugLog(@"<= %@", [[[NSString alloc] initWithData:body encoding:NSUTF8StringEncoding] autorelease]);
 }
 
 + (Response *)sendRequest:(NSMutableURLRequest *)request withUser:(NSString *)user andPassword:(NSString *)password {
