@@ -128,6 +128,10 @@ static NSString *_activeResourcePassword = nil;
 	}
 }
 
+- (BOOL)destroyAtPath:(NSString *) path {
+	return [[Connection delete:path withUser:[[self class]  getUser] andPassword:[[self class]  getPassword]] isSuccess];
+}
+
 - (BOOL)create {
 	return [self createAtPath:[self collectionPath]];
 }
@@ -139,7 +143,7 @@ static NSString *_activeResourcePassword = nil;
 - (BOOL)destroy {
 	id myId = [self getId];
 	if (nil != myId) {
-		return [[Connection delete:[[self class] elementPath:myId] withUser:[[self class]  getUser] andPassword:[[self class]  getPassword]] isSuccess];
+		return [self destroyAtPath:[[self class] elementPath:myId]];
 	}
 	else {
 		return NO;
