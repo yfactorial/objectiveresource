@@ -128,6 +128,12 @@ static NSString *_activeResourcePassword = nil;
 	}
 }
 
+-(BOOL)updateAtPath:(NSString *)path {	
+	return [[Connection put:[self toXMLElementExcluding:[NSArray arrayWithObject:[self classIdName]]] 
+											 to:path 
+								 withUser:[[self class]  getUser] andPassword:[[self class]  getPassword]] isSuccess];
+}
+
 - (BOOL)destroyAtPath:(NSString *) path {
 	return [[Connection delete:path withUser:[[self class]  getUser] andPassword:[[self class]  getPassword]] isSuccess];
 }
@@ -153,9 +159,7 @@ static NSString *_activeResourcePassword = nil;
 - (BOOL)update {
 	id myId = [self getId];
 	if (nil != myId) {
-		return [[Connection put:[self toXMLElementExcluding:[NSArray arrayWithObject:[self classIdName]]] 
-					  to:[[self class] elementPath:myId] 
-					   withUser:[[self class]  getUser] andPassword:[[self class]  getPassword]] isSuccess];
+		return [self updateAtPath:[[self class] elementPath:myId]];
 	}
 	else {
 		return NO;

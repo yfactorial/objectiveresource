@@ -11,7 +11,7 @@
 
 @implementation ObjectiveResourceDateFormatter
 
-static NSString * dateFormatString = @"yyyy-MM-dd'T'HH:mm:ss'Z'";
+static NSString *dateFormatString = @"yyyy-MM-dd'T'HH:mm:ss'Z'";
 
 + (void)setFormatString:(NSString *)format {
 	dateFormatString = format;
