@@ -13,8 +13,10 @@
 
 }
 
-+ (void)setFormatString:(NSString *)format;
++ (void)setDateFormatString:(NSString *)format;
++ (void)setDateTimeFormatString:(NSString *)format;
 + (NSString *)formatDate:(NSDate *)date;
 + (NSDate *)parseDate:(NSString *)dateString;
++ (NSDate *)parseDateTime:(NSString *)dateTimeString;
 
 @end

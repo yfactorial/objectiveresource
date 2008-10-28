@@ -8,5 +8,6 @@
 
 @interface NSDate (XMLSerializableSupport)
 - (NSString *)toXMLValue;
-+ (NSDate *)fromXMLString:(NSString *)xmlString;
++ (NSDate *)fromXMLDateTimeString:(NSString *)xmlString;
++ (NSDate *)fromXMLDateString:(NSString *)xmlString;
 @end

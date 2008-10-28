@@ -50,6 +50,11 @@ static NSString *_activeResourcePassword = nil;
 	return [self allFromXMLData:res.body];
 }
 
++ (id)find:(NSString *)elementId {
+	Response *res = [Connection get:[self elementPath:elementId] withUser:[[self class] getUser] andPassword:[[self class]  getPassword]];
+	return [self fromXMLData:res.body];
+}
+
 + (NSString *)elementName {
 	return [[NSStringFromClass([self class]) stringByReplacingCharactersInRange:NSMakeRange(0, 1) 
 			withString:[[NSStringFromClass([self class]) substringWithRange:NSMakeRange(0,1)] lowercaseString]] underscore];

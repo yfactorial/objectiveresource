@@ -17,10 +17,13 @@
 	return [ ObjectiveResourceDateFormatter formatDate:self]; 
 }
 
-+ (NSDate *)fromXMLString:(NSString *)xmlString {
-	return [ ObjectiveResourceDateFormatter parseDate:xmlString];
++ (NSDate *)fromXMLDateTimeString:(NSString *)xmlString {
+	return [ ObjectiveResourceDateFormatter parseDateTime:xmlString];
 }
 
++ (NSDate *)fromXMLDateString:(NSString *)xmlString {
+	return [ ObjectiveResourceDateFormatter parseDate:xmlString];
+}
 
 
 @end

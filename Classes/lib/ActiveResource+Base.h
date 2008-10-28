@@ -21,6 +21,7 @@
 
 // Finders
 + (NSArray *)findAll;
++ (id)find:(NSString *)elementId;
 
 // URL construction accessors
 + (NSString *)elementName;
