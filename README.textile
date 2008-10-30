@@ -1,6 +1,6 @@
 h2. Overview
 
-ObjectiveResource is a port of Rail's ActiveRecord framework to Objective-C.
+ObjectiveResource is a port of Rails' ActiveResource framework to Objective-C.
 
 The primary purpose of this project is to quickly and easily connect 
 iPhone applications with servers running Rails. 
