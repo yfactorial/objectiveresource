@@ -41,6 +41,10 @@
 - (BOOL)update;
 - (BOOL)save;
 
+- (BOOL)createAtPath:(NSString *)path;
+-	(BOOL)updateAtPath:(NSString *)path;
+- (BOOL)destroyAtPath:(NSString *)path;
+
 // Instance helpers for getting at commonly used class-level values
 - (NSString *)collectionPath;
 
