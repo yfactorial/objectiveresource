@@ -134,9 +134,18 @@ static NSString *_activeResourcePassword = nil;
 }
 
 -(BOOL)updateAtPath:(NSString *)path {	
-	return [[Connection put:[self toXMLElementExcluding:[NSArray arrayWithObject:[self classIdName]]] 
+	Response *res = [Connection put:[self toXMLElementExcluding:[NSArray arrayWithObject:[self classIdName]]] 
 											 to:path 
-								 withUser:[[self class]  getUser] andPassword:[[self class]  getPassword]] isSuccess];
+								 withUser:[[self class]  getUser] andPassword:[[self class]  getPassword]];
+	if ([res isSuccess]) {
+		NSDictionary *newProperties = [[[self class] fromXMLData:res.body] properties];
+		[self setProperties:newProperties];
+		return YES;
+	}
+	else {
+		return NO;
+	}
+	
 }
 
 - (BOOL)destroyAtPath:(NSString *) path {
