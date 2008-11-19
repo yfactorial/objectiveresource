@@ -25,10 +25,6 @@
 	}
 }
 
-+ (void)logResponse:(NSHTTPURLResponse *)response withBody:(NSData *)body {
-	debugLog(@"<= %@", [[[NSString alloc] initWithData:body encoding:NSUTF8StringEncoding] autorelease]);
-}
-
 + (Response *)sendRequest:(NSMutableURLRequest *)request withUser:(NSString *)user andPassword:(NSString *)password {
 	
 	//lots of servers fail to implement http basic authentication correctly, so we pass the credentials even if they are not asked for
@@ -50,10 +46,11 @@
 	NSError *error;
 	[self logRequest:request to:[authURL absoluteString]];
 	NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
-	[self logResponse:response withBody:data];
 	[escapedUser release];
 	[escapedPassword release];
-	return [Response responseFrom:response withBody:data];
+	Response *resp = [Response responseFrom:response withBody:data];
+	[resp log];
+	return resp;
 }
 
 + (Response *)post:(NSString *)body to:(NSString *)url {
