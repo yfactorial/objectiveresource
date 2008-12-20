@@ -5,6 +5,14 @@
 //  Created by Ryan Daigle on 7/30/08.
 //  Copyright 2008 yFactorial, LLC. All rights reserved.
 //
+#ifdef __OBJC__
+//setup debug only logging
+#ifdef DEBUG
+#define debugLog(...) NSLog(__VA_ARGS__)
+#else
+#define debugLog(...)
+#endif
+#endif
 
 @interface Response : NSObject {
 	NSData *body;

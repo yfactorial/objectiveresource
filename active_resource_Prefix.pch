@@ -3,12 +3,6 @@
 //
 
 #ifdef __OBJC__
-//setup debug only logging
-#ifdef DEBUG
-	#define debugLog(...) NSLog(__VA_ARGS__)
-#else
-	#define debugLog(...)
-#endif
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #endif
