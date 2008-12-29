@@ -17,6 +17,18 @@
 	return [[[self alloc] initFrom:response withBody:data andError:aError] autorelease];
 }
 
+- (void)normalizeError:(NSError *)aError {
+	switch ([aError code]) {
+		case -1012:
+			self.statusCode = 401;
+			self.error = [NSHTTPURLResponse buildResponseError:401];
+			break;
+		default:
+			self.error = aError;
+			break;
+	}
+}
+
 - (id)initFrom:(NSHTTPURLResponse *)response withBody:(NSData *)data andError:(NSError *)aError {
 	[self init];
 	self.body = data;
@@ -26,7 +38,7 @@
 		self.error = [response error];		
 	}
 	else {
-		self.error = aError;
+		[self normalizeError:aError];
 	}
 	return self;
 }

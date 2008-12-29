@@ -10,5 +10,6 @@
 
 -(NSError *) error;
 -(BOOL) isSuccess;
++ (NSError *)buildResponseError:(int)statusCode;
 
 @end
