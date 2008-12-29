@@ -29,11 +29,6 @@ NSUInteger shouldBe = 0;
   }
   NSArray * dogs = [Dog findAll];
   
-  // Must cast 100 as a NSUInteger or this fails.
-  // even though
-  // STAssertTrue(100 == [dogs count],@" Should have 100 dogs");
-  // works
-  
   STAssertEquals(shouldBe , [dogs count], @"Should have %d dogs , %d found" , 
                  shouldBe, [dogs count]);
   

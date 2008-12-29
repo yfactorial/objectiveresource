@@ -21,7 +21,9 @@
 
 // Finders
 + (NSArray *)findAll;
++ (NSArray *)findAllWithResponse:(NSError **)aError;
 + (id)find:(NSString *)elementId;
++ (id)find:(NSString *)elementId withResponse:(NSError **)aError; 
 
 // URL construction accessors
 + (NSString *)elementName;
@@ -36,14 +38,20 @@
 - (id)getId;
 - (NSString *)classIdName;
 - (BOOL)create;
+- (BOOL)createWithResponse:(NSError **)aError;
 - (BOOL)createWithParameters:(NSDictionary *)parameters;
+- (BOOL)createWithParameters:(NSDictionary *)parameters andResponse:(NSError **)aError;
 - (BOOL)destroy;
+- (BOOL)destroyWithResponse:(NSError **)aError;
 - (BOOL)update;
+- (BOOL)updateWithResponse:(NSError **)aError;
 - (BOOL)save;
+- (BOOL)saveWithResponse:(NSError **)aError;
 
-- (BOOL)createAtPath:(NSString *)path;
--	(BOOL)updateAtPath:(NSString *)path;
-- (BOOL)destroyAtPath:(NSString *)path;
+
+- (BOOL)createAtPath:(NSString *)path withResponse:(NSError **)aError;
+-	(BOOL)updateAtPath:(NSString *)path withResponse:(NSError **)aError;
+- (BOOL)destroyAtPath:(NSString *)path withResponse:(NSError **)aError;
 
 // Instance helpers for getting at commonly used class-level values
 - (NSString *)collectionPath;

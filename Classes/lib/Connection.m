@@ -48,7 +48,7 @@
 	NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
 	[escapedUser release];
 	[escapedPassword release];
-	Response *resp = [Response responseFrom:response withBody:data];
+	Response *resp = [Response responseFrom:response withBody:data andError:error];
 	[resp log];
 	return resp;
 }

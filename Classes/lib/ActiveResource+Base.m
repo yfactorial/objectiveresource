@@ -45,14 +45,30 @@ static NSString *_activeResourcePassword = nil;
 
 
 // Find all items 
-+ (NSArray *)findAll {
++ (NSArray *)findAllWithResponse:(NSError **)aError {
 	Response *res = [Connection get:[self collectionPath] withUser:[[self class] getUser] andPassword:[[self class]  getPassword]];
+	if([res isError] && aError) {
+		*aError = res.error;
+	}
 	return [self allFromXMLData:res.body];
 }
 
-+ (id)find:(NSString *)elementId {
++ (NSArray *)findAll {
+	NSError *aError;
+	return [self findAllWithResponse:&aError];
+}
+
++ (id)find:(NSString *)elementId withResponse:(NSError **)aError {
 	Response *res = [Connection get:[self elementPath:elementId] withUser:[[self class] getUser] andPassword:[[self class]  getPassword]];
-	return [self fromXMLData:res.body];
+	if([res isError] && aError) {
+		*aError = res.error;
+	}
+	return [self fromXMLData:res.body];	
+}
+
++ (id)find:(NSString *)elementId {
+	NSError *aError;
+	return [self find:elementId withResponse:&aError];
 }
 
 + (NSString *)elementName {
@@ -121,8 +137,11 @@ static NSString *_activeResourcePassword = nil;
   
 }
 
-- (BOOL)createAtPath:(NSString *)path {
+- (BOOL)createAtPath:(NSString *)path withResponse:(NSError **)aError {
 	Response *res = [Connection post:[self toXMLElementExcluding:[NSArray arrayWithObject:[self classIdName]]] to:path withUser:[[self class]  getUser] andPassword:[[self class]  getPassword]];
+	if([res isError] && aError) {
+		*aError = res.error;
+	}
 	if ([res isSuccess]) {
 		NSDictionary *newProperties = [[[self class] fromXMLData:res.body] properties];
 		[self setProperties:newProperties];
@@ -133,10 +152,13 @@ static NSString *_activeResourcePassword = nil;
 	}
 }
 
--(BOOL)updateAtPath:(NSString *)path {	
+-(BOOL)updateAtPath:(NSString *)path withResponse:(NSError **)aError {	
 	Response *res = [Connection put:[self toXMLElementExcluding:[NSArray arrayWithObject:[self classIdName]]] 
-											 to:path 
-								 withUser:[[self class]  getUser] andPassword:[[self class]  getPassword]];
+															 to:path 
+												 withUser:[[self class]  getUser] andPassword:[[self class]  getPassword]];
+	if([res isError] && aError) {
+		*aError = res.error;
+	}
 	if ([res isSuccess]) {
 		NSDictionary *newProperties = [[[self class] fromXMLData:res.body] properties];
 		[self setProperties:newProperties];
@@ -148,47 +170,80 @@ static NSString *_activeResourcePassword = nil;
 	
 }
 
-- (BOOL)destroyAtPath:(NSString *) path {
-	return [[Connection delete:path withUser:[[self class]  getUser] andPassword:[[self class]  getPassword]] isSuccess];
+- (BOOL)destroyAtPath:(NSString *)path withResponse:(NSError **)aError {
+	Response *res = [Connection delete:path withUser:[[self class]  getUser] andPassword:[[self class]  getPassword]];
+	if([res isError] && aError) {
+		*aError = res.error;
+	}
+	return [res	isSuccess];
+}
+
+- (BOOL)createWithResponse:(NSError **)aError {
+	return [self createAtPath:[self collectionPath] withResponse:aError];	
 }
 
 - (BOOL)create {
-	return [self createAtPath:[self collectionPath]];
+	NSError *error;
+	return [self createWithResponse:&error];
+}
+
+- (BOOL)createWithParameters:(NSDictionary *)parameters andResponse:(NSError **)aError {
+	return [self createAtPath:[[self class] collectionPathWithParameters:parameters] withResponse:aError];
 }
 
 - (BOOL)createWithParameters:(NSDictionary *)parameters {
-	return [self createAtPath:[[self class] collectionPathWithParameters:parameters]];
+	NSError *error;
+	return [self createWithParameters:parameters andResponse:&error];
+}
+
+
+- (BOOL)destroyWithResponse:(NSError **)aError {
+	id myId = [self getId];
+	if (nil != myId) {
+		return [self destroyAtPath:[[self class] elementPath:myId] withResponse:aError];
+	}
+	else {
+		// this should return a error
+		return NO;
+	}
 }
 
 - (BOOL)destroy {
+	NSError *error;
+	return [self destroyWithResponse:&error];
+}
+
+- (BOOL)updateWithResponse:(NSError **)aError {
 	id myId = [self getId];
 	if (nil != myId) {
-		return [self destroyAtPath:[[self class] elementPath:myId]];
+		return [self updateAtPath:[[self class] elementPath:myId] withResponse:aError];
 	}
 	else {
+		// this should return an error
 		return NO;
 	}
 }
 
 - (BOOL)update {
+	NSError *error;
+	return [self updateWithResponse:&error];
+}
+
+- (BOOL)saveWithResponse:(NSError **)aError {
 	id myId = [self getId];
-	if (nil != myId) {
-		return [self updateAtPath:[[self class] elementPath:myId]];
+	if (nil == myId) {
+		return [self createWithResponse:aError];
 	}
 	else {
-		return NO;
+		return [self updateWithResponse:aError];
 	}
 }
 
 - (BOOL)save {
-	id myId = [self getId];
-	if (nil == myId) {
-		return [self create];
-	}
-	else {
-		return [self update];
-	}
+	NSError *error;
+	return [self saveWithResponse:&error];
 }
+
 
 - (void) dealloc
 {

@@ -7,25 +7,36 @@
 //
 
 #import "Response.h"
+#import "NSHTTPURLResponse+Error.h"
 
 @implementation Response
 
-@synthesize body, headers, statusCode;
+@synthesize body, headers, statusCode, error;
 
-+ (id)responseFrom:(NSHTTPURLResponse *)response withBody:(NSData *)data {
-	return [[[self alloc] initFrom:response withBody:data] autorelease];
++ (id)responseFrom:(NSHTTPURLResponse *)response withBody:(NSData *)data andError:(NSError *)aError {
+	return [[[self alloc] initFrom:response withBody:data andError:aError] autorelease];
 }
 
-- (id)initFrom:(NSHTTPURLResponse *)response withBody:(NSData *)data {
+- (id)initFrom:(NSHTTPURLResponse *)response withBody:(NSData *)data andError:(NSError *)aError {
 	[self init];
 	self.body = data;
-	self.statusCode = [response statusCode];
-	self.headers = [response allHeaderFields];
+	if(response) {
+		self.statusCode = [response statusCode];
+		self.headers = [response allHeaderFields];
+		self.error = [response error];		
+	}
+	else {
+		self.error = aError;
+	}
 	return self;
 }
 
 - (BOOL)isSuccess {
 	return statusCode >= 200 && statusCode < 400;
+}
+
+- (BOOL)isError {
+	return ![self isSuccess];
 }
 
 - (void)log {

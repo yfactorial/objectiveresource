@@ -18,14 +18,17 @@
 	NSData *body;
 	NSDictionary *headers;
 	NSInteger statusCode;
+	NSError *error;
 }
 
 @property (nonatomic, retain) NSData *body;
 @property (nonatomic, retain) NSDictionary *headers;
 @property (assign, nonatomic) NSInteger statusCode;
+@property (nonatomic, retain) NSError *error;
 
-+ (id)responseFrom:(NSHTTPURLResponse *)response withBody:(NSData *)data;
-- (id)initFrom:(NSHTTPURLResponse *)response withBody:(NSData *)data;
++ (id)responseFrom:(NSHTTPURLResponse *)response withBody:(NSData *)data andError:(NSError *)aError;
+- (id)initFrom:(NSHTTPURLResponse *)response withBody:(NSData *)data andError:(NSError *)aError;
 - (BOOL)isSuccess;
+- (BOOL)isError;
 - (void)log;
 @end
