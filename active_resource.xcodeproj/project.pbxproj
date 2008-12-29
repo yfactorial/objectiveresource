@@ -50,7 +50,6 @@
 		239D75CD0EAF8D3700664953 /* ObjectiveResourceDateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 239D75CC0EAF8D3700664953 /* ObjectiveResourceDateFormatter.m */; };
 		239D75CE0EAF8D3700664953 /* ObjectiveResourceDateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 239D75CC0EAF8D3700664953 /* ObjectiveResourceDateFormatter.m */; };
 		23B4A6420F092B620021AB9D /* DogErrorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 23B4A6410F092B620021AB9D /* DogErrorTest.m */; };
-		23B4A6430F092B620021AB9D /* DogErrorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 23B4A6410F092B620021AB9D /* DogErrorTest.m */; };
 		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
 		350420F40E5E15AA00493366 /* DogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 350420F30E5E15AA00493366 /* DogViewController.m */; };
 		350421290E5E1A0F00493366 /* Dog.m in Sources */ = {isa = PBXBuildFile; fileRef = 350421280E5E1A0F00493366 /* Dog.m */; };
@@ -517,7 +516,6 @@
 				3506000D0EA7FCCA0085CBDF /* NSData+Additions.m in Sources */,
 				239D75CD0EAF8D3700664953 /* ObjectiveResourceDateFormatter.m in Sources */,
 				2377C4F50F019E67006E155F /* NSHTTPURLResponse+Error.m in Sources */,
-				23B4A6430F092B620021AB9D /* DogErrorTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
