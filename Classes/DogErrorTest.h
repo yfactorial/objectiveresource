@@ -22,3 +22,8 @@
 }
 
 @end
+
+@interface DogDoesNotExist : ActiveResource
+
+@end
+
