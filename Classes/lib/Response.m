@@ -19,7 +19,7 @@
 
 - (void)normalizeError:(NSError *)aError {
 	switch ([aError code]) {
-		case -1012:
+		case NSURLErrorUserCancelledAuthentication:
 			self.statusCode = 401;
 			self.error = [NSHTTPURLResponse buildResponseError:401];
 			break;
