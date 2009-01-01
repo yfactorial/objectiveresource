@@ -18,6 +18,15 @@
 
 @implementation Connection
 
+static float timeoutInterval = 5.0;
+
++ (void)setTimeout:(float)timeOut {
+	timeoutInterval = timeOut;
+}
++ (float)timeout {
+	return timeoutInterval;
+}
+
 + (void)logRequest:(NSURLRequest *)request to:(NSString *)url {
 	debugLog(@"%@ -> %@", [request HTTPMethod], url);
 	if([request HTTPBody]) {
@@ -58,7 +67,7 @@
 }
 
 + (Response *)sendBy:(NSString *)method withBody:(NSString *)body to:(NSString *)url withUser:(NSString *)user andPassword:(NSString *)password{
-	NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url] cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:5.0];
+	NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url] cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:timeoutInterval];
 	[request setHTTPMethod:method];
 	[request setHTTPBody:[body dataUsingEncoding:NSUTF8StringEncoding]];
 	[request setValue:@"application/xml" forHTTPHeaderField:@"Content-Type"];
@@ -78,14 +87,14 @@
 }
 
 + (Response *)get:(NSString *)url withUser:(NSString *)user andPassword:(NSString *)password {
-	NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url] cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:5.0];
+	NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url] cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:timeoutInterval];
 	[request setHTTPMethod:@"GET"];
 	[request setValue:@"application/xml" forHTTPHeaderField:@"Content-Type"];
 	return [self sendRequest:request withUser:user andPassword:password];
 }
 
 + (Response *)delete:(NSString *)url withUser:(NSString *)user andPassword:(NSString *)password {
-	NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url] cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:5.0];
+	NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url] cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:timeoutInterval];
 	[request setHTTPMethod:@"DELETE"];
 	[request setValue:@"application/xml" forHTTPHeaderField:@"Content-Type"];
 	return [self sendRequest:request withUser:user andPassword:password];
