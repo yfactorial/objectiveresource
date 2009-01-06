@@ -14,10 +14,9 @@
 @implementation NSString(XMLSerializableSupport)
 
 + (NSString *)fromXmlString:(NSString *)aString {
-	NSString *temp = [aString gsub:[NSDictionary dictionaryWithObject:@"&amp;" forKey:@"&"]];
 	NSDictionary* escapeChars = [NSDictionary dictionaryWithObjectsAndKeys:@"&",@"&amp;",@"\"",@"&quot;",@"'",@"&apos;"
 															 ,@"<",@"&lt;",@">",@"&gt;",nil];
-	return [temp gsub:escapeChars];
+	return [aString gsub:escapeChars];
 	
 }
 
