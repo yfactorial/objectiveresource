@@ -48,7 +48,10 @@ NSUInteger shouldBe = 0;
   NSArray * dogs = [Dog findAll];
   STAssertEquals(shouldBe , [dogs count], @"Should have %d dogs , %d found" , 
                  shouldBe, [dogs count]);
-	STAssertTrue([[aDog.name toXMLValue] isEqualToString: @"Helio&quot;s Coffee &amp; friends"],@"Should be Helio&quot;s Coffee &amp; friends , got %@" , [aDog.name toXMLValue]);
+	STAssertTrue([[aDog.name toXMLValue] isEqualToString: @"Helio&apos;s Coffee &amp; friends"],@"Should be Helio&apos;s Coffee &amp; friends , got %@" , [aDog.name toXMLValue]);
+	STAssertTrue([[NSString fromXmlString:aDog.name] isEqualToString: @"Helio's Coffee & friends"],@"Should be Helio's Coffee & friends , got %@" , [aDog.name toXMLValue]);
+
+	
 }
 
 -(void) testDogSave{

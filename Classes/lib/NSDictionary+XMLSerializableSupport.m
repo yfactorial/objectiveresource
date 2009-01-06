@@ -29,8 +29,7 @@
 			[elementValue appendString:[value toXMLElementAs:propertyRootName]];
 		}
 	}
-	
-	return [[self class] buildXMLElementAs:rootName	withValue:elementValue];
+	return [[self class] buildXmlElementAs:rootName withInnerXml:elementValue];
 }
 
 @end

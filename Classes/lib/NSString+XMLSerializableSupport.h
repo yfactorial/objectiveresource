@@ -11,6 +11,7 @@
 
 @interface NSString(XMLSerializableSupport) 
 
++ (NSString *)fromXmlString:(NSString *)aString;
 - (NSString *)toXMLValue;
 
 @end

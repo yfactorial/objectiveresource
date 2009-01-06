@@ -7,8 +7,7 @@
 //
 
 #import "FromXMLElementDelegate.h"
-#import "NSObject+XMLSerializableSupport.h"
-#import "NSDate+XMLSerializableSupport.h"
+#import "XMLSerializableSupport.h"
 #import "CoreSupport.h"
 
 @implementation FromXMLElementDelegate
@@ -105,7 +104,7 @@
 		return [NSDate fromXMLDateString:propertyValue];
 	}
 	else {
-		return propertyValue;
+		return [NSString fromXmlString:propertyValue];
 	}
 }
 

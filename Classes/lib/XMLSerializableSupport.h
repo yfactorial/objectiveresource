@@ -11,3 +11,4 @@
 #import "NSObject+XMLSerializableSupport.h"
 #import "NSNull+XMLSerializableSupport.h"
 #import "NSDate+XMLSerializableSupport.h"
+#import "NSString+XMLSerializableSupport.h"

@@ -12,9 +12,16 @@
 
 /**
  * Construct a string representation of the given value object, assuming
- * the given root element name.
+ * the given root element name , the NSObjects's toXmlValue is called.
  */
 + (NSString *)buildXMLElementAs:(NSString *)rootName withValue:(NSObject *)value;
+
+/**
+ *
+ * Constructs the actual xml node as a string
+ *
+ */
++ (NSString *)buildXmlElementAs:(NSString *)rootName withInnerXml:(NSString *)value;
 
 /**
  * What is the element name for this object when serialized to XML.

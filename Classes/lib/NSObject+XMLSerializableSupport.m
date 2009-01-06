@@ -44,16 +44,19 @@
 	}
 }
 
-+ (NSString *)buildXMLElementAs:(NSString *)rootName withValue:(NSObject *)value {
-	
++ (NSString *)buildXmlElementAs:(NSString *)rootName withInnerXml:(NSString *)value {
 	NSString *xmlType = [self xmlTypeFor:value];
 	NSString *dashedName = [rootName dasherize];
 	
 	if (xmlType != nil) {
-		return [NSString stringWithFormat:@"<%@ type=\"%@\">%@</%@>", dashedName, xmlType, [value toXMLValue], dashedName];
+		return [NSString stringWithFormat:@"<%@ type=\"%@\">%@</%@>", dashedName, xmlType, value, dashedName];
 	} else {
-		return [NSString stringWithFormat:@"<%@>%@</%@>", dashedName, [value toXMLValue], dashedName];
-	}
+		return [NSString stringWithFormat:@"<%@>%@</%@>", dashedName, value, dashedName];
+	}	
+}
+
++ (NSString *)buildXMLElementAs:(NSString *)rootName withValue:(NSObject *)value {
+	return [[self class] buildXmlElementAs:rootName withInnerXml:[value toXMLValue]];
 }
 
 + (NSString *)xmlElementName {
