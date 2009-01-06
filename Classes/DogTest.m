@@ -8,6 +8,7 @@
 
 #import "DogTest.h"
 #import "Dog.h"
+#import "NSString+XMLSerializableSupport.h"
 
 @implementation DogTest
 
@@ -32,6 +33,22 @@ NSUInteger shouldBe = 0;
   STAssertEquals(shouldBe , [dogs count], @"Should have %d dogs , %d found" , 
                  shouldBe, [dogs count]);
   
+}
+
+- (void) testDogWithEscapableChars {
+	Dog* aDog	 = [[Dog alloc] init];
+	aDog.name = @"Helio's Coffee & friends";
+  if(shouldBe == 0) {
+		
+    shouldBe = 100;
+    
+  }
+  shouldBe += 1;
+  [aDog save];
+  NSArray * dogs = [Dog findAll];
+  STAssertEquals(shouldBe , [dogs count], @"Should have %d dogs , %d found" , 
+                 shouldBe, [dogs count]);
+	STAssertTrue([[aDog.name toXMLValue] isEqualToString: @"Helio&quot;s Coffee &amp; friends"],@"Should be Helio&quot;s Coffee &amp; friends , got %@" , [aDog.name toXMLValue]);
 }
 
 -(void) testDogSave{
