@@ -15,10 +15,11 @@
 static NSString *_activeResourceSite = nil;
 static NSString *_activeResourceUser = nil;
 static NSString *_activeResourcePassword = nil;
+static SEL _activeResourceParseDataMethod = nil;
 
 @implementation ActiveResource (Base)
 
-
+#pragma mark configuration methods
 + (NSString *)getSite {
 	return _activeResourceSite;
 }
@@ -43,6 +44,14 @@ static NSString *_activeResourcePassword = nil;
 	_activeResourcePassword = password;
 }
 
++ (SEL)getParseDataMethod {
+	return (nil == _activeResourceParseDataMethod) ? @selector(fromXMLData:) : _activeResourceParseDataMethod;
+}
+
++ (void)setParseDataMethod:(SEL)parseMethod {
+	_activeResourceParseDataMethod = parseMethod;
+}
+
 
 // Find all items 
 + (NSArray *)findAllWithResponse:(NSError **)aError {
@@ -50,7 +59,7 @@ static NSString *_activeResourcePassword = nil;
 	if([res isError] && aError) {
 		*aError = res.error;
 	}
-	return [self allFromXMLData:res.body];
+	return [self performSelector:[self getParseDataMethod] withObject:res.body];
 }
 
 + (NSArray *)findAll {
@@ -63,7 +72,7 @@ static NSString *_activeResourcePassword = nil;
 	if([res isError] && aError) {
 		*aError = res.error;
 	}
-	return [self fromXMLData:res.body];	
+	return [self performSelector:[self getParseDataMethod] withObject:res.body];
 }
 
 + (id)find:(NSString *)elementId {

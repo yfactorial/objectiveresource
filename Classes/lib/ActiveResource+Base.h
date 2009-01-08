@@ -17,7 +17,8 @@
 + (void)setUser:(NSString *)user;
 + (NSString *)getPassword;
 + (void)setPassword:(NSString *)password;
-
++ (SEL)getParseDataMethod;
++ (void)setParseDataMethod:(SEL)parseMethod;
 
 // Finders
 + (NSArray *)findAll;
