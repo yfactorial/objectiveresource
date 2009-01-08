@@ -16,6 +16,7 @@ static NSString *_activeResourceSite = nil;
 static NSString *_activeResourceUser = nil;
 static NSString *_activeResourcePassword = nil;
 static SEL _activeResourceParseDataMethod = nil;
+static NSString *_activeResourceProtocolExtension = @"xml";
 
 @implementation ActiveResource (Base)
 
@@ -50,6 +51,14 @@ static SEL _activeResourceParseDataMethod = nil;
 
 + (void)setParseDataMethod:(SEL)parseMethod {
 	_activeResourceParseDataMethod = parseMethod;
+}
+
++ (NSString *)protocolExtension {
+	return _activeResourceProtocolExtension;
+}
+
++ (void)setProtocolExtension:(NSString *)protocolExtension {
+	_activeResourceProtocolExtension = protocolExtension;
 }
 
 
@@ -87,10 +96,6 @@ static SEL _activeResourceParseDataMethod = nil;
 
 + (NSString *)collectionName {
 	return [[self elementName] stringByAppendingString:@"s"];
-}
-
-+ (NSString *)protocolExtension {
-	return @".xml";
 }
 
 + (NSString *)elementPath:(NSString *)elementId {

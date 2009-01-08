@@ -85,4 +85,9 @@
 	return [output substringToIndex:[self length]];
 }
 
+- (NSString *)toClassName {
+	return [self stringByReplacingCharactersInRange:NSMakeRange(0,1) 
+										 withString:[[self substringWithRange:NSMakeRange(0,1)] uppercaseString]];
+}
+
 @end

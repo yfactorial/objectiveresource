@@ -19,6 +19,9 @@
 + (void)setPassword:(NSString *)password;
 + (SEL)getParseDataMethod;
 + (void)setParseDataMethod:(SEL)parseMethod;
++ (NSString *)protocolExtension;
++ (void)setProtocolExtension:(NSString *)protocolExtension;
+
 
 // Finders
 + (NSArray *)findAll;
@@ -29,7 +32,6 @@
 // URL construction accessors
 + (NSString *)elementName;
 + (NSString *)collectionName;
-+ (NSString *)protocolExtension;
 + (NSString *)elementPath:(NSString *)elementId;
 + (NSString *)collectionPath;
 + (NSString *)collectionPathWithParameters:(NSDictionary *)parameters;

@@ -53,8 +53,7 @@
 		//if we are inside another element and it is not the current parent object, 
 		// then create an object for that parent element
 		if(self.currentPropertyName != nil && (![self.currentPropertyName isEqualToString:[[self.parsedObject class] xmlElementName]])) {
-			Class elementClass = NSClassFromString([self.currentPropertyName stringByReplacingCharactersInRange:NSMakeRange(0, 1) 
-													withString:[[self.currentPropertyName substringWithRange:NSMakeRange(0,1)] uppercaseString]]);
+			Class elementClass = NSClassFromString([currentPropertyName toClassName]);
 			if (elementClass != nil) {
 				//classname matches, instantiate a new instance of the class and set it as the current parent object
 				self.parsedObject = [[[elementClass alloc] init] autorelease];

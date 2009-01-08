@@ -34,4 +34,9 @@
  */
 - (NSString *)titleize;
 
+/**
+ * Return a copy of the string with the first letter capitalized.
+ */
+- (NSString *)toClassName;
+
 @end
