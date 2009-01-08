@@ -17,8 +17,8 @@
 	
 	//Configure ActiveResource
 	[ActiveResource setSite:@"http://localhost:3000/"];
-	[ActiveResource setProtocolExtension:@".json"];
-	[ActiveResource setParseDataMethod:@selector(fromJSONData:)];
+	//[ActiveResource setProtocolExtension:@".json"];
+	//[ActiveResource setParseDataMethod:@selector(fromJSONData:)];
 	
 	[window addSubview:navigationController.view];
 	

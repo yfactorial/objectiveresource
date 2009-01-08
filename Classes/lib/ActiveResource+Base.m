@@ -16,7 +16,7 @@ static NSString *_activeResourceSite = nil;
 static NSString *_activeResourceUser = nil;
 static NSString *_activeResourcePassword = nil;
 static SEL _activeResourceParseDataMethod = nil;
-static NSString *_activeResourceProtocolExtension = @"xml";
+static NSString *_activeResourceProtocolExtension = @".xml";
 
 @implementation ActiveResource (Base)
 
