@@ -19,7 +19,7 @@
 @implementation DogDoesNotExist
 
 + (NSString *)getSite {
-	return @"http://localhost:9999/";
+	return @"http://badhost:9999/";
 }
 
 @end
@@ -29,7 +29,7 @@
 
 - (void) test404Error {
 	NSError *aError;
-	NSArray * dogs = [DogError findAllWithResponse:&aError];
+	[DogError findAllWithResponse:&aError];
   
   STAssertEquals([aError code], 404, @"Should have returned 404 error instead got %d " , 
                  [aError code]);
@@ -37,7 +37,7 @@
 
 - (void) testCantFindServer {
 	NSError *aError;
-	NSArray * dogs = [DogDoesNotExist findAllWithResponse:&aError];
+	[DogDoesNotExist findAllWithResponse:&aError];
   
   STAssertTrue([[aError domain] isEqualToString:NSURLErrorDomain], 
 							 @"Should have returned NSURLErrorDomain error instead got %@ " , [aError domain]);

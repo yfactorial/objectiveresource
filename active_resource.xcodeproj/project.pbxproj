@@ -18,9 +18,6 @@
 		23829F010EA39B3B0070F0BF /* ViewDogController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23829F000EA39B3B0070F0BF /* ViewDogController.m */; };
 		23829F120EA39C430070F0BF /* ViewDogController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23829F110EA39C430070F0BF /* ViewDogController.xib */; };
 		239D4FFC0EA690BC00318802 /* GTMSenTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 239D4FFB0EA690BC00318802 /* GTMSenTestCase.m */; };
-		239D4FFE0EA690E600318802 /* GTMDefines.h in Sources */ = {isa = PBXBuildFile; fileRef = 239D4FFD0EA690D700318802 /* GTMDefines.h */; };
-		239D4FFF0EA690E600318802 /* GTMSenTestCase.h in Sources */ = {isa = PBXBuildFile; fileRef = 239D4FFA0EA690BC00318802 /* GTMSenTestCase.h */; };
-		239D50000EA690E600318802 /* GTMIPhoneUnitTestDelegate.h in Sources */ = {isa = PBXBuildFile; fileRef = 239D4FE70EA6906100318802 /* GTMIPhoneUnitTestDelegate.h */; };
 		239D50010EA690E600318802 /* GTMIPhoneUnitTestDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 239D4FE80EA6906100318802 /* GTMIPhoneUnitTestDelegate.m */; };
 		239D50020EA690E600318802 /* GTMIPhoneUnitTestMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 239D4FE90EA6906100318802 /* GTMIPhoneUnitTestMain.m */; };
 		239D501A0EA691AC00318802 /* DogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 350420F30E5E15AA00493366 /* DogViewController.m */; };
@@ -59,13 +56,19 @@
 		350421CB0E5E1E0900493366 /* AddDogView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 350421CA0E5E1E0900493366 /* AddDogView.xib */; };
 		350421CF0E5E1EC500493366 /* AddDogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 350421CE0E5E1EC500493366 /* AddDogViewController.m */; };
 		3506000D0EA7FCCA0085CBDF /* NSData+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3506000C0EA7FCCA0085CBDF /* NSData+Additions.m */; };
-		350600100EA7FCDF0085CBDF /* NSData+Additions.h in Sources */ = {isa = PBXBuildFile; fileRef = 3506000B0EA7FCCA0085CBDF /* NSData+Additions.h */; };
 		350600110EA7FCDF0085CBDF /* NSData+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3506000C0EA7FCCA0085CBDF /* NSData+Additions.m */; };
 		3520BE780F1644EC00BEF309 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 3520BE720F1644EC00BEF309 /* NSObject+SBJSON.m */; };
 		3520BE790F1644EC00BEF309 /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 3520BE740F1644EC00BEF309 /* NSString+SBJSON.m */; };
 		3520BE7A0F1644EC00BEF309 /* SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 3520BE760F1644EC00BEF309 /* SBJSON.m */; };
 		3520BE850F16482800BEF309 /* NSObject+JSONSerializableSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 3520BE840F16482800BEF309 /* NSObject+JSONSerializableSupport.m */; };
 		3520BE860F16482800BEF309 /* NSObject+JSONSerializableSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 3520BE840F16482800BEF309 /* NSObject+JSONSerializableSupport.m */; };
+		3520C0340F16673E00BEF309 /* NSObject+SBJSON.h in Sources */ = {isa = PBXBuildFile; fileRef = 3520BE710F1644EC00BEF309 /* NSObject+SBJSON.h */; };
+		3520C0350F16673E00BEF309 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 3520BE720F1644EC00BEF309 /* NSObject+SBJSON.m */; };
+		3520C0360F16673E00BEF309 /* NSString+SBJSON.h in Sources */ = {isa = PBXBuildFile; fileRef = 3520BE730F1644EC00BEF309 /* NSString+SBJSON.h */; };
+		3520C0370F16673E00BEF309 /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 3520BE740F1644EC00BEF309 /* NSString+SBJSON.m */; };
+		3520C0380F16673E00BEF309 /* SBJSON.h in Sources */ = {isa = PBXBuildFile; fileRef = 3520BE750F1644EC00BEF309 /* SBJSON.h */; };
+		3520C0390F16673E00BEF309 /* SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 3520BE760F1644EC00BEF309 /* SBJSON.m */; };
+		3520C03A0F16673E00BEF309 /* JSONFramework.h in Sources */ = {isa = PBXBuildFile; fileRef = 3520BE770F1644EC00BEF309 /* JSONFramework.h */; };
 		357A91B30E9A55EF0025D9AF /* ActiveResource+Base.m in Sources */ = {isa = PBXBuildFile; fileRef = 357A91940E9A55EF0025D9AF /* ActiveResource+Base.m */; };
 		357A91B40E9A55EF0025D9AF /* ActiveResource+XMLSerializableSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 357A91960E9A55EF0025D9AF /* ActiveResource+XMLSerializableSupport.m */; };
 		357A91B50E9A55EF0025D9AF /* ActiveResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 357A91980E9A55EF0025D9AF /* ActiveResource.m */; };
@@ -465,7 +468,6 @@
 				239D4FF00EA6907E00318802 /* Resources */,
 				239D4FF10EA6907E00318802 /* Sources */,
 				239D4FF20EA6907E00318802 /* Frameworks */,
-				239D500A0EA6910400318802 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -516,22 +518,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		239D500A0EA6910400318802 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "./rails_boot_strap.rb\n./google_toolbar/UnitTesting/RunIPhoneUnitTest.sh\n";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		1D60588E0D05DD3D006BFB54 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -575,10 +561,16 @@
 			files = (
 				239D501A0EA691AC00318802 /* DogViewController.m in Sources */,
 				239D501B0EA691AC00318802 /* Dog.m in Sources */,
-				350600100EA7FCDF0085CBDF /* NSData+Additions.h in Sources */,
 				350600110EA7FCDF0085CBDF /* NSData+Additions.m in Sources */,
 				239D501C0EA691AC00318802 /* AddDogViewController.m in Sources */,
 				239D501D0EA691AC00318802 /* ActiveResource+Base.m in Sources */,
+				3520C0340F16673E00BEF309 /* NSObject+SBJSON.h in Sources */,
+				3520C0350F16673E00BEF309 /* NSObject+SBJSON.m in Sources */,
+				3520C0360F16673E00BEF309 /* NSString+SBJSON.h in Sources */,
+				3520C0370F16673E00BEF309 /* NSString+SBJSON.m in Sources */,
+				3520C0380F16673E00BEF309 /* SBJSON.h in Sources */,
+				3520C0390F16673E00BEF309 /* SBJSON.m in Sources */,
+				3520C03A0F16673E00BEF309 /* JSONFramework.h in Sources */,
 				239D501E0EA691AC00318802 /* ActiveResource+XMLSerializableSupport.m in Sources */,
 				239D501F0EA691AC00318802 /* ActiveResource.m in Sources */,
 				239D50200EA691AC00318802 /* Connection.m in Sources */,
@@ -594,10 +586,7 @@
 				239D502A0EA691AC00318802 /* Response.m in Sources */,
 				239D502B0EA691AC00318802 /* EditDogViewController.m in Sources */,
 				239D502C0EA691AC00318802 /* ViewDogController.m in Sources */,
-				239D4FFE0EA690E600318802 /* GTMDefines.h in Sources */,
-				239D4FFF0EA690E600318802 /* GTMSenTestCase.h in Sources */,
 				239D4FFC0EA690BC00318802 /* GTMSenTestCase.m in Sources */,
-				239D50000EA690E600318802 /* GTMIPhoneUnitTestDelegate.h in Sources */,
 				239D50010EA690E600318802 /* GTMIPhoneUnitTestDelegate.m in Sources */,
 				239D50020EA690E600318802 /* GTMIPhoneUnitTestMain.m in Sources */,
 				239D50DA0EA6921800318802 /* DogTest.m in Sources */,
@@ -648,6 +637,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
+				GCC_PREPROCESSOR_DEFINITIONS = "";
 				INFOPLIST_FILE = "Unit Tests-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				OTHER_LDFLAGS = (

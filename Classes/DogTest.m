@@ -14,6 +14,11 @@
 
 NSUInteger shouldBe = 0;
 
+-(void) setUp {
+	[ActiveResource setSite:@"http://localhost:3000/"];
+//	[ActiveResource setProtocolExtension:@".json"];
+//	[ActiveResource setParseDataMethod:@selector(fromJSONData:)];
+}
 
 -(void) testDogProperties {
  
