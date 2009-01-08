@@ -13,12 +13,6 @@
 
 @synthesize name, dogId , createdAt , updatedAt;
 
-static NSString *site = @"http://localhost:3000/";
-
-+ (NSString *)getSite {
-	return site;
-}
-
 - (void) dealloc
 {
   [createdAt release];

@@ -187,8 +187,6 @@
 				357A915B0E9A436E0025D9AF /* ActiveResource */,
 				357A91400E9A436E0025D9AF /* ActiveSupport */,
 				350420F10E5E153C00493366 /* Example */,
-				1D3623240D0F684500981E51 /* active_resourceAppDelegate.h */,
-				1D3623250D0F684500981E51 /* active_resourceAppDelegate.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -293,6 +291,8 @@
 				23829E0B0EA393700070F0BF /* EditDogViewController.m */,
 				23829EFF0EA39B3B0070F0BF /* ViewDogController.h */,
 				23829F000EA39B3B0070F0BF /* ViewDogController.m */,
+				1D3623240D0F684500981E51 /* active_resourceAppDelegate.h */,
+				1D3623250D0F684500981E51 /* active_resourceAppDelegate.m */,
 			);
 			name = Example;
 			sourceTree = "<group>";
