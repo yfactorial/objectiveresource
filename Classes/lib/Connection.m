@@ -9,7 +9,7 @@
 #import "Connection.h"
 #import "Response.h"
 #import "NSData+Additions.h"
-
+#import "ConnectionDelegate.h"
 
 //#define debugLog(...) NSLog(__VA_ARGS__)
 #ifndef debugLog(...)
@@ -19,6 +19,16 @@
 @implementation Connection
 
 static float timeoutInterval = 5.0;
+
+static NSMutableArray *activeDelegates;
+
++ (NSMutableArray *)activeDelegates {
+	if (nil == activeDelegates) {
+		activeDelegates = [NSMutableArray array];
+		[activeDelegates retain];
+	}
+	return activeDelegates;
+}
 
 + (void)setTimeout:(float)timeOut {
 	timeoutInterval = timeOut;
@@ -51,14 +61,34 @@ static float timeoutInterval = 5.0;
 	NSURL *authURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@://%@:%@@%@:%@%@?%@", [url scheme],escapedUser, escapedPassword, 
 										   [url host], [url port], [url path], [url query]]];
 	[request setURL:authURL];
-	NSHTTPURLResponse *response;
-	NSError *error;
+
 	[self logRequest:request to:[authURL absoluteString]];
-	NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+	
+	ConnectionDelegate *connectionDelegate = [[[ConnectionDelegate alloc] init] autorelease];
+
+	[activeDelegates addObject:connectionDelegate];
+	NSURLConnection *connection = [[[NSURLConnection alloc] initWithRequest:request delegate:connectionDelegate startImmediately:NO] autorelease];
+	connectionDelegate.connection = connection;
+
+	NSRunLoop* runLoop = [NSRunLoop mainRunLoop];
+	
+	//This needs to run in the main run loop in the default mode
+	[connection unscheduleFromRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+	[connection scheduleInRunLoop:runLoop forMode:NSDefaultRunLoopMode];
+	[connection start];
+
+	while (![connectionDelegate isDone]) {
+		[runLoop runUntilDate:[NSDate date]];
+	}
+	Response *resp = [Response responseFrom:(NSHTTPURLResponse *)connectionDelegate.response 
+								   withBody:connectionDelegate.data 
+								   andError:connectionDelegate.error];
+	[resp log];
+	
 	[escapedUser release];
 	[escapedPassword release];
-	Response *resp = [Response responseFrom:response withBody:data andError:error];
-	[resp log];
+	[activeDelegates removeObject:connectionDelegate];
+	
 	return resp;
 }
 
@@ -98,6 +128,12 @@ static float timeoutInterval = 5.0;
 	[request setHTTPMethod:@"DELETE"];
 	[request setValue:@"application/xml" forHTTPHeaderField:@"Content-Type"];
 	return [self sendRequest:request withUser:user andPassword:password];
+}
+
++ (void) cancelAllActiveConnections {
+	for (ConnectionDelegate *delegate in activeDelegates) {
+		[delegate cancel];
+	}
 }
 
 @end

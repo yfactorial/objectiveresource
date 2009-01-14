@@ -83,6 +83,8 @@
 		357A91BE0E9A55EF0025D9AF /* NSString+GSub.m in Sources */ = {isa = PBXBuildFile; fileRef = 357A91AC0E9A55EF0025D9AF /* NSString+GSub.m */; };
 		357A91BF0E9A55EF0025D9AF /* NSString+InflectionSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 357A91AE0E9A55EF0025D9AF /* NSString+InflectionSupport.m */; };
 		357A91C00E9A55EF0025D9AF /* Response.m in Sources */ = {isa = PBXBuildFile; fileRef = 357A91B00E9A55EF0025D9AF /* Response.m */; };
+		35CA32650F1E67A1001513AA /* ConnectionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CA32640F1E67A1001513AA /* ConnectionDelegate.m */; };
+		35CA32660F1E67A1001513AA /* ConnectionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CA32640F1E67A1001513AA /* ConnectionDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -170,6 +172,8 @@
 		357A91B00E9A55EF0025D9AF /* Response.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Response.m; path = lib/Response.m; sourceTree = "<group>"; };
 		357A91B10E9A55EF0025D9AF /* XMLSerializable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XMLSerializable.h; path = lib/XMLSerializable.h; sourceTree = "<group>"; };
 		357A91B20E9A55EF0025D9AF /* XMLSerializableSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XMLSerializableSupport.h; path = lib/XMLSerializableSupport.h; sourceTree = "<group>"; };
+		35CA32630F1E67A1001513AA /* ConnectionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ConnectionDelegate.h; path = lib/ConnectionDelegate.h; sourceTree = "<group>"; };
+		35CA32640F1E67A1001513AA /* ConnectionDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ConnectionDelegate.m; path = lib/ConnectionDelegate.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -431,6 +435,8 @@
 		357A91630E9A436E0025D9AF /* Connection */ = {
 			isa = PBXGroup;
 			children = (
+				35CA32630F1E67A1001513AA /* ConnectionDelegate.h */,
+				35CA32640F1E67A1001513AA /* ConnectionDelegate.m */,
 				2377C4F30F019E67006E155F /* NSHTTPURLResponse+Error.h */,
 				2377C4F40F019E67006E155F /* NSHTTPURLResponse+Error.m */,
 				357A919A0E9A55EF0025D9AF /* Connection.h */,
@@ -552,6 +558,7 @@
 				3520BE790F1644EC00BEF309 /* NSString+SBJSON.m in Sources */,
 				3520BE7A0F1644EC00BEF309 /* SBJSON.m in Sources */,
 				3520BE850F16482800BEF309 /* NSObject+JSONSerializableSupport.m in Sources */,
+				35CA32650F1E67A1001513AA /* ConnectionDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -595,6 +602,7 @@
 				23B4A6420F092B620021AB9D /* DogErrorTest.m in Sources */,
 				23F71FFC0F13FDFC009C7C2E /* NSString+XMLSerializableSupport.m in Sources */,
 				3520BE860F16482800BEF309 /* NSObject+JSONSerializableSupport.m in Sources */,
+				35CA32660F1E67A1001513AA /* ConnectionDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
