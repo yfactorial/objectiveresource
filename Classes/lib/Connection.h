@@ -17,4 +17,7 @@
 + (Response *)get:(NSString *)url;
 + (Response *)put:(NSString *)body to:(NSString *)url withUser:(NSString *)user andPassword:(NSString *)password;
 + (Response *)delete:(NSString *)url withUser:(NSString *)user andPassword:(NSString *)password;
+
++ (void) cancelAllActiveConnections;
+
 @end
