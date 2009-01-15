@@ -77,7 +77,7 @@ static NSMutableArray *activeDelegates;
 	[connection scheduleInRunLoop:runLoop forMode:NSDefaultRunLoopMode];
 	[connection start];
 	while (![connectionDelegate isDone]) {
-		[runLoop runUntilDate:[NSDate dateWithTimeIntervalSinceNow:.5]];
+		[runLoop runUntilDate:[NSDate dateWithTimeIntervalSinceNow:.3]];
 	}
 	Response *resp = [Response responseFrom:(NSHTTPURLResponse *)connectionDelegate.response 
 								   withBody:connectionDelegate.data 
