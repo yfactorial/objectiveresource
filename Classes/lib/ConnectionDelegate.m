@@ -29,6 +29,9 @@
 
 - (void) cancel {
 	[connection cancel];
+	self.response = nil;
+	self.data = nil;
+	self.error = nil;
 	done = YES;
 }
 

@@ -66,7 +66,7 @@ static NSMutableArray *activeDelegates;
 	
 	ConnectionDelegate *connectionDelegate = [[[ConnectionDelegate alloc] init] autorelease];
 
-	[activeDelegates addObject:connectionDelegate];
+	[[self activeDelegates] addObject:connectionDelegate];
 	NSURLConnection *connection = [[[NSURLConnection alloc] initWithRequest:request delegate:connectionDelegate startImmediately:NO] autorelease];
 	connectionDelegate.connection = connection;
 
@@ -76,9 +76,8 @@ static NSMutableArray *activeDelegates;
 	[connection unscheduleFromRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
 	[connection scheduleInRunLoop:runLoop forMode:NSDefaultRunLoopMode];
 	[connection start];
-
 	while (![connectionDelegate isDone]) {
-		[runLoop runUntilDate:[NSDate date]];
+		[runLoop runUntilDate:[NSDate dateWithTimeIntervalSinceNow:.5]];
 	}
 	Response *resp = [Response responseFrom:(NSHTTPURLResponse *)connectionDelegate.response 
 								   withBody:connectionDelegate.data 
@@ -88,6 +87,13 @@ static NSMutableArray *activeDelegates;
 	[escapedUser release];
 	[escapedPassword release];
 	[activeDelegates removeObject:connectionDelegate];
+	
+	//if there are no more active delegates release the array
+	if (0 == [activeDelegates count]) {
+		NSMutableArray *tempDelegates = activeDelegates;
+		activeDelegates = nil;
+		[tempDelegates release];
+	}
 	
 	return resp;
 }
@@ -132,7 +138,7 @@ static NSMutableArray *activeDelegates;
 
 + (void) cancelAllActiveConnections {
 	for (ConnectionDelegate *delegate in activeDelegates) {
-		[delegate cancel];
+		[delegate performSelectorOnMainThread:@selector(cancel) withObject:nil waitUntilDone:NO];
 	}
 }
 
