@@ -11,12 +11,20 @@
 #import "Response.h"
 #import "CoreSupport.h"
 #import "XMLSerializableSupport.h"
+#import "JSONSerializableSupport.h"
 
 static NSString *_activeResourceSite = nil;
 static NSString *_activeResourceUser = nil;
 static NSString *_activeResourcePassword = nil;
 static SEL _activeResourceParseDataMethod = nil;
+static SEL _activeResourceSerializeMethod = nil;
 static NSString *_activeResourceProtocolExtension = @".xml";
+static ResponseFormat _format;
+
+@interface ActiveResource()
+- (NSString *)convertToExpectedType;
+@end
+
 
 @implementation ActiveResource (Base)
 
@@ -45,12 +53,40 @@ static NSString *_activeResourceProtocolExtension = @".xml";
 	_activeResourcePassword = password;
 }
 
++ (void)setResponseType:(ResponseFormat) format {
+	_format = format;
+	switch (format) {
+		case JSONResponse:
+			[[self class] setProtocolExtension:@".json"];
+			[[self class] setParseDataMethod:@selector(fromJSONData:)];
+			[[self class] setSerializeMethod:@selector(toJSONExcluding:)];
+			break;
+		default:
+			[[self class] setProtocolExtension:@".xml"];
+			[[self class] setParseDataMethod:@selector(fromXMLData:)];
+			[[self class] setSerializeMethod:@selector(toXMLElementExcluding:)];
+			break;
+	}
+}
+
++ (ResponseFormat)getResponseType {
+	return _format;
+}
+
 + (SEL)getParseDataMethod {
 	return (nil == _activeResourceParseDataMethod) ? @selector(fromXMLData:) : _activeResourceParseDataMethod;
 }
 
 + (void)setParseDataMethod:(SEL)parseMethod {
 	_activeResourceParseDataMethod = parseMethod;
+}
+
++ (SEL) getSerializeMethod {
+	return (nil == _activeResourceSerializeMethod) ? @selector(toXMLElementExcluding:) : _activeResourceSerializeMethod;
+}
+
++ (void) setSerializeMethod:(SEL)serializeMethod {
+	_activeResourceSerializeMethod = serializeMethod;
 }
 
 + (NSString *)protocolExtension {
@@ -124,6 +160,13 @@ static NSString *_activeResourceProtocolExtension = @".xml";
 	return [[self class] collectionPath];
 }
 
+// Converts the object to the data format expected by the server
+- (NSString *)convertToExpectedType {
+	// exclude id , created_at , updated_at
+	NSArray	 *defaultExclusions = [NSArray arrayWithObjects:[self classIdName],@"createdAt",@"updatedAt",nil];
+	return [self performSelector:[[self class] getSerializeMethod] withObject:defaultExclusions];
+}
+
 #pragma mark default equals methods for id and class based equality
 - (BOOL)isEqual:(id)anObject {
 	return 	[NSStringFromClass([self class]) isEqualToString:NSStringFromClass([anObject class])] &&
@@ -152,12 +195,12 @@ static NSString *_activeResourceProtocolExtension = @".xml";
 }
 
 - (BOOL)createAtPath:(NSString *)path withResponse:(NSError **)aError {
-	Response *res = [Connection post:[self toXMLElementExcluding:[NSArray arrayWithObject:[self classIdName]]] to:path withUser:[[self class]  getUser] andPassword:[[self class]  getPassword]];
+	Response *res = [Connection post:[self convertToExpectedType] to:path withUser:[[self class]  getUser] andPassword:[[self class]  getPassword]];
 	if([res isError] && aError) {
 		*aError = res.error;
 	}
 	if ([res isSuccess]) {
-		NSDictionary *newProperties = [[[self class] fromXMLData:res.body] properties];
+		NSDictionary *newProperties = [[[self class] performSelector:[[self class] getParseDataMethod] withObject:res.body] properties];
 		[self setProperties:newProperties];
 		return YES;
 	}
@@ -167,14 +210,13 @@ static NSString *_activeResourceProtocolExtension = @".xml";
 }
 
 -(BOOL)updateAtPath:(NSString *)path withResponse:(NSError **)aError {	
-	Response *res = [Connection put:[self toXMLElementExcluding:[NSArray arrayWithObject:[self classIdName]]] 
-															 to:path 
+	Response *res = [Connection put:[self convertToExpectedType] to:path 
 												 withUser:[[self class]  getUser] andPassword:[[self class]  getPassword]];
 	if([res isError] && aError) {
 		*aError = res.error;
 	}
 	if ([res isSuccess]) {
-		NSDictionary *newProperties = [[[self class] fromXMLData:res.body] properties];
+		NSDictionary *newProperties = [[[self class] performSelector:[[self class] getParseDataMethod] withObject:res.body] properties];
 		[self setProperties:newProperties];
 		return YES;
 	}

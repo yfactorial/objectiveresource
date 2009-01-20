@@ -9,6 +9,12 @@
 @interface NSObject (PropertySupport)
 
 /**
+ * Get the names of all properties and thier types declared on this class.
+ *
+ */
++ (NSDictionary *)propertyNamesAndTypes;
+
+/**
  * Get the names of all properties declared on this class.
  */
 + (NSArray *)propertyNames;

@@ -9,6 +9,7 @@
 #import "Connection.h"
 #import "Response.h"
 #import "NSData+Additions.h"
+#import "NSMutableURLRequest+ResponseType.h"
 
 
 //#define debugLog(...) NSLog(__VA_ARGS__)
@@ -40,9 +41,6 @@ static float timeoutInterval = 5.0;
 	//TODO make this configurable?
 	NSString *authString = [[[NSString stringWithFormat:@"%@:%@",user, password] dataUsingEncoding:NSUTF8StringEncoding] base64Encoding];
 	[request addValue:[NSString stringWithFormat:@"Basic %@", authString] forHTTPHeaderField:@"Authorization"]; 
-	[request addValue:@"application/xml" forHTTPHeaderField:@"Accept"];
-
-	
 	NSString *escapedUser = (NSString *)CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault, 
 								(CFStringRef)user, NULL, (CFStringRef)@"@.:", kCFStringEncodingUTF8);
 	NSString *escapedPassword = (NSString *)CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault, 
@@ -67,10 +65,8 @@ static float timeoutInterval = 5.0;
 }
 
 + (Response *)sendBy:(NSString *)method withBody:(NSString *)body to:(NSString *)url withUser:(NSString *)user andPassword:(NSString *)password{
-	NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url] cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:timeoutInterval];
-	[request setHTTPMethod:method];
+	NSMutableURLRequest *request = [NSMutableURLRequest requestWithUrl:[NSURL URLWithString:url] andMethod:method];
 	[request setHTTPBody:[body dataUsingEncoding:NSUTF8StringEncoding]];
-	[request setValue:@"application/xml" forHTTPHeaderField:@"Content-Type"];
 	return [self sendRequest:request withUser:user andPassword:password];
 }
 
@@ -87,16 +83,12 @@ static float timeoutInterval = 5.0;
 }
 
 + (Response *)get:(NSString *)url withUser:(NSString *)user andPassword:(NSString *)password {
-	NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url] cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:timeoutInterval];
-	[request setHTTPMethod:@"GET"];
-	[request setValue:@"application/xml" forHTTPHeaderField:@"Content-Type"];
+	NSMutableURLRequest *request = [NSMutableURLRequest requestWithUrl:[NSURL URLWithString:url] andMethod:@"GET"];
 	return [self sendRequest:request withUser:user andPassword:password];
 }
 
 + (Response *)delete:(NSString *)url withUser:(NSString *)user andPassword:(NSString *)password {
-	NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url] cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:timeoutInterval];
-	[request setHTTPMethod:@"DELETE"];
-	[request setValue:@"application/xml" forHTTPHeaderField:@"Content-Type"];
+	NSMutableURLRequest *request = [NSMutableURLRequest requestWithUrl:[NSURL URLWithString:url] andMethod:@"DELETE"];
 	return [self sendRequest:request withUser:user andPassword:password];
 }
 

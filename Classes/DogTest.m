@@ -16,6 +16,7 @@ NSUInteger shouldBe = 0;
 
 -(void) setUp {
 	[ActiveResource setSite:@"http://localhost:3000/"];
+	[ActiveResource setResponseType:JSONResponse];
 //	[ActiveResource setProtocolExtension:@".json"];
 //	[ActiveResource setParseDataMethod:@selector(fromJSONData:)];
 }

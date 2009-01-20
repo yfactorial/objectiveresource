@@ -19,6 +19,7 @@ class DogsController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @dog }
+      format.json  { render :json => @dog.to_json }
     end
   end
 
@@ -30,6 +31,7 @@ class DogsController < ApplicationController
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @dog }
+      format.json  { render :json => @dog.to_json }      
     end
   end
 
@@ -48,9 +50,11 @@ class DogsController < ApplicationController
         flash[:notice] = 'Dog was successfully created.'
         format.html { redirect_to(@dog) }
         format.xml  { render :xml => @dog, :status => :created, :location => @dog }
+        format.json  { render :json => @dog.to_json }
       else
         format.html { render :action => "new" }
         format.xml  { render :xml => @dog.errors, :status => :unprocessable_entity }
+        format.json  { render :json => @dog.errors }
       end
     end
   end
@@ -65,9 +69,11 @@ class DogsController < ApplicationController
         flash[:notice] = 'Dog was successfully updated.'
         format.html { redirect_to(@dog) }
         format.xml  { head :ok }
+        format.json { head :ok }
       else
         format.html { render :action => "edit" }
         format.xml  { render :xml => @dog.errors, :status => :unprocessable_entity }
+        format.json  { render :json => @dog.errors }
       end
     end
   end
@@ -81,6 +87,7 @@ class DogsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to(dogs_url) }
       format.xml  { head :ok }
+      format.json { head :ok }
     end
   end
 end

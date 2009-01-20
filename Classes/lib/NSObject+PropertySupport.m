@@ -9,10 +9,20 @@
 #import "objc/runtime.h"
 #import "NSObject+PropertySupport.h"
 
-@implementation NSObject (PropertySupport)
+@interface NSObject()
 
++ (NSString *) getPropertyType:(NSString *)attributeString;
+
+@end
+
+
+@implementation NSObject (PropertySupport)
 + (NSArray *)propertyNames {
-	NSMutableArray *propertyNames = [NSMutableArray array];
+	return [[self propertyNamesAndTypes] allKeys];
+}
+
++ (NSDictionary *)propertyNamesAndTypes {
+	NSMutableDictionary *propertyNames = [NSMutableDictionary dictionary];
 	
 	//include superclass properties
 	Class currentClass = [self class];
@@ -27,8 +37,9 @@
 		for (i = 0; i < outCount; i++)
 		{
 			objc_property_t * prop = propList + i;
+			NSString *type = [NSString stringWithCString:property_getAttributes(*prop) encoding:NSUTF8StringEncoding];
 			propName = [NSString stringWithCString:property_getName(*prop) encoding:NSUTF8StringEncoding];
-			[propertyNames addObject:propName];
+			[propertyNames setObject:[self getPropertyType:type] forKey:propName];
 		}
 		
 		free(propList);
@@ -45,6 +56,21 @@
 	for (NSString *property in [overrideProperties allKeys]) {
 		[self setValue:[overrideProperties objectForKey:property] forKey:property];
 	}
+}
+
++ (NSString *) getPropertyType:(NSString *)attributeString {
+	NSString *type = [NSString string];
+	NSScanner *typeScanner = [NSScanner scannerWithString:attributeString];
+	[typeScanner scanUpToCharactersFromSet:[NSCharacterSet characterSetWithCharactersInString:@"@"] intoString:NULL];
+	
+	// we are not dealing with an object
+	if([typeScanner isAtEnd]) {
+		return @"NULL";
+	}
+	[typeScanner scanCharactersFromSet:[NSCharacterSet characterSetWithCharactersInString:@"\"@"] intoString:NULL];
+	// this gets the actual object type
+	[typeScanner scanUpToCharactersFromSet:[NSCharacterSet characterSetWithCharactersInString:@"\""] intoString:&type];
+	return type;
 }
 
 @end

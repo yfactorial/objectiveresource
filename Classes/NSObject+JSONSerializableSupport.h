@@ -7,10 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "JSONSerializable.h"
 
-
-@interface NSObject (JSONSerializableSupport)
+@interface NSObject (JSONSerializableSupport) <JSONSerializable>
 
 + (id)fromJSONData:(NSData *)data;
+- (NSString *)toJSON;
+- (NSString *)toJSONExcluding:(NSArray *)exclusions;
+- (NSString *)toJSONAs:(NSString *)rootName;
+- (NSString *)toJSONAs:(NSString *)rootName excludingInArray:(NSArray *)exclusions;
+- (NSString *)toJSONAs:(NSString *)rootName withTranslations:(NSDictionary *)keyTranslations;
+- (NSString *)toJSONAs:(NSString *)rootName excludingInArray:(NSArray *)exclusions
+			withTranslations:(NSDictionary *)keyTranslations;
 
 @end

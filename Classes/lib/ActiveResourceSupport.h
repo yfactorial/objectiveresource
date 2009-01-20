@@ -12,3 +12,4 @@
 #import "Response.h"
 #import "CoreSupport.h"
 #import "XMLSerializableSupport.h"
+#import "JSONSerializableSupport.h"

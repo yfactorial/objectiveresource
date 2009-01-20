@@ -7,13 +7,11 @@
 //
 
 #import "NSObject+XMLSerializableSupport.h"
+#import "NSDictionary+KeyTranslation.h"
 
 @implementation NSDictionary (XMLSerializableSupport)
 
-+ (NSString *)xmlTranslationForKey:(NSString *)key withTranslations:(NSDictionary *)keyTranslations {
-	NSString *newKey = [keyTranslations objectForKey:key];
-	return (newKey ? newKey : key);	
-}
+
 
 - (NSString *)toXMLElementAs:(NSString *)rootName excludingInArray:(NSArray *)exclusions
 			withTranslations:(NSDictionary *)keyTranslations {
@@ -25,7 +23,7 @@
 		// Create XML if key not in exclusion list
 		if(![exclusions containsObject:key]) {
 			value = [self valueForKey:key];
-			propertyRootName = [[self class] xmlTranslationForKey:key withTranslations:keyTranslations];
+			propertyRootName = [[self class] translationForKey:key withTranslations:keyTranslations];
 			[elementValue appendString:[value toXMLElementAs:propertyRootName]];
 		}
 	}

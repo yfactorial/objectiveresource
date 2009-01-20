@@ -17,9 +17,12 @@
 	
 	//Configure ActiveResource
 	[ActiveResource setSite:@"http://localhost:3000/"];
-	//[ActiveResource setProtocolExtension:@".json"];
-	//[ActiveResource setParseDataMethod:@selector(fromJSONData:)];
 	
+	// use json
+	[ActiveResource setResponseType:JSONResponse];
+	
+	// use xml
+	//[ActiveResource setResponseType:XmlResponse];
 	[window addSubview:navigationController.view];
 	
 	// Override point for customization after app launch	

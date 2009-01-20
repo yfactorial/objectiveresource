@@ -10,6 +10,12 @@
 
 @interface ActiveResource (Base) 
 
+// Response Formats
+typedef enum {
+	XmlResponse = 0,
+	JSONResponse,
+} ResponseFormat;
+
 // Resource configuration
 + (NSString *)getSite;
 + (void)setSite:(NSString*)siteURL;
@@ -19,8 +25,12 @@
 + (void)setPassword:(NSString *)password;
 + (SEL)getParseDataMethod;
 + (void)setParseDataMethod:(SEL)parseMethod;
++ (SEL) getSerializeMethod;
++ (void) setSerializeMethod:(SEL)serializeMethod;
 + (NSString *)protocolExtension;
 + (void)setProtocolExtension:(NSString *)protocolExtension;
++ (void)setResponseType:(ResponseFormat) format;
++ (ResponseFormat)getResponseType;
 
 
 // Finders
