@@ -27,10 +27,7 @@
 }
 
 - (void) loadDogs {
-	Dog *newDog = [[Dog alloc] init];
-	newDog.name = @"hello";
-	newDog.createdAt = [NSDate date];
-	NSString *json = [newDog toJSONAs:@"Dog" excludingInArray:[NSArray array] withTranslations:[NSDictionary dictionary ]];
+
 //	
 	self.dogs = [Dog findAll];
 	[tableView reloadData];
