@@ -59,7 +59,8 @@
 	done = YES;
 }
 
-- (void)connection:(NSURLConnection *)aConnection didFailWithError:(NSError *)error {
+- (void)connection:(NSURLConnection *)aConnection didFailWithError:(NSError *)aError {
+	self.error = aError;
 	done = YES;
 }
 
