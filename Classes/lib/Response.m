@@ -1,6 +1,6 @@
 //
 //  Response.m
-//  medaxion
+//  
 //
 //  Created by Ryan Daigle on 7/30/08.
 //  Copyright 2008 yFactorial, LLC. All rights reserved.
