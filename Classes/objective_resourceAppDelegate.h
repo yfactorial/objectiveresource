@@ -8,9 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@class active_resourceViewController;
-
-@interface active_resourceAppDelegate : NSObject <UIApplicationDelegate> {
+@interface objective_resourceAppDelegate : NSObject <UIApplicationDelegate> {
 	IBOutlet UIWindow *window;
 	IBOutlet UINavigationController *navigationController;
 }

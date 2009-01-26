@@ -94,7 +94,7 @@
     }
 }
 
-//Basic type conversion based on the ActiveResource "type" attribute
+//Basic type conversion based on the ObjectiveResource "type" attribute
 - (id) convertProperty:(NSString *)propertyValue toType:(NSString *)type {
 	if ([type isEqualToString:@"datetime" ]) {
 		return [NSDate fromXMLDateTimeString:propertyValue];

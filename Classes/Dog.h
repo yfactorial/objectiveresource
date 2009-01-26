@@ -6,9 +6,9 @@
 //  Copyright 2008 Joshua Vickery. All rights reserved.
 //
 
-#import "ActiveResourceSupport.h"
+#import "ObjectiveResource.h"
 
-@interface Dog : ActiveResource {
+@interface Dog : ObjectiveResource {
 	
 	NSString *name;
   NSString *dogId;

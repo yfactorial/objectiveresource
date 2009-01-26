@@ -7,7 +7,7 @@
 //
 
 #import "GTMSenTestCase.h"
-#import "ActiveResourceSupport.h"
+#import "ObjectiveResource.h"
 
 
 @interface DogErrorTest : SenTestCase  {
@@ -16,14 +16,14 @@
 
 @end
 
-@interface DogError : ActiveResource {
+@interface DogError : ObjectiveResource {
 	
 
 }
 
 @end
 
-@interface DogDoesNotExist : ActiveResource
+@interface DogDoesNotExist : ObjectiveResource
 
 @end
 

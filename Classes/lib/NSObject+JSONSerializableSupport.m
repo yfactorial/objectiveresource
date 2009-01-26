@@ -10,7 +10,7 @@
 #import "NSDictionary+JSONSerializableSupport.h"
 #import "Serialize.h"
 #import "JSONFramework.h"
-#import "ActiveResourceSupport.h"
+#import "ObjectiveSupport.h"
 
 @interface NSObject (JSONSerializableSupport_Private)
 + (id) deserializeJSON:(id)jsonObject;

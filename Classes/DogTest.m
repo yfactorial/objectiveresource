@@ -15,9 +15,9 @@
 NSUInteger shouldBe = 0;
 
 -(void) setUp {
-	[ActiveResource setSite:@"http://localhost:3000/"];
-	[ActiveResource setResponseType:JSONResponse];
-	//[ActiveResource setResponseType:XmlResponse];
+	[ObjectiveResource setSite:@"http://localhost:3000/"];
+	[ObjectiveResource setResponseType:JSONResponse];
+	//[ObjectiveResource setResponseType:XmlResponse];
 }
 
 -(void) testDogProperties {

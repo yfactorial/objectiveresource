@@ -1,12 +1,12 @@
 //
-//  ActiveResourceBase.m
+//  ObjectiveResource.m
 //  medaxion
 //
 //  Created by Ryan Daigle on 7/24/08.
 //  Copyright 2008 yFactorial, LLC. All rights reserved.
 //
 
-#import "ActiveResource+Base.h"
+#import "ObjectiveResource.h"
 #import "Connection.h"
 #import "Response.h"
 #import "CoreSupport.h"
@@ -21,12 +21,12 @@ static SEL _activeResourceSerializeMethod = nil;
 static NSString *_activeResourceProtocolExtension = @".xml";
 static ResponseFormat _format;
 
-@interface ActiveResource()
+@interface ObjectiveResource()
 - (NSString *)convertToExpectedType;
 @end
 
 
-@implementation ActiveResource (Base)
+@implementation ObjectiveResource
 
 #pragma mark configuration methods
 + (NSString *)getSite {
@@ -127,7 +127,7 @@ static ResponseFormat _format;
 
 + (NSString *)elementName {
 	return [[NSStringFromClass([self class]) stringByReplacingCharactersInRange:NSMakeRange(0, 1) 
-			withString:[[NSStringFromClass([self class]) substringWithRange:NSMakeRange(0,1)] lowercaseString]] underscore];
+			 withString:[[NSStringFromClass([self class]) substringWithRange:NSMakeRange(0,1)] lowercaseString]] underscore];
 }
 
 + (NSString *)collectionName {
@@ -170,7 +170,7 @@ static ResponseFormat _format;
 #pragma mark default equals methods for id and class based equality
 - (BOOL)isEqual:(id)anObject {
 	return 	[NSStringFromClass([self class]) isEqualToString:NSStringFromClass([anObject class])] &&
-		[anObject respondsToSelector:@selector(getId)] && [[anObject getId] isEqualToString:[self getId]];
+	[anObject respondsToSelector:@selector(getId)] && [[anObject getId] isEqualToString:[self getId]];
 }
 - (NSUInteger)hash {
 	return [[self getId] intValue] + [NSStringFromClass([self class]) hash];
@@ -187,11 +187,11 @@ static ResponseFormat _format;
 }
 
 - (NSString *)classIdName {
-  
-  return [NSString stringWithFormat:@"%@Id",
-          [NSStringFromClass([self class]) stringByReplacingCharactersInRange:NSMakeRange(0, 1) 
-           withString:[[NSStringFromClass([self class]) substringWithRange:NSMakeRange(0,1)] lowercaseString]]];
-  
+	
+	return [NSString stringWithFormat:@"%@Id",
+			[NSStringFromClass([self class]) stringByReplacingCharactersInRange:NSMakeRange(0, 1) 
+			 withString:[[NSStringFromClass([self class]) substringWithRange:NSMakeRange(0,1)] lowercaseString]]];
+	
 }
 
 - (BOOL)createAtPath:(NSString *)path withResponse:(NSError **)aError {
@@ -211,7 +211,7 @@ static ResponseFormat _format;
 
 -(BOOL)updateAtPath:(NSString *)path withResponse:(NSError **)aError {	
 	Response *res = [Connection put:[self convertToExpectedType] to:path 
-												 withUser:[[self class]  getUser] andPassword:[[self class]  getPassword]];
+						   withUser:[[self class]  getUser] andPassword:[[self class]  getPassword]];
 	if([res isError] && aError) {
 		*aError = res.error;
 	}
@@ -306,5 +306,5 @@ static ResponseFormat _format;
 	[super dealloc];
 }
 
-	
+
 @end

@@ -9,7 +9,7 @@
 #import "JSONFramework.h"
 #import "NSDictionary+KeyTranslation.h"
 #import "NSDictionary+JSONSerializableSupport.h"
-#import "ActiveResourceSupport.h"
+#import "ObjectiveSupport.h"
 #import "Serialize.h"
 
 @implementation NSDictionary(JSONSerializableSupport)

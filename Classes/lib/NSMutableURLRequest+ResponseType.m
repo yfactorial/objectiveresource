@@ -7,7 +7,7 @@
 //
 
 #import "NSMutableURLRequest+ResponseType.h"
-#import "ActiveResource+Base.h"
+#import "ObjectiveResource.h"
 #import "Connection.h"
 
 @implementation NSMutableURLRequest(ResponseType)
@@ -16,7 +16,7 @@
 	NSMutableURLRequest * request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringCacheData
 																											timeoutInterval:[Connection timeout]];
 	[request setHTTPMethod:method];
-	switch ([ActiveResource getResponseType]) {
+	switch ([ObjectiveResource getResponseType]) {
 		case JSONResponse:
 			[request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];	
 			[request addValue:@"application/json" forHTTPHeaderField:@"Accept"];

@@ -1,15 +1,15 @@
 //
-//  ActiveResource+XML.m
+//  ObjectiveResource+XML.m
 //  medaxion
 //
 //  Created by Ryan Daigle on 7/24/08.
 //  Copyright 2008 yFactorial, LLC. All rights reserved.
 //
 
-#import "ActiveResource+XMLSerializableSupport.h"
+#import "ObjectiveResource+XMLSerializableSupport.h"
 #import "XMLSerializableSupport.h"
 
-@implementation ActiveResource (XMLSerializableSupport)
+@implementation ObjectiveResource (XMLSerializableSupport)
 
 
 - (NSString *)toXMLElementAs:(NSString *)rootName excludingInArray:(NSArray *)exclusions

@@ -6,23 +6,23 @@
 //  Copyright Joshua Vickery 2008. All rights reserved.
 //
 
-#import "active_resourceAppDelegate.h"
-#import "ActiveResource+Base.h"
+#import "objective_resourceAppDelegate.h"
+#import "ObjectiveResource.h"
 
-@implementation active_resourceAppDelegate
+@implementation objective_resourceAppDelegate
 
 @synthesize window, navigationController;
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {	
 	
-	//Configure ActiveResource
-	[ActiveResource setSite:@"http://localhost:3000/"];
+	//Configure ObjectiveResource
+	[ObjectiveResource setSite:@"http://localhost:3000/"];
 	
 	// use json
-	[ActiveResource setResponseType:JSONResponse];
+	[ObjectiveResource setResponseType:JSONResponse];
 	
 	// use xml
-	//[ActiveResource setResponseType:XmlResponse];
+	//[ObjectiveResource setResponseType:XmlResponse];
 	[window addSubview:navigationController.view];
 	
 	// Override point for customization after app launch	
