@@ -5,8 +5,10 @@ ObjectiveResource is a port of Rails' ActiveResource framework to Objective-C.
 The primary purpose of this project is to quickly and easily connect 
 iPhone applications with servers running Rails. 
 
-A secondary goal of this project is to provide some popular Rubyisms to 
-Objective-C. This work can be found in the ActiveSupport group.
+This project relies on ObjectiveSupport, which aims to provide some popular 
+Rubyisms to Objective-C. If you checkout this project using git, you can
+pull down ObjectiveSupport by doing a "git submodule init" followed by
+a "git submodule update".
 
 h2. Getting Started
 
@@ -19,6 +21,6 @@ up the .xcodeproj and fire up a rails server in sample_rails_app.
 h3. Integrating with your project
 
 # Download (clone) the objectiveresource project
-## If you are using git you can checkout objectiveresource as a submodule
+## If you do a git clone, you will need to follow it up with "git submodule init" and "git submodule update"
 # open the .xcodeproj in XCode for both objectiveresource and your iPhone project
 # drag the ActiveResource and ActiveSupport groups from the objectiveresource project onto your iPhone project
