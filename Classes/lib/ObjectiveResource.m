@@ -216,8 +216,10 @@ static ResponseFormat _format;
 		*aError = res.error;
 	}
 	if ([res isSuccess]) {
-		NSDictionary *newProperties = [[[self class] performSelector:[[self class] getParseDataMethod] withObject:res.body] properties];
-		[self setProperties:newProperties];
+		if([(NSString *)[res.headers objectForKey:@"Content-Length"] intValue] > 1) {
+			NSDictionary *newProperties = [[[self class] performSelector:[[self class] getParseDataMethod] withObject:res.body] properties];
+			[self setProperties:newProperties];
+		}
 		return YES;
 	}
 	else {
