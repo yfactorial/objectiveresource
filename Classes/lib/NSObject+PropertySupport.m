@@ -1,6 +1,6 @@
 //
 //  NSObject+Properties.m
-//  medaxion
+//  
 //
 //  Created by Ryan Daigle on 7/28/08.
 //  Copyright 2008 yFactorial, LLC. All rights reserved.
