@@ -23,4 +23,5 @@ h3. Integrating with your project
 # Download (clone) the objectiveresource project
 ## If you do a git clone, you will need to follow it up with "git submodule init" and "git submodule update"
 # open the .xcodeproj in XCode for both objectiveresource and your iPhone project
-# drag the ActiveResource and ActiveSupport groups from the objectiveresource project onto your iPhone project
+# drag the ObjectiveResource and ObjectSupport groups from the objectiveresource project onto your iPhone project, making
+sure to check the "copy files" box.
