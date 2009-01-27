@@ -25,3 +25,15 @@ h3. Integrating with your project
 # open the .xcodeproj in XCode for both objectiveresource and your iPhone project
 # drag the ObjectiveResource and ObjectSupport groups from the objectiveresource project onto your iPhone project, making
 sure to check the "copy files" box.
+
+h2. Contributing
+
+h3. Running Tests
+
+Unit testing makes use of the SenTest work-alike from Google Toolbox for Mac.
+
+To run the tests, select the "Unit Tests" target in XCode and Build and Run.
+
+You will need to have Rails installed along with the populator and faker
+gems, as the project uses a "Run Script" to setup a local Rails
+server for testing.

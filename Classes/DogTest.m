@@ -15,7 +15,7 @@
 NSUInteger shouldBe = 0;
 
 -(void) setUp {
-	[ObjectiveResource setSite:@"http://localhost:3000/"];
+	[ObjectiveResource setSite:@"http://localhost:36313/"];
 	[ObjectiveResource setResponseType:JSONResponse];
 	//[ObjectiveResource setResponseType:XmlResponse];
 }

@@ -33,7 +33,6 @@
 		239D50830EA691DB00318802 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		239D50CB0EA691DD00318802 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		239D50DA0EA6921800318802 /* DogTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 239D50D90EA6921800318802 /* DogTest.m */; };
-		239D50E70EA694F300318802 /* rails_boot_strap.rb in Resources */ = {isa = PBXBuildFile; fileRef = 239D50E60EA694F300318802 /* rails_boot_strap.rb */; };
 		23B4A6420F092B620021AB9D /* DogErrorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 23B4A6410F092B620021AB9D /* DogErrorTest.m */; };
 		23C922800F24FED700EDE8AF /* ObjectiveResource+JSONSerializableSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 23C9227F0F24FED700EDE8AF /* ObjectiveResource+JSONSerializableSupport.m */; };
 		23C922810F24FED700EDE8AF /* ObjectiveResource+JSONSerializableSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 23C9227F0F24FED700EDE8AF /* ObjectiveResource+JSONSerializableSupport.m */; };
@@ -119,7 +118,6 @@
 		239D4FFD0EA690D700318802 /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTMDefines.h; path = google_toolbar/GTMDefines.h; sourceTree = SOURCE_ROOT; };
 		239D50D80EA6921800318802 /* DogTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DogTest.h; sourceTree = "<group>"; };
 		239D50D90EA6921800318802 /* DogTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DogTest.m; sourceTree = "<group>"; };
-		239D50E60EA694F300318802 /* rails_boot_strap.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = rails_boot_strap.rb; sourceTree = "<group>"; };
 		23B4A6400F092B620021AB9D /* DogErrorTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DogErrorTest.h; sourceTree = "<group>"; };
 		23B4A6410F092B620021AB9D /* DogErrorTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DogErrorTest.m; sourceTree = "<group>"; };
 		23C9227E0F24FED700EDE8AF /* ObjectiveResource+JSONSerializableSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ObjectiveResource+JSONSerializableSupport.h"; path = "lib/ObjectiveResource+JSONSerializableSupport.h"; sourceTree = "<group>"; };
@@ -268,18 +266,9 @@
 			name = UnitTests;
 			sourceTree = "<group>";
 		};
-		239D50E50EA694B400318802 /* RailsBootStrap */ = {
-			isa = PBXGroup;
-			children = (
-				239D50E60EA694F300318802 /* rails_boot_strap.rb */,
-			);
-			name = RailsBootStrap;
-			sourceTree = "<group>";
-		};
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				239D50E50EA694B400318802 /* RailsBootStrap */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -502,6 +491,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 239D4FF90EA6907F00318802 /* Build configuration list for PBXNativeTarget "Unit Tests" */;
 			buildPhases = (
+				35C679680F2E7803005FF6CE /* ShellScript */,
 				239D4FF00EA6907E00318802 /* Resources */,
 				239D4FF10EA6907E00318802 /* Sources */,
 				239D4FF20EA6907E00318802 /* Frameworks */,
@@ -549,11 +539,26 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				239D50E70EA694F300318802 /* rails_boot_strap.rb in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		35C679680F2E7803005FF6CE /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd sample_rails_app\nrake db:populate RAILS_ENV=test\n./script/server -e test -p 36313 -d";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1D60588E0D05DD3D006BFB54 /* Sources */ = {

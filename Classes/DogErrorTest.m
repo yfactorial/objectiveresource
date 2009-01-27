@@ -11,7 +11,7 @@
 @implementation DogError
 
 + (NSString *)getSite {
-	return @"http://localhost:3000/";
+	return @"http://localhost:36313/";
 }
 
 @end
@@ -19,7 +19,7 @@
 @implementation DogDoesNotExist
 
 + (NSString *)getSite {
-	return @"http://badhost:9999/";
+	return @"http://badhost.localhost:9999/";
 }
 
 @end
