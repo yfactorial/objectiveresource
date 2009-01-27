@@ -7,11 +7,19 @@
 //
 
 #import "Dog.h"
+#import "ObjectiveResource.h"
+
+@interface Dog ()
+
+-(NSString *) nestedPath;
+
+@end
+
 
 
 @implementation Dog
 
-@synthesize name, dogId , createdAt , updatedAt;
+@synthesize name, dogId , createdAt , updatedAt , personId;
 
 - (void) dealloc
 {
@@ -19,8 +27,35 @@
   [updatedAt release];
   [dogId release];
 	[name release];
+	[personId release];
 	[super dealloc];
 }
 
+#pragma mark ObjectiveResource overrides to handle nestd resources
+
++ (NSString *)collectionName {
+	return @"people";
+}
+
+- (BOOL)createWithResponse:(NSError **)aError {
+	return [self createAtPath:[[self class] elementPath:[self nestedPath]] withResponse:aError];
+}
+
+- (BOOL)updateWithResponse:(NSError **)aError {
+	return [self updateAtPath:[[self class] elementPath:[self nestedPath]] withResponse:aError];	
+}
+
+- (BOOL)destroyWithResponse:(NSError **)aError {
+	return [self destroyAtPath:[[self class] elementPath:[self nestedPath]] withResponse:aError];
+}
+
+
+-(NSString *) nestedPath {
+	NSString *path = [NSString stringWithFormat:@"%@/dogs",personId,nil];
+	if(dogId) {
+		path = [path stringByAppendingFormat:@"/%@",dogId,nil];
+	}
+	return path;
+}
 
 @end

@@ -8,23 +8,23 @@
 
 #import <UIKit/UIKit.h>
 
-@class AddDogViewController;
+@class AddDogViewController , Person;
 
 
 @interface DogViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
 
+	Person *owner;
 	NSMutableArray *dogs;
 	AddDogViewController *addController;
 	IBOutlet UITableView *tableView;
-  IBOutlet UIBarButtonItem * addButton;
 	
 }
 
+@property(nonatomic , retain) Person *owner;
 @property(nonatomic , retain) NSArray *dogs;
 @property(nonatomic , retain) AddDogViewController *addController;
 @property(nonatomic , retain) UITableView *tableView;
-@property(nonatomic , retain) UIBarButtonItem * addButton;
 
-- (IBAction) addDogButtonClicked:(id) sender;
+- (void) addDogButtonClicked;
 
 @end

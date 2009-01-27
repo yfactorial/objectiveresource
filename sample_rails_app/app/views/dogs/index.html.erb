@@ -8,13 +8,14 @@
 <% for dog in @dogs %>
   <tr>
     <td><%=h dog.name %></td>
-    <td><%= link_to 'Show', dog %></td>
-    <td><%= link_to 'Edit', edit_dog_path(dog) %></td>
-    <td><%= link_to 'Destroy', dog, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Show', [@person,dog] %></td>
+    <td><%= link_to 'Edit', edit_person_dog_path(dog.person,dog) %></td>
+    <td><%= link_to 'Destroy', [@person,dog], :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New dog', new_dog_path %>
+<%= link_to 'Back to Person', @person %>|
+<%= link_to 'New dog', new_person_dog_path(@person) %>
