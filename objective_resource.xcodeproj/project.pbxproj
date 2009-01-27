@@ -27,6 +27,8 @@
 		2314FF730F2F8089003B13AB /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 2314FF6F0F2F8089003B13AB /* Person.m */; };
 		2314FF760F2F8094003B13AB /* ViewPersonController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2314FF750F2F8094003B13AB /* ViewPersonController.m */; };
 		2314FF770F2F8094003B13AB /* ViewPersonController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2314FF750F2F8094003B13AB /* ViewPersonController.m */; };
+		2322CD650F2F968000EDF562 /* PersonTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2322CD640F2F968000EDF562 /* PersonTest.m */; };
+		2322CD660F2F968000EDF562 /* PersonTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2322CD640F2F968000EDF562 /* PersonTest.m */; };
 		2377C4F50F019E67006E155F /* NSHTTPURLResponse+Error.m in Sources */ = {isa = PBXBuildFile; fileRef = 2377C4F40F019E67006E155F /* NSHTTPURLResponse+Error.m */; };
 		2377C4F60F019E67006E155F /* NSHTTPURLResponse+Error.m in Sources */ = {isa = PBXBuildFile; fileRef = 2377C4F40F019E67006E155F /* NSHTTPURLResponse+Error.m */; };
 		23829E0C0EA393700070F0BF /* EditDogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23829E0B0EA393700070F0BF /* EditDogViewController.m */; };
@@ -130,6 +132,9 @@
 		2314FF6F0F2F8089003B13AB /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 		2314FF740F2F8094003B13AB /* ViewPersonController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewPersonController.h; sourceTree = "<group>"; };
 		2314FF750F2F8094003B13AB /* ViewPersonController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewPersonController.m; sourceTree = "<group>"; };
+		2322CD630F2F968000EDF562 /* PersonTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonTest.h; sourceTree = "<group>"; };
+		2322CD640F2F968000EDF562 /* PersonTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonTest.m; sourceTree = "<group>"; };
+		2322CD890F2F9F3D00EDF562 /* ItemIds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemIds.h; sourceTree = "<group>"; };
 		2377C4F30F019E67006E155F /* NSHTTPURLResponse+Error.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSHTTPURLResponse+Error.h"; path = "lib/NSHTTPURLResponse+Error.h"; sourceTree = "<group>"; };
 		2377C4F40F019E67006E155F /* NSHTTPURLResponse+Error.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSHTTPURLResponse+Error.m"; path = "lib/NSHTTPURLResponse+Error.m"; sourceTree = "<group>"; };
 		23829E0A0EA393700070F0BF /* EditDogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditDogViewController.h; sourceTree = "<group>"; };
@@ -293,6 +298,9 @@
 				239D50D90EA6921800318802 /* DogTest.m */,
 				23B4A6400F092B620021AB9D /* DogErrorTest.h */,
 				23B4A6410F092B620021AB9D /* DogErrorTest.m */,
+				2322CD630F2F968000EDF562 /* PersonTest.h */,
+				2322CD640F2F968000EDF562 /* PersonTest.m */,
+				2322CD890F2F9F3D00EDF562 /* ItemIds.h */,
 			);
 			name = UnitTests;
 			sourceTree = "<group>";
@@ -649,6 +657,7 @@
 				2314FF700F2F8089003B13AB /* PeopleViewController.m in Sources */,
 				2314FF710F2F8089003B13AB /* Person.m in Sources */,
 				2314FF760F2F8094003B13AB /* ViewPersonController.m in Sources */,
+				2322CD660F2F968000EDF562 /* PersonTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -700,6 +709,7 @@
 				2314FF720F2F8089003B13AB /* PeopleViewController.m in Sources */,
 				2314FF730F2F8089003B13AB /* Person.m in Sources */,
 				2314FF770F2F8094003B13AB /* ViewPersonController.m in Sources */,
+				2322CD650F2F968000EDF562 /* PersonTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -52,7 +52,7 @@ class DogsController < ApplicationController
       if @dog.save
         flash[:notice] = 'Dog was successfully created.'
         format.html { redirect_to(@dog) }
-        format.xml  { render :xml => @dog, :status => :created, :location => @dog }
+        format.xml  { render :xml => @dog, :status => :created, :location => [@person,@dog] }
         format.json  { render :json => @dog.to_json }
       else
         format.html { render :action => "new" }
