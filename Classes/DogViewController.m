@@ -8,6 +8,7 @@
 
 #import "DogViewController.h"
 #import "Dog.h"
+#import "Person.h"
 #import "AddDogViewController.h"
 #import "ViewDogController.h"
 
@@ -20,41 +21,34 @@
 
 @implementation DogViewController
 
-@synthesize dogs, addController, tableView , addButton;
+@synthesize dogs, addController, tableView , owner;
 
-- (IBAction) addDogButtonClicked:(id) sender {
+- (void) addDogButtonClicked {
+	Dog	 *newDog = [[[Dog alloc] init] autorelease];
+	newDog.personId = owner.personId;
+	addController.newDog = newDog;
 	[self.navigationController pushViewController:addController animated:YES];
 }
 
 - (void) loadDogs {
-
-//	
-	self.dogs = [Dog findAll];
+	self.dogs = [owner findAllDogs];
 	[tableView reloadData];
 }
 
 #pragma mark UIViewController methods
 
 - (void)viewDidLoad {
+	self.title = [NSString stringWithFormat:@"%@s Dogs",owner.name];
 	self.addController = [[[AddDogViewController alloc] initWithNibName:@"AddDogView" bundle:nil] autorelease];
-  self.navigationItem.leftBarButtonItem = self.editButtonItem;
+	self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd 
+																																												 target:self action:@selector(addDogButtonClicked)]; 
 }
+
+
 
 
 - (void)viewWillAppear:(BOOL)animated {
 	[self loadDogs];
-}
-
-- (void)setEditing:(BOOL)editing animated:(BOOL)animated {
-  
-  [super setEditing:editing animated:animated];
-  [tableView setEditing:editing animated:YES];
-  if (editing) {
-    addButton.enabled = NO;
-  } else {
-    addButton.enabled = YES;
-  }
-  
 }
 
 #pragma mark UITableViewDataSource methods
@@ -100,7 +94,6 @@
 #pragma mark cleanup
 - (void)dealloc {
   
-  [addButton release];
 	[tableView release];
 	[addController release];
 	[dogs release];

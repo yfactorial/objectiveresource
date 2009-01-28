@@ -30,7 +30,6 @@
 }
 
 
-// Implement viewDidLoad to do additional setup after loading the view.
 - (void)viewDidLoad {
 
   self.title = dog.name;

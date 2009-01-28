@@ -8,16 +8,20 @@
 
 #import "DogTest.h"
 #import "Dog.h"
+#import "Person.h"
 #import "NSString+XMLSerializableSupport.h"
+#import "ItemIds.h"
 
 @implementation DogTest
 
-NSUInteger shouldBe = 0;
+static Person *owner;
 
 -(void) setUp {
 	[ObjectiveResource setSite:@"http://localhost:36313/"];
-	[ObjectiveResource setResponseType:JSONResponse];
-	//[ObjectiveResource setResponseType:XmlResponse];
+	//[ObjectiveResource setResponseType:JSONResponse];
+	[ObjectiveResource setResponseType:XmlResponse];
+	
+	owner = [Person find:[NSString stringWithFormat:@"%i",DOG_OWNER]];
 }
 
 -(void) testDogProperties {
@@ -30,84 +34,85 @@ NSUInteger shouldBe = 0;
 
 -(void) testDogCount {
  
-  if(shouldBe == 0) {
-    shouldBe = 100;
-  }
-  NSArray * dogs = [Dog findAll];
+  NSArray * dogs = [owner findAllDogs];
   
-  STAssertEquals(shouldBe , [dogs count], @"Should have %d dogs , %d found" , 
-                 shouldBe, [dogs count]);
+  STAssertTrue(20 == [dogs count], @"Should have %i dogs , %d found" , 
+							 20 ,[dogs count]);
   
 }
 
 - (void) testDogWithEscapableChars {
+	int shouldBe  = [[owner findAllDogs] count] + 1;
+	
 	Dog* aDog	 = [[Dog alloc] init];
-	aDog.name = @"Helio's Coffee & friends";
-  if(shouldBe == 0) {
-		
-    shouldBe = 100;
-    
-  }
-  shouldBe += 1;
+	aDog.personId = owner.personId;
+	aDog.name = @"Helio's Coffee & Chairs";
   [aDog save];
-  NSArray * dogs = [Dog findAll];
-  STAssertEquals(shouldBe , [dogs count], @"Should have %d dogs , %d found" , 
-                 shouldBe, [dogs count]);
-	STAssertTrue([[aDog.name toXMLValue] isEqualToString: @"Helio&apos;s Coffee &amp; friends"],@"Should be Helio&apos;s Coffee &amp; friends , got %@" , [aDog.name toXMLValue]);
-	STAssertTrue([[NSString fromXmlString:aDog.name] isEqualToString: @"Helio's Coffee & friends"],@"Should be Helio's Coffee & friends , got %@" , [aDog.name toXMLValue]);
+  NSArray * dogs = [owner findAllDogs];
+
+  
+  STAssertTrue(shouldBe == [dogs count], @"Should have %i dogs , %d found" , 
+							 shouldBe ,[dogs count]);
+	STAssertTrue([[aDog.name toXMLValue] isEqualToString: @"Helio&apos;s Coffee &amp; Chairs"],@"Should be Helio&apos;s Coffee &amp; Chairs , got %@" , [aDog.name toXMLValue]);
+	STAssertTrue([[NSString fromXmlString:aDog.name] isEqualToString: @"Helio's Coffee & Chairs"],@"Should be Helio's Coffee & Chairs , got %@" , [aDog.name toXMLValue]);
 
 	
 }
 
 -(void) testDogSave{
+	int shouldBe  = [[owner findAllDogs]count] + 1;
   
   Dog * aDog = [[Dog alloc] init];
-  
+  aDog.personId = owner.personId;
   aDog.name = @"Judge";
-  
-  if(shouldBe == 0) {
-   
-    shouldBe = 100;
-    
-  }
-  shouldBe += 1;
+
   [aDog save];
-  NSArray * dogs = [Dog findAll];
-  STAssertEquals(shouldBe , [dogs count], @"Should have %d dogs , %d found" , 
-                 shouldBe, [dogs count]);
+  NSArray * dogs = [owner findAllDogs];
+  STAssertTrue(shouldBe == [dogs count], @"Should have %i dogs , %d found" , 
+							 shouldBe ,[dogs count]);
   
   [aDog release];
 }
 
 -(void) testDogUpdate{
-  
-  NSArray * dogs = [Dog findAll];
-
-  Dog * aDog = [dogs objectAtIndex:0];
-  
+  NSArray * dogs = [owner findAllDogs];
+  BOOL found = NO;
+  Dog *aDog = [dogs objectAtIndex:0];
   aDog.name = @"Judge";
   [aDog update];
-  if(shouldBe == 0) {
-    
-    shouldBe = 100;
-    
-  }
-  STAssertEquals(shouldBe , [dogs count], @"Should have %d dogs , %d found" , 
-                 shouldBe, [dogs count]);
+
+  aDog = [dogs objectAtIndex:0];
+	
+	for(Dog *dog in dogs) {
+		if([dog isEqual:aDog]) {
+			STAssertTrue([dog.name isEqualToString: aDog.name],@"Should be Judge , got %@" , aDog.name);
+			found = YES;
+		}
+	}
+	STAssertTrue(found,@"Should found the record");
+	
   
 }
 
 -(void) testDogDelete {
  
-  NSArray * dogs = [Dog findAll];
+	BOOL found = NO;
+  NSArray * dogs = [owner findAllDogs];
   
-  shouldBe = [dogs count] - 1;
+  int shouldBe = [dogs count] - 1;
+  Dog *toDelete = (Dog *)[dogs objectAtIndex:0];
+  [toDelete destroy];
   
-  [(Dog *)[dogs objectAtIndex:0] destroy];
-  
-  dogs = [Dog findAll];
-  STAssertEquals(shouldBe , [dogs count], @"Should have %d dogs , %d found" , 
+  dogs = [owner findAllDogs];
+  STAssertTrue(shouldBe == [dogs count], @"Should have %i dogs , %d found" , 
                  shouldBe ,[dogs count]);
+	
+	for(Dog *dog in dogs) {
+		if([dog isEqual:toDelete]) {
+			found = YES;
+		}
+	}
+	STAssertFalse(found,@"Should not found the record");
   
 }
 

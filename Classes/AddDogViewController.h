@@ -8,13 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-
+@class Dog;
 @interface AddDogViewController : UIViewController <UITextFieldDelegate> {
 
 	IBOutlet UITextField *textField;
+	Dog *newDog;
 	
 }
 
 @property (nonatomic, retain) UITextField *textField;
+@property (nonatomic, retain) Dog *newDog;
 
 @end

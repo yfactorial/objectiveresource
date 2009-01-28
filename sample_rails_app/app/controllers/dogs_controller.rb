@@ -1,8 +1,11 @@
 class DogsController < ApplicationController
   # GET /dogs
   # GET /dogs.xml
+  
+  before_filter :find_person
+  
   def index
-    @dogs = Dog.find(:all)
+    @dogs = @person.dogs.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -19,19 +22,19 @@ class DogsController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @dog }
-      format.json  { render :json => @dog.to_json }
+      format.json  { render :json => @dog }
     end
   end
 
   # GET /dogs/new
   # GET /dogs/new.xml
   def new
-    @dog = Dog.new
+    @dog = @person.dogs.create
 
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @dog }
-      format.json  { render :json => @dog.to_json }      
+      format.json  { render :json => @dog }      
     end
   end
 
@@ -43,13 +46,13 @@ class DogsController < ApplicationController
   # POST /dogs
   # POST /dogs.xml
   def create
-    @dog = Dog.new(params[:dog])
+    @dog = @person.dogs.create(params[:dog])
 
     respond_to do |format|
       if @dog.save
         flash[:notice] = 'Dog was successfully created.'
         format.html { redirect_to(@dog) }
-        format.xml  { render :xml => @dog, :status => :created, :location => @dog }
+        format.xml  { render :xml => @dog, :status => :created, :location => [@person,@dog] }
         format.json  { render :json => @dog.to_json }
       else
         format.html { render :action => "new" }
@@ -67,7 +70,7 @@ class DogsController < ApplicationController
     respond_to do |format|
       if @dog.update_attributes(params[:dog])
         flash[:notice] = 'Dog was successfully updated.'
-        format.html { redirect_to(@dog) }
+        format.html { redirect_to([@person,@dog]) }
         format.xml  { head :ok }
         format.json { head :ok }
       else
@@ -85,9 +88,16 @@ class DogsController < ApplicationController
     @dog.destroy
 
     respond_to do |format|
-      format.html { redirect_to(dogs_url) }
+      format.html { redirect_to(person_dogs_url(@person)) }
       format.xml  { head :ok }
       format.json { head :ok }
     end
   end
+  
+  private
+  
+  def find_person
+    @person = Person.find(params[:person_id])
+  end
+  
 end

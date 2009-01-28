@@ -1592,7 +1592,7 @@ Element.Methods = {
     if (content && content.toElement) content = content.toElement();
     else if (!Object.isElement(content)) {
       content = Object.toHTML(content);
-      var range = element.ownerDocument.createRange();
+      var range = element.personDocument.createRange();
       range.selectNode(element);
       content.evalScripts.bind(content).defer();
       content = range.createContextualFragment(content.stripScripts());
@@ -1623,7 +1623,7 @@ Element.Methods = {
 
       content = Object.toHTML(content);
 
-      range = element.ownerDocument.createRange();
+      range = element.personDocument.createRange();
       t.initializeRange(element, range);
       t.insert(element, range.createContextualFragment(content.stripScripts()));
 

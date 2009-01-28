@@ -26,14 +26,6 @@
 }
 
 
-/*
-// Implement loadView to create a view hierarchy programmatically.
-- (void)loadView {
-}
-*/
-
-
-// Implement viewDidLoad to do additional setup after loading the view.
 - (void)viewDidLoad {
   self.title = @"Edit Dog";
   aTextField.returnKeyType = UIReturnKeyDone; 
@@ -50,7 +42,7 @@
   [textField resignFirstResponder];
   dog.name = textField.text;
   
-  // converts the object to xml and submits it to the resource
+	// explicitly update a dog on the server
   [dog update];
   aViewController.dog = dog;
   [self.navigationController popViewControllerAnimated:YES];
@@ -58,19 +50,6 @@
   [ aViewController.tableView reloadData];
   return YES; 
 } 
-
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning]; // Releases the view if it doesn't have a superview
-    // Release anything that's not essential, such as cached data
-}
-
 
 - (void)dealloc {
   

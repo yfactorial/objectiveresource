@@ -1,8 +1,7 @@
-<h1>Editing dog</h1>
+<h1>Editing person</h1>
 
-<% form_for([@person,@dog]) do |f| %>
+<% form_for(@person) do |f| %>
   <%= f.error_messages %>
-
   <p>
     <%= f.label :name %><br />
     <%= f.text_field :name %>
@@ -12,5 +11,5 @@
   </p>
 <% end %>
 
-<%= link_to 'Show', [@person,@dog] %> |
-<%= link_to 'Back', person_dogs_path(@person) %>
+<%= link_to 'Show', @person %> |
+<%= link_to 'Back', people_path %>

@@ -11,7 +11,7 @@
 
 @implementation AddDogViewController
 
-@synthesize textField;
+@synthesize textField , newDog;
 
 #pragma mark UIViewController methods
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
@@ -27,17 +27,18 @@
 
 #pragma mark UITextFieldDelegate methods
 - (BOOL)textFieldShouldReturn:(UITextField *)theTextField {
-	Dog *newDog = [[Dog alloc] init];
 	newDog.name = textField.text;
+	
+	// explicitly create a new dog on the server
 	[newDog create];
-	[newDog release];
-    [self.navigationController popViewControllerAnimated:YES];
+	[self.navigationController popViewControllerAnimated:YES];
 	return YES;
 }
 
 #pragma mark cleanup
 
 - (void)dealloc {
+	[newDog release];
 	[textField release];
 	[super dealloc];
 }
