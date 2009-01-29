@@ -33,19 +33,19 @@
 
 #pragma mark ObjectiveResource overrides to handle nestd resources
 
-+ (NSString *)collectionName {
++ (NSString *)getORSCollectionName {
 	return @"people";
 }
 
-- (BOOL)createWithResponse:(NSError **)aError {
+- (BOOL)createORSWithResponse:(NSError **)aError {
 	return [self createAtPath:[[self class] elementPath:[self nestedPath]] withResponse:aError];
 }
 
-- (BOOL)updateWithResponse:(NSError **)aError {
+- (BOOL)updateORSWithResponse:(NSError **)aError {
 	return [self updateAtPath:[[self class] elementPath:[self nestedPath]] withResponse:aError];	
 }
 
-- (BOOL)destroyWithResponse:(NSError **)aError {
+- (BOOL)destroyORSWithResponse:(NSError **)aError {
 	return [self destroyAtPath:[[self class] elementPath:[self nestedPath]] withResponse:aError];
 }
 

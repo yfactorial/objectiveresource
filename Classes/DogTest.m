@@ -18,8 +18,8 @@ static Person *owner;
 
 -(void) setUp {
 	[ObjectiveResource setSite:@"http://localhost:36313/"];
-	//[ObjectiveResource setResponseType:JSONResponse];
-	[ObjectiveResource setResponseType:XmlResponse];
+	[ObjectiveResource setResponseType:JSONResponse];
+	//[ObjectiveResource setResponseType:XmlResponse];
 	
 	owner = [Person find:[NSString stringWithFormat:@"%i",DOG_OWNER]];
 }

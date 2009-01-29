@@ -6,15 +6,10 @@
 //  Copyright 2008 yFactorial, LLC. All rights reserved.
 //
 
+#import "NSObject+ObjectiveResource.h"
+
+
 @interface ObjectiveResource : NSObject 
-
-
-// Response Formats
-typedef enum {
-	XmlResponse = 0,
-	JSONResponse,
-} ResponseFormat;
-
 // Resource configuration
 + (NSString *)getSite;
 + (void)setSite:(NSString*)siteURL;
@@ -28,8 +23,8 @@ typedef enum {
 + (void) setSerializeMethod:(SEL)serializeMethod;
 + (NSString *)protocolExtension;
 + (void)setProtocolExtension:(NSString *)protocolExtension;
-+ (void)setResponseType:(ResponseFormat) format;
-+ (ResponseFormat)getResponseType;
++ (void)setResponseType:(ORSResponseFormat) format;
++ (ORSResponseFormat)getResponseType;
 
 
 // Finders
@@ -62,10 +57,7 @@ typedef enum {
 
 
 - (BOOL)createAtPath:(NSString *)path withResponse:(NSError **)aError;
--	(BOOL)updateAtPath:(NSString *)path withResponse:(NSError **)aError;
+- (BOOL)updateAtPath:(NSString *)path withResponse:(NSError **)aError;
 - (BOOL)destroyAtPath:(NSString *)path withResponse:(NSError **)aError;
-
-// Instance helpers for getting at commonly used class-level values
-- (NSString *)collectionPath;
 
 @end

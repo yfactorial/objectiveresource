@@ -62,6 +62,7 @@
 		357A91B60E9A55EF0025D9AF /* Connection.m in Sources */ = {isa = PBXBuildFile; fileRef = 357A919B0E9A55EF0025D9AF /* Connection.m */; };
 		357A91C00E9A55EF0025D9AF /* Response.m in Sources */ = {isa = PBXBuildFile; fileRef = 357A91B00E9A55EF0025D9AF /* Response.m */; };
 		3584DFD60F31F684008E596B /* NSObject+ObjectiveResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3584DFD50F31F684008E596B /* NSObject+ObjectiveResource.m */; };
+		3584E0A40F32334D008E596B /* NSObject+ObjectiveResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3584DFD50F31F684008E596B /* NSObject+ObjectiveResource.m */; };
 		35C679300F2E70C2005FF6CE /* NSString+InflectionSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C678FC0F2E70C2005FF6CE /* NSString+InflectionSupport.m */; };
 		35C679310F2E70C2005FF6CE /* NSData+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C678FE0F2E70C2005FF6CE /* NSData+Additions.m */; };
 		35C679320F2E70C2005FF6CE /* NSObject+PropertySupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C679000F2E70C2005FF6CE /* NSObject+PropertySupport.m */; };
@@ -622,6 +623,7 @@
 				357A91B60E9A55EF0025D9AF /* Connection.m in Sources */,
 				357A91C00E9A55EF0025D9AF /* Response.m in Sources */,
 				23829E0C0EA393700070F0BF /* EditDogViewController.m in Sources */,
+				3584E0A40F32334D008E596B /* NSObject+ObjectiveResource.m in Sources */,
 				23829F010EA39B3B0070F0BF /* ViewDogController.m in Sources */,
 				2377C4F50F019E67006E155F /* NSHTTPURLResponse+Error.m in Sources */,
 				23C922F40F25066900EDE8AF /* NSMutableURLRequest+ResponseType.m in Sources */,

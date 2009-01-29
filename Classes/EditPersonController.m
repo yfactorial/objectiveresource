@@ -11,6 +11,7 @@
 
 @implementation EditPersonController
 
+@synthesize person, aTextField, aViewController;
 
 /*
 // Implement loadView to create a view hierarchy programmatically.
@@ -39,6 +40,9 @@
 
 
 - (void)dealloc {
+	[person release];
+	[aTextField release];
+	[aViewController release];
     [super dealloc];
 }
 
