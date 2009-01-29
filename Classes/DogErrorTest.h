@@ -16,14 +16,14 @@
 
 @end
 
-@interface DogError : ObjectiveResource {
+@interface DogError : NSObject {
 	
 
 }
 
 @end
 
-@interface DogDoesNotExist : ObjectiveResource
+@interface DogDoesNotExist : NSObject
 
 @end
 

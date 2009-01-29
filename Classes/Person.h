@@ -8,7 +8,7 @@
 
 #import "ObjectiveResource.h"
 
-@interface Person : ObjectiveResource {
+@interface Person : NSObject {
 	
 	NSString *name;
   NSString *personId;

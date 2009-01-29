@@ -40,7 +40,6 @@
 		239D501A0EA691AC00318802 /* DogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 350420F30E5E15AA00493366 /* DogViewController.m */; };
 		239D501B0EA691AC00318802 /* Dog.m in Sources */ = {isa = PBXBuildFile; fileRef = 350421280E5E1A0F00493366 /* Dog.m */; };
 		239D501C0EA691AC00318802 /* AddDogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 350421CE0E5E1EC500493366 /* AddDogViewController.m */; };
-		239D501F0EA691AC00318802 /* ObjectiveResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 357A91980E9A55EF0025D9AF /* ObjectiveResource.m */; };
 		239D50200EA691AC00318802 /* Connection.m in Sources */ = {isa = PBXBuildFile; fileRef = 357A919B0E9A55EF0025D9AF /* Connection.m */; };
 		239D502A0EA691AC00318802 /* Response.m in Sources */ = {isa = PBXBuildFile; fileRef = 357A91B00E9A55EF0025D9AF /* Response.m */; };
 		239D502B0EA691AC00318802 /* EditDogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23829E0B0EA393700070F0BF /* EditDogViewController.m */; };
@@ -58,11 +57,12 @@
 		350421870E5E1BF200493366 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 350421860E5E1BF200493366 /* CoreGraphics.framework */; };
 		350421CB0E5E1E0900493366 /* AddDogView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 350421CA0E5E1E0900493366 /* AddDogView.xib */; };
 		350421CF0E5E1EC500493366 /* AddDogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 350421CE0E5E1EC500493366 /* AddDogViewController.m */; };
-		357A91B50E9A55EF0025D9AF /* ObjectiveResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 357A91980E9A55EF0025D9AF /* ObjectiveResource.m */; };
 		357A91B60E9A55EF0025D9AF /* Connection.m in Sources */ = {isa = PBXBuildFile; fileRef = 357A919B0E9A55EF0025D9AF /* Connection.m */; };
 		357A91C00E9A55EF0025D9AF /* Response.m in Sources */ = {isa = PBXBuildFile; fileRef = 357A91B00E9A55EF0025D9AF /* Response.m */; };
 		3584DFD60F31F684008E596B /* NSObject+ObjectiveResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3584DFD50F31F684008E596B /* NSObject+ObjectiveResource.m */; };
 		3584E0A40F32334D008E596B /* NSObject+ObjectiveResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3584DFD50F31F684008E596B /* NSObject+ObjectiveResource.m */; };
+		3584E0F00F324581008E596B /* ObjectiveResourceConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 3584E0EF0F324581008E596B /* ObjectiveResourceConfig.m */; };
+		3584E0F10F324581008E596B /* ObjectiveResourceConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 3584E0EF0F324581008E596B /* ObjectiveResourceConfig.m */; };
 		35C679300F2E70C2005FF6CE /* NSString+InflectionSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C678FC0F2E70C2005FF6CE /* NSString+InflectionSupport.m */; };
 		35C679310F2E70C2005FF6CE /* NSData+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C678FE0F2E70C2005FF6CE /* NSData+Additions.m */; };
 		35C679320F2E70C2005FF6CE /* NSObject+PropertySupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C679000F2E70C2005FF6CE /* NSObject+PropertySupport.m */; };
@@ -165,13 +165,14 @@
 		350421CD0E5E1EC500493366 /* AddDogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddDogViewController.h; sourceTree = "<group>"; };
 		350421CE0E5E1EC500493366 /* AddDogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddDogViewController.m; sourceTree = "<group>"; };
 		357A91970E9A55EF0025D9AF /* ObjectiveResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ObjectiveResource.h; path = lib/ObjectiveResource.h; sourceTree = "<group>"; };
-		357A91980E9A55EF0025D9AF /* ObjectiveResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ObjectiveResource.m; path = lib/ObjectiveResource.m; sourceTree = "<group>"; };
 		357A919A0E9A55EF0025D9AF /* Connection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Connection.h; path = lib/Connection.h; sourceTree = "<group>"; };
 		357A919B0E9A55EF0025D9AF /* Connection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Connection.m; path = lib/Connection.m; sourceTree = "<group>"; };
 		357A91AF0E9A55EF0025D9AF /* Response.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Response.h; path = lib/Response.h; sourceTree = "<group>"; };
 		357A91B00E9A55EF0025D9AF /* Response.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Response.m; path = lib/Response.m; sourceTree = "<group>"; };
 		3584DFD40F31F684008E596B /* NSObject+ObjectiveResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+ObjectiveResource.h"; path = "lib/NSObject+ObjectiveResource.h"; sourceTree = "<group>"; };
 		3584DFD50F31F684008E596B /* NSObject+ObjectiveResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+ObjectiveResource.m"; path = "lib/NSObject+ObjectiveResource.m"; sourceTree = "<group>"; };
+		3584E0EE0F324581008E596B /* ObjectiveResourceConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ObjectiveResourceConfig.h; path = lib/ObjectiveResourceConfig.h; sourceTree = "<group>"; };
+		3584E0EF0F324581008E596B /* ObjectiveResourceConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ObjectiveResourceConfig.m; path = lib/ObjectiveResourceConfig.m; sourceTree = "<group>"; };
 		35C678F90F2E70C2005FF6CE /* CoreSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreSupport.h; sourceTree = "<group>"; };
 		35C678FB0F2E70C2005FF6CE /* NSString+InflectionSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+InflectionSupport.h"; sourceTree = "<group>"; };
 		35C678FC0F2E70C2005FF6CE /* NSString+InflectionSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+InflectionSupport.m"; sourceTree = "<group>"; };
@@ -382,7 +383,8 @@
 				3584DFD50F31F684008E596B /* NSObject+ObjectiveResource.m */,
 				357A91630E9A436E0025D9AF /* Connection */,
 				357A91970E9A55EF0025D9AF /* ObjectiveResource.h */,
-				357A91980E9A55EF0025D9AF /* ObjectiveResource.m */,
+				3584E0EE0F324581008E596B /* ObjectiveResourceConfig.h */,
+				3584E0EF0F324581008E596B /* ObjectiveResourceConfig.m */,
 			);
 			name = ObjectiveResource;
 			sourceTree = "<group>";
@@ -619,7 +621,6 @@
 				350420F40E5E15AA00493366 /* DogViewController.m in Sources */,
 				350421290E5E1A0F00493366 /* Dog.m in Sources */,
 				350421CF0E5E1EC500493366 /* AddDogViewController.m in Sources */,
-				357A91B50E9A55EF0025D9AF /* ObjectiveResource.m in Sources */,
 				357A91B60E9A55EF0025D9AF /* Connection.m in Sources */,
 				357A91C00E9A55EF0025D9AF /* Response.m in Sources */,
 				23829E0C0EA393700070F0BF /* EditDogViewController.m in Sources */,
@@ -654,6 +655,7 @@
 				2314FF700F2F8089003B13AB /* PeopleViewController.m in Sources */,
 				2314FF710F2F8089003B13AB /* Person.m in Sources */,
 				2314FF760F2F8094003B13AB /* ViewPersonController.m in Sources */,
+				3584E0F10F324581008E596B /* ObjectiveResourceConfig.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -664,7 +666,6 @@
 				239D501A0EA691AC00318802 /* DogViewController.m in Sources */,
 				239D501B0EA691AC00318802 /* Dog.m in Sources */,
 				239D501C0EA691AC00318802 /* AddDogViewController.m in Sources */,
-				239D501F0EA691AC00318802 /* ObjectiveResource.m in Sources */,
 				239D50200EA691AC00318802 /* Connection.m in Sources */,
 				239D502A0EA691AC00318802 /* Response.m in Sources */,
 				239D502B0EA691AC00318802 /* EditDogViewController.m in Sources */,
@@ -705,6 +706,7 @@
 				2314FF770F2F8094003B13AB /* ViewPersonController.m in Sources */,
 				2322CD650F2F968000EDF562 /* PersonTest.m in Sources */,
 				3584DFD60F31F684008E596B /* NSObject+ObjectiveResource.m in Sources */,
+				3584E0F00F324581008E596B /* ObjectiveResourceConfig.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
