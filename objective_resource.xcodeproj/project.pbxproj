@@ -40,7 +40,6 @@
 		239D501A0EA691AC00318802 /* DogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 350420F30E5E15AA00493366 /* DogViewController.m */; };
 		239D501B0EA691AC00318802 /* Dog.m in Sources */ = {isa = PBXBuildFile; fileRef = 350421280E5E1A0F00493366 /* Dog.m */; };
 		239D501C0EA691AC00318802 /* AddDogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 350421CE0E5E1EC500493366 /* AddDogViewController.m */; };
-		239D501E0EA691AC00318802 /* ObjectiveResource+XMLSerializableSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 357A91960E9A55EF0025D9AF /* ObjectiveResource+XMLSerializableSupport.m */; };
 		239D501F0EA691AC00318802 /* ObjectiveResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 357A91980E9A55EF0025D9AF /* ObjectiveResource.m */; };
 		239D50200EA691AC00318802 /* Connection.m in Sources */ = {isa = PBXBuildFile; fileRef = 357A919B0E9A55EF0025D9AF /* Connection.m */; };
 		239D502A0EA691AC00318802 /* Response.m in Sources */ = {isa = PBXBuildFile; fileRef = 357A91B00E9A55EF0025D9AF /* Response.m */; };
@@ -51,8 +50,6 @@
 		239D50CB0EA691DD00318802 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		239D50DA0EA6921800318802 /* DogTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 239D50D90EA6921800318802 /* DogTest.m */; };
 		23B4A6420F092B620021AB9D /* DogErrorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 23B4A6410F092B620021AB9D /* DogErrorTest.m */; };
-		23C922800F24FED700EDE8AF /* ObjectiveResource+JSONSerializableSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 23C9227F0F24FED700EDE8AF /* ObjectiveResource+JSONSerializableSupport.m */; };
-		23C922810F24FED700EDE8AF /* ObjectiveResource+JSONSerializableSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 23C9227F0F24FED700EDE8AF /* ObjectiveResource+JSONSerializableSupport.m */; };
 		23C922F30F25066900EDE8AF /* NSMutableURLRequest+ResponseType.m in Sources */ = {isa = PBXBuildFile; fileRef = 23C922F20F25066900EDE8AF /* NSMutableURLRequest+ResponseType.m */; };
 		23C922F40F25066900EDE8AF /* NSMutableURLRequest+ResponseType.m in Sources */ = {isa = PBXBuildFile; fileRef = 23C922F20F25066900EDE8AF /* NSMutableURLRequest+ResponseType.m */; };
 		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
@@ -61,10 +58,10 @@
 		350421870E5E1BF200493366 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 350421860E5E1BF200493366 /* CoreGraphics.framework */; };
 		350421CB0E5E1E0900493366 /* AddDogView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 350421CA0E5E1E0900493366 /* AddDogView.xib */; };
 		350421CF0E5E1EC500493366 /* AddDogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 350421CE0E5E1EC500493366 /* AddDogViewController.m */; };
-		357A91B40E9A55EF0025D9AF /* ObjectiveResource+XMLSerializableSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 357A91960E9A55EF0025D9AF /* ObjectiveResource+XMLSerializableSupport.m */; };
 		357A91B50E9A55EF0025D9AF /* ObjectiveResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 357A91980E9A55EF0025D9AF /* ObjectiveResource.m */; };
 		357A91B60E9A55EF0025D9AF /* Connection.m in Sources */ = {isa = PBXBuildFile; fileRef = 357A919B0E9A55EF0025D9AF /* Connection.m */; };
 		357A91C00E9A55EF0025D9AF /* Response.m in Sources */ = {isa = PBXBuildFile; fileRef = 357A91B00E9A55EF0025D9AF /* Response.m */; };
+		3584DFD60F31F684008E596B /* NSObject+ObjectiveResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3584DFD50F31F684008E596B /* NSObject+ObjectiveResource.m */; };
 		35C679300F2E70C2005FF6CE /* NSString+InflectionSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C678FC0F2E70C2005FF6CE /* NSString+InflectionSupport.m */; };
 		35C679310F2E70C2005FF6CE /* NSData+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C678FE0F2E70C2005FF6CE /* NSData+Additions.m */; };
 		35C679320F2E70C2005FF6CE /* NSObject+PropertySupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C679000F2E70C2005FF6CE /* NSObject+PropertySupport.m */; };
@@ -153,8 +150,6 @@
 		239D50D90EA6921800318802 /* DogTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DogTest.m; sourceTree = "<group>"; };
 		23B4A6400F092B620021AB9D /* DogErrorTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DogErrorTest.h; sourceTree = "<group>"; };
 		23B4A6410F092B620021AB9D /* DogErrorTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DogErrorTest.m; sourceTree = "<group>"; };
-		23C9227E0F24FED700EDE8AF /* ObjectiveResource+JSONSerializableSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ObjectiveResource+JSONSerializableSupport.h"; path = "lib/ObjectiveResource+JSONSerializableSupport.h"; sourceTree = "<group>"; };
-		23C9227F0F24FED700EDE8AF /* ObjectiveResource+JSONSerializableSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "ObjectiveResource+JSONSerializableSupport.m"; path = "lib/ObjectiveResource+JSONSerializableSupport.m"; sourceTree = "<group>"; };
 		23C922F10F25066900EDE8AF /* NSMutableURLRequest+ResponseType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMutableURLRequest+ResponseType.h"; path = "lib/NSMutableURLRequest+ResponseType.h"; sourceTree = "<group>"; };
 		23C922F20F25066900EDE8AF /* NSMutableURLRequest+ResponseType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutableURLRequest+ResponseType.m"; path = "lib/NSMutableURLRequest+ResponseType.m"; sourceTree = "<group>"; };
 		28AD733E0D9D9553002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
@@ -168,14 +163,14 @@
 		350421CA0E5E1E0900493366 /* AddDogView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddDogView.xib; sourceTree = "<group>"; };
 		350421CD0E5E1EC500493366 /* AddDogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddDogViewController.h; sourceTree = "<group>"; };
 		350421CE0E5E1EC500493366 /* AddDogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddDogViewController.m; sourceTree = "<group>"; };
-		357A91950E9A55EF0025D9AF /* ObjectiveResource+XMLSerializableSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ObjectiveResource+XMLSerializableSupport.h"; path = "lib/ObjectiveResource+XMLSerializableSupport.h"; sourceTree = "<group>"; };
-		357A91960E9A55EF0025D9AF /* ObjectiveResource+XMLSerializableSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "ObjectiveResource+XMLSerializableSupport.m"; path = "lib/ObjectiveResource+XMLSerializableSupport.m"; sourceTree = "<group>"; };
 		357A91970E9A55EF0025D9AF /* ObjectiveResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ObjectiveResource.h; path = lib/ObjectiveResource.h; sourceTree = "<group>"; };
 		357A91980E9A55EF0025D9AF /* ObjectiveResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ObjectiveResource.m; path = lib/ObjectiveResource.m; sourceTree = "<group>"; };
 		357A919A0E9A55EF0025D9AF /* Connection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Connection.h; path = lib/Connection.h; sourceTree = "<group>"; };
 		357A919B0E9A55EF0025D9AF /* Connection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Connection.m; path = lib/Connection.m; sourceTree = "<group>"; };
 		357A91AF0E9A55EF0025D9AF /* Response.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Response.h; path = lib/Response.h; sourceTree = "<group>"; };
 		357A91B00E9A55EF0025D9AF /* Response.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Response.m; path = lib/Response.m; sourceTree = "<group>"; };
+		3584DFD40F31F684008E596B /* NSObject+ObjectiveResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+ObjectiveResource.h"; path = "lib/NSObject+ObjectiveResource.h"; sourceTree = "<group>"; };
+		3584DFD50F31F684008E596B /* NSObject+ObjectiveResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+ObjectiveResource.m"; path = "lib/NSObject+ObjectiveResource.m"; sourceTree = "<group>"; };
 		35C678F90F2E70C2005FF6CE /* CoreSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreSupport.h; sourceTree = "<group>"; };
 		35C678FB0F2E70C2005FF6CE /* NSString+InflectionSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+InflectionSupport.h"; sourceTree = "<group>"; };
 		35C678FC0F2E70C2005FF6CE /* NSString+InflectionSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+InflectionSupport.m"; sourceTree = "<group>"; };
@@ -382,13 +377,11 @@
 		357A915B0E9A436E0025D9AF /* ObjectiveResource */ = {
 			isa = PBXGroup;
 			children = (
+				3584DFD40F31F684008E596B /* NSObject+ObjectiveResource.h */,
+				3584DFD50F31F684008E596B /* NSObject+ObjectiveResource.m */,
 				357A91630E9A436E0025D9AF /* Connection */,
-				357A91950E9A55EF0025D9AF /* ObjectiveResource+XMLSerializableSupport.h */,
-				357A91960E9A55EF0025D9AF /* ObjectiveResource+XMLSerializableSupport.m */,
 				357A91970E9A55EF0025D9AF /* ObjectiveResource.h */,
 				357A91980E9A55EF0025D9AF /* ObjectiveResource.m */,
-				23C9227E0F24FED700EDE8AF /* ObjectiveResource+JSONSerializableSupport.h */,
-				23C9227F0F24FED700EDE8AF /* ObjectiveResource+JSONSerializableSupport.m */,
 			);
 			name = ObjectiveResource;
 			sourceTree = "<group>";
@@ -611,7 +604,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "cd sample_rails_app\nrake db:populate RAILS_ENV=test\n./script/server -e test -p 36313 -d";
+			shellScript = "cd sample_rails_app\nkill `cat tmp/pids/mongrel.pid`\nrake db:migrate\nrake db:test:prepare\nrake db:populate RAILS_ENV=test\n./script/server -e test -p 36313 -d";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -625,14 +618,12 @@
 				350420F40E5E15AA00493366 /* DogViewController.m in Sources */,
 				350421290E5E1A0F00493366 /* Dog.m in Sources */,
 				350421CF0E5E1EC500493366 /* AddDogViewController.m in Sources */,
-				357A91B40E9A55EF0025D9AF /* ObjectiveResource+XMLSerializableSupport.m in Sources */,
 				357A91B50E9A55EF0025D9AF /* ObjectiveResource.m in Sources */,
 				357A91B60E9A55EF0025D9AF /* Connection.m in Sources */,
 				357A91C00E9A55EF0025D9AF /* Response.m in Sources */,
 				23829E0C0EA393700070F0BF /* EditDogViewController.m in Sources */,
 				23829F010EA39B3B0070F0BF /* ViewDogController.m in Sources */,
 				2377C4F50F019E67006E155F /* NSHTTPURLResponse+Error.m in Sources */,
-				23C922800F24FED700EDE8AF /* ObjectiveResource+JSONSerializableSupport.m in Sources */,
 				23C922F40F25066900EDE8AF /* NSMutableURLRequest+ResponseType.m in Sources */,
 				35CA32650F1E67A1001513AA /* ConnectionDelegate.m in Sources */,
 				35C679300F2E70C2005FF6CE /* NSString+InflectionSupport.m in Sources */,
@@ -671,7 +662,6 @@
 				239D501A0EA691AC00318802 /* DogViewController.m in Sources */,
 				239D501B0EA691AC00318802 /* Dog.m in Sources */,
 				239D501C0EA691AC00318802 /* AddDogViewController.m in Sources */,
-				239D501E0EA691AC00318802 /* ObjectiveResource+XMLSerializableSupport.m in Sources */,
 				239D501F0EA691AC00318802 /* ObjectiveResource.m in Sources */,
 				239D50200EA691AC00318802 /* Connection.m in Sources */,
 				239D502A0EA691AC00318802 /* Response.m in Sources */,
@@ -683,7 +673,6 @@
 				239D50DA0EA6921800318802 /* DogTest.m in Sources */,
 				2377C4F60F019E67006E155F /* NSHTTPURLResponse+Error.m in Sources */,
 				23B4A6420F092B620021AB9D /* DogErrorTest.m in Sources */,
-				23C922810F24FED700EDE8AF /* ObjectiveResource+JSONSerializableSupport.m in Sources */,
 				23C922F30F25066900EDE8AF /* NSMutableURLRequest+ResponseType.m in Sources */,
 				35CA32660F1E67A1001513AA /* ConnectionDelegate.m in Sources */,
 				35C679450F2E70C2005FF6CE /* NSString+InflectionSupport.m in Sources */,
@@ -713,6 +702,7 @@
 				2314FF730F2F8089003B13AB /* Person.m in Sources */,
 				2314FF770F2F8094003B13AB /* ViewPersonController.m in Sources */,
 				2322CD650F2F968000EDF562 /* PersonTest.m in Sources */,
+				3584DFD60F31F684008E596B /* NSObject+ObjectiveResource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
