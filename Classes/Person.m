@@ -23,7 +23,7 @@
 // this will go to the url http://localhost:3000/people/<id>/dogs
 // and return the array of dogs
 -(NSArray *) findAllDogs {
-	return [Dog find:[NSString stringWithFormat:@"%@/%@",personId,@"dogs",nil]];
+	return [Dog findORS:[NSString stringWithFormat:@"%@/%@",personId,@"dogs",nil]];
 }
 
 @end

@@ -38,15 +38,15 @@
 }
 
 - (BOOL)createORSWithResponse:(NSError **)aError {
-	return [self createAtPath:[[self class] elementPath:[self nestedPath]] withResponse:aError];
+	return [self createORSAtPath:[[self class] getORSElementPath:[self nestedPath]] withResponse:aError];
 }
 
 - (BOOL)updateORSWithResponse:(NSError **)aError {
-	return [self updateAtPath:[[self class] elementPath:[self nestedPath]] withResponse:aError];	
+	return [self updateORSAtPath:[[self class] getORSElementPath:[self nestedPath]] withResponse:aError];	
 }
 
 - (BOOL)destroyORSWithResponse:(NSError **)aError {
-	return [self destroyAtPath:[[self class] elementPath:[self nestedPath]] withResponse:aError];
+	return [self destroyORSAtPath:[[self class] getORSElementPath:[self nestedPath]] withResponse:aError];
 }
 
 

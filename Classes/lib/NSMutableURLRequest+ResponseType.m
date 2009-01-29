@@ -16,7 +16,7 @@
 	NSMutableURLRequest * request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringCacheData
 																											timeoutInterval:[Connection timeout]];
 	[request setHTTPMethod:method];
-	switch ([ObjectiveResource getResponseType]) {
+	switch ([ObjectiveResourceConfig getResponseType]) {
 		case JSONResponse:
 			[request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];	
 			[request addValue:@"application/json" forHTTPHeaderField:@"Accept"];

@@ -165,7 +165,7 @@ static ORSResponseFormat _format;
 #pragma mark default equals methods for id and class based equality
 - (BOOL)isEqual:(id)anObject {
 	return 	[NSStringFromClass([self class]) isEqualToString:NSStringFromClass([anObject class])] &&
-	[anObject respondsToSelector:@selector(getId)] && [[anObject getORSId] isEqualToString:[self getORSId]];
+	[anObject respondsToSelector:@selector(getORSId)] && [[anObject getORSId] isEqualToString:[self getORSId]];
 }
 - (NSUInteger)hash {
 	return [[self getORSId] intValue] + [NSStringFromClass([self class]) hash];

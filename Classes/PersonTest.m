@@ -14,16 +14,16 @@
 @implementation PersonTest
 
 -(void) setUp {
-	[ObjectiveResource setSite:@"http://localhost:36313/"];
-	[ObjectiveResource setResponseType:JSONResponse];
-	//[ObjectiveResource setResponseType:XmlResponse];
+	[ObjectiveResourceConfig setSite:@"http://localhost:36313/"];
+	[ObjectiveResourceConfig setResponseType:JSONResponse];
+	//[ObjectiveResourceConfig setResponseType:XmlResponse];
 }
 
 -(void) testPersonDelete {
-	int count = [[Person findAll]count];
-  Person *person = [Person find:[NSString stringWithFormat:@"%i",PERSON_DESTROY]];
-  STAssertTrue([person destroy], @"Should have been true");	
-	NSArray *people = [Person findAll];
+	int count = [[Person findAllORS]count];
+  Person *person = [Person findORS:[NSString stringWithFormat:@"%i",PERSON_DESTROY]];
+  STAssertTrue([person destroyORS], @"Should have been true");	
+	NSArray *people = [Person findAllORS];
   STAssertTrue((count-1) == [people count], @"Should have %i people , %d found" ,count ,[people count]);
 	
 }
@@ -32,8 +32,8 @@
 	BOOL found = NO;
 	Person *toCreate = [[Person alloc] init];
 	toCreate.name = @"Daniel Waterhouse";
-  STAssertTrue(	[toCreate create], @"Should have been true");	
-  NSArray *people = [Person findAll];
+  STAssertTrue(	[toCreate createORS], @"Should have been true");	
+  NSArray *people = [Person findAllORS];
 
 	for(Person *person in people) {
 		if([toCreate isEqual:person]) {
@@ -45,10 +45,10 @@
 
 -(void) testPersonUpdate {
 	BOOL found = NO;
-  Person *toUpdate = [Person find:[NSString stringWithFormat:@"%i",PERSON]];
+  Person *toUpdate = [Person findORS:[NSString stringWithFormat:@"%i",PERSON]];
 	toUpdate.name = @"America Shaftoe";
-  STAssertTrue(	[toUpdate save], @"Should have been true");	
-	NSArray *people = [Person findAll];
+  STAssertTrue(	[toUpdate saveORS], @"Should have been true");	
+	NSArray *people = [Person findAllORS];
 	for(Person *person in people) {
 		if([toUpdate isEqual:person] && [toUpdate.name isEqualToString:person.name]) {
 			found = YES;
@@ -58,9 +58,9 @@
 }
 
 -(void) testFindPerson {
-  NSArray * people = [Person findAll];
+  NSArray * people = [Person findAllORS];
 	Person *toFind = (Person *)[people objectAtIndex:0];
-	STAssertTrue([toFind isEqual:[Person find:toFind.personId]], @"Should of returned %@",toFind.name);	
+	STAssertTrue([toFind isEqual:[Person findORS:toFind.personId]], @"Should of returned %@",toFind.name);	
 }
 
 

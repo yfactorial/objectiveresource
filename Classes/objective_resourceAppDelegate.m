@@ -16,13 +16,13 @@
 - (void)applicationDidFinishLaunching:(UIApplication *)application {	
 	
 	//Configure ObjectiveResource
-	[ObjectiveResource setSite:@"http://localhost:3000/"];
+	[ObjectiveResourceConfig setSite:@"http://localhost:3000/"];
 	
 	// use json
 	//[ObjectiveResource setResponseType:JSONResponse];
 	
 	// use xml
-	[ObjectiveResource setResponseType:XmlResponse];
+	[ObjectiveResourceConfig setResponseType:XmlResponse];
 	[window addSubview:navigationController.view];
 	
 	// Override point for customization after app launch	

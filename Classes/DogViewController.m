@@ -85,7 +85,7 @@
     [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:YES]; 
 
     // Deletes the object on the resource , if the deletion is successfull YES is returned
-    [(Dog *)[dogs objectAtIndex:indexPath.row] destroy];
+    [(Dog *)[dogs objectAtIndex:indexPath.row] destroyORS];
     [dogs removeObjectAtIndex:indexPath.row];
   } 
   [tableView endUpdates];   

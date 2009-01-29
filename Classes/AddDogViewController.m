@@ -30,7 +30,7 @@
 	newDog.name = textField.text;
 	
 	// explicitly create a new dog on the server
-	[newDog create];
+	[newDog createORS];
 	[self.navigationController popViewControllerAnimated:YES];
 	return YES;
 }
