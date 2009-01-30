@@ -180,6 +180,13 @@ static ORSResponseFormat _format;
 	}
 	return result;
 }
+- (void)setORSId:(id)orsId {
+	SEL setter = NSSelectorFromString([NSString stringWithFormat:@"set%@Id:",[self className]]);
+	if ([self respondsToSelector:setter]) {
+		[self performSelector:setter withObject:orsId];
+	}
+}
+
 
 - (NSString *)getORSClassIdName {
 	

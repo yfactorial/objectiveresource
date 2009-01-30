@@ -50,6 +50,7 @@ typedef enum {
 
 // Instance-specific methods
 - (id)getORSId;
+- (void)setORSId:(id)orsId;
 - (NSString *)getORSClassIdName;
 - (BOOL)createORS;
 - (BOOL)createORSWithResponse:(NSError **)aError;
