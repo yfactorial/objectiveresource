@@ -18,12 +18,14 @@ cd $ORES_DIR
 rm -rf ../ores_zip_temp_dir
 
 #zip lib only
-#cd $ORES_DIR/Classes/
-#zip -r objective_resource_lib_only lib -x lib/objective_support/\* lib/objective_support/
-#mv objective_resource_lib_only.zip lib/objective_support/Classes
-#cd lib/objective_support/Classes
-#cp -R lib objective_support
-#mv objective_support lib/objective_support
-#zip -r objective_resource_lib_only lib/objective_support
-#rm -rf lib/objective_support
-#mv objective_resource_lib_only.zip ../../../../
+cd $ORES_DIR/Classes/
+cp -R lib objective_resource
+zip -r objective_resource_lib_only objective_resource -x objective_resource/objective_support/\* objective_resource/objective_support/
+mv objective_resource_lib_only.zip lib/objective_support/Classes
+rm -rf objective_resource
+cd lib/objective_support/Classes
+mkdir objective_resource
+cp -R lib objective_resource/objective_support
+zip -r objective_resource_lib_only objective_resource/objective_support
+rm -rf objetive_resource/objective_support
+mv objective_resource_lib_only.zip ../../../../
