@@ -43,7 +43,7 @@
   dog.name = textField.text;
   
 	// explicitly update a dog on the server
-  [dog updateORS];
+  [dog updateRemote];
   aViewController.dog = dog;
   [self.navigationController popViewControllerAnimated:YES];
   aViewController.title = dog.name;

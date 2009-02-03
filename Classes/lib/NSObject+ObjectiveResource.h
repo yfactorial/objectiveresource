@@ -18,58 +18,58 @@ typedef enum {
 } ORSResponseFormat;
 
 // Resource configuration
-+ (NSString *)getORSSite;
-+ (void)setORSSite:(NSString*)siteURL;
-+ (NSString *)getORSUser;
-+ (void)setORSUser:(NSString *)user;
-+ (NSString *)getORSPassword;
-+ (void)setORSPassword:(NSString *)password;
-+ (SEL)getORSParseDataMethod;
-+ (void)setORSParseDataMethod:(SEL)parseMethod;
-+ (SEL) getORSSerializeMethod;
-+ (void) setORSSerializeMethod:(SEL)serializeMethod;
-+ (NSString *)getORSProtocolExtension;
-+ (void)setORSProtocolExtension:(NSString *)protocolExtension;
-+ (void)setORSResponseType:(ORSResponseFormat) format;
-+ (ORSResponseFormat)getORSResponseType;
++ (NSString *)getRemoteSite;
++ (void)setRemoteSite:(NSString*)siteURL;
++ (NSString *)getRemoteUser;
++ (void)setRemoteUser:(NSString *)user;
++ (NSString *)getRemotePassword;
++ (void)setRemotePassword:(NSString *)password;
++ (SEL)getRemoteParseDataMethod;
++ (void)setRemoteParseDataMethod:(SEL)parseMethod;
++ (SEL) getRemoteSerializeMethod;
++ (void) setRemoteSerializeMethod:(SEL)serializeMethod;
++ (NSString *)getRemoteProtocolExtension;
++ (void)setRemoteProtocolExtension:(NSString *)protocolExtension;
++ (void)setRemoteResponseType:(ORSResponseFormat) format;
++ (ORSResponseFormat)getRemoteResponseType;
 
 
 // Finders
-+ (NSArray *)findAllORS;
-+ (NSArray *)findAllORSWithResponse:(NSError **)aError;
-+ (id)findORS:(NSString *)elementId;
-+ (id)findORS:(NSString *)elementId withResponse:(NSError **)aError; 
++ (NSArray *)findAllRemote;
++ (NSArray *)findAllRemoteWithResponse:(NSError **)aError;
++ (id)findRemote:(NSString *)elementId;
++ (id)findRemote:(NSString *)elementId withResponse:(NSError **)aError; 
 
 // URL construction accessors
-+ (NSString *)getORSElementName;
-+ (NSString *)getORSCollectionName;
-+ (NSString *)getORSElementPath:(NSString *)elementId;
-+ (NSString *)getORSCollectionPath;
-+ (NSString *)getORSCollectionPathWithParameters:(NSDictionary *)parameters;
-+ (NSString *)populateORSPath:(NSString *)path withParameters:(NSDictionary *)parameters;
++ (NSString *)getRemoteElementName;
++ (NSString *)getRemoteCollectionName;
++ (NSString *)getRemoteElementPath:(NSString *)elementId;
++ (NSString *)getRemoteCollectionPath;
++ (NSString *)getRemoteCollectionPathWithParameters:(NSDictionary *)parameters;
++ (NSString *)populateRemotePath:(NSString *)path withParameters:(NSDictionary *)parameters;
 
 // Instance-specific methods
-- (id)getORSId;
-- (void)setORSId:(id)orsId;
-- (NSString *)getORSClassIdName;
-- (BOOL)createORS;
-- (BOOL)createORSWithResponse:(NSError **)aError;
-- (BOOL)createORSWithParameters:(NSDictionary *)parameters;
-- (BOOL)createORSWithParameters:(NSDictionary *)parameters andResponse:(NSError **)aError;
-- (BOOL)destroyORS;
-- (BOOL)destroyORSWithResponse:(NSError **)aError;
-- (BOOL)updateORS;
-- (BOOL)updateORSWithResponse:(NSError **)aError;
-- (BOOL)saveORS;
-- (BOOL)saveORSWithResponse:(NSError **)aError;
+- (id)getRemoteId;
+- (void)setRemoteId:(id)orsId;
+- (NSString *)getRemoteClassIdName;
+- (BOOL)createRemote;
+- (BOOL)createRemoteWithResponse:(NSError **)aError;
+- (BOOL)createRemoteWithParameters:(NSDictionary *)parameters;
+- (BOOL)createRemoteWithParameters:(NSDictionary *)parameters andResponse:(NSError **)aError;
+- (BOOL)destroyRemote;
+- (BOOL)destroyRemoteWithResponse:(NSError **)aError;
+- (BOOL)updateRemote;
+- (BOOL)updateRemoteWithResponse:(NSError **)aError;
+- (BOOL)saveRemote;
+- (BOOL)saveRemoteWithResponse:(NSError **)aError;
 
 
-- (BOOL)createORSAtPath:(NSString *)path withResponse:(NSError **)aError;
-- (BOOL)updateORSAtPath:(NSString *)path withResponse:(NSError **)aError;
-- (BOOL)destroyORSAtPath:(NSString *)path withResponse:(NSError **)aError;
+- (BOOL)createRemoteAtPath:(NSString *)path withResponse:(NSError **)aError;
+- (BOOL)updateRemoteAtPath:(NSString *)path withResponse:(NSError **)aError;
+- (BOOL)destroyRemoteAtPath:(NSString *)path withResponse:(NSError **)aError;
 
 // Instance helpers for getting at commonly used class-level values
-- (NSString *)getORSCollectionPath;
-- (NSString *)convertToORSExpectedType;
+- (NSString *)getRemoteCollectionPath;
+- (NSString *)convertToRemoteExpectedType;
 
 @end

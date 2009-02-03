@@ -21,7 +21,7 @@ static Person *owner;
 	[ObjectiveResourceConfig setResponseType:JSONResponse];
 	//[ObjectiveResource setResponseType:XmlResponse];
 	
-	owner = [Person findORS:[NSString stringWithFormat:@"%i",DOG_OWNER]];
+	owner = [Person findRemote:[NSString stringWithFormat:@"%i",DOG_OWNER]];
 }
 
 -(void) testDogProperties {
@@ -47,7 +47,7 @@ static Person *owner;
 	Dog* aDog	 = [[Dog alloc] init];
 	aDog.personId = owner.personId;
 	aDog.name = @"Helio's Coffee & Chairs";
-  [aDog saveORS];
+  [aDog saveRemote];
   NSArray * dogs = [owner findAllDogs];
 
   
@@ -66,7 +66,7 @@ static Person *owner;
   aDog.personId = owner.personId;
   aDog.name = @"Judge";
 
-  [aDog saveORS];
+  [aDog saveRemote];
   NSArray * dogs = [owner findAllDogs];
   STAssertTrue(shouldBe == [dogs count], @"Should have %i dogs , %d found" , 
 							 shouldBe ,[dogs count]);
@@ -79,7 +79,7 @@ static Person *owner;
   BOOL found = NO;
   Dog *aDog = [dogs objectAtIndex:0];
   aDog.name = @"Judge";
-  [aDog updateORS];
+  [aDog updateRemote];
 
   aDog = [dogs objectAtIndex:0];
 	
@@ -101,7 +101,7 @@ static Person *owner;
   
   int shouldBe = [dogs count] - 1;
   Dog *toDelete = (Dog *)[dogs objectAtIndex:0];
-  [toDelete destroyORS];
+  [toDelete destroyRemote];
   
   dogs = [owner findAllDogs];
   STAssertTrue(shouldBe == [dogs count], @"Should have %i dogs , %d found" , 

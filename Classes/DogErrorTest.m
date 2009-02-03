@@ -4,13 +4,13 @@
 //
 //  Created by James Burka on 12/29/08.
 //  Copyright 2008 Burkaprojects. All rights reserved.
-//
+//Remote
 
 #import "DogErrorTest.h"
 
 @implementation DogError
 
-+ (NSString *)getORSSite {
++ (NSString *)getRemoteSite {
 	return @"http://localhost:36313/";
 }
 
@@ -18,7 +18,7 @@
 
 @implementation DogDoesNotExist
 
-+ (NSString *)getORSSite {
++ (NSString *)getRemoteSite {
 	return @"http://badhost.localhost:9999/";
 }
 
@@ -29,7 +29,7 @@
 
 - (void) test404Error {
 	NSError *aError;
-	[DogError findAllORSWithResponse:&aError];
+	[DogError findAllRemoteWithResponse:&aError];
   
   STAssertEquals([aError code], 404, @"Should have returned 404 error instead got %d " , 
                  [aError code]);
@@ -37,7 +37,7 @@
 
 - (void) testCantFindServer {
 	NSError *aError;
-	[DogDoesNotExist findAllORSWithResponse:&aError];
+	[DogDoesNotExist findAllRemoteWithResponse:&aError];
   
   STAssertTrue([[aError domain] isEqualToString:NSURLErrorDomain], 
 							 @"Should have returned NSURLErrorDomain error instead got %@ " , [aError domain]);

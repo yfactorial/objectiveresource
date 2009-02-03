@@ -31,7 +31,7 @@
   [textField resignFirstResponder];
   person.name = textField.text;
 	// If the model is new then create will be called otherwise the model will be updated 
-  [person saveORS];
+  [person saveRemote];
 	[delegate.tableView reloadData];
   [self.navigationController popViewControllerAnimated:YES];
   return YES; 

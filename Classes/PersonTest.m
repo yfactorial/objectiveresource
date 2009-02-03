@@ -20,10 +20,10 @@
 }
 
 -(void) testPersonDelete {
-	int count = [[Person findAllORS]count];
-  Person *person = [Person findORS:[NSString stringWithFormat:@"%i",PERSON_DESTROY]];
-  STAssertTrue([person destroyORS], @"Should have been true");	
-	NSArray *people = [Person findAllORS];
+	int count = [[Person findAllRemote]count];
+  Person *person = [Person findRemote:[NSString stringWithFormat:@"%i",PERSON_DESTROY]];
+  STAssertTrue([person destroyRemote], @"Should have been true");	
+	NSArray *people = [Person findAllRemote];
   STAssertTrue((count-1) == [people count], @"Should have %i people , %d found" ,count ,[people count]);
 	
 }
@@ -32,8 +32,8 @@
 	BOOL found = NO;
 	Person *toCreate = [[Person alloc] init];
 	toCreate.name = @"Daniel Waterhouse";
-  STAssertTrue(	[toCreate createORS], @"Should have been true");	
-  NSArray *people = [Person findAllORS];
+  STAssertTrue(	[toCreate createRemote], @"Should have been true");	
+  NSArray *people = [Person findAllRemote];
 
 	for(Person *person in people) {
 		if([toCreate isEqual:person]) {
@@ -45,10 +45,10 @@
 
 -(void) testPersonUpdate {
 	BOOL found = NO;
-  Person *toUpdate = [Person findORS:[NSString stringWithFormat:@"%i",PERSON]];
+  Person *toUpdate = [Person findRemote:[NSString stringWithFormat:@"%i",PERSON]];
 	toUpdate.name = @"America Shaftoe";
-  STAssertTrue(	[toUpdate saveORS], @"Should have been true");	
-	NSArray *people = [Person findAllORS];
+  STAssertTrue(	[toUpdate saveRemote], @"Should have been true");	
+	NSArray *people = [Person findAllRemote];
 	for(Person *person in people) {
 		if([toUpdate isEqual:person] && [toUpdate.name isEqualToString:person.name]) {
 			found = YES;
@@ -58,9 +58,9 @@
 }
 
 -(void) testFindPerson {
-  NSArray * people = [Person findAllORS];
+  NSArray * people = [Person findAllRemote];
 	Person *toFind = (Person *)[people objectAtIndex:0];
-	STAssertTrue([toFind isEqual:[Person findORS:toFind.personId]], @"Should of returned %@",toFind.name);	
+	STAssertTrue([toFind isEqual:[Person findRemote:toFind.personId]], @"Should of returned %@",toFind.name);	
 }
 
 

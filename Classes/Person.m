@@ -15,7 +15,7 @@
 
 
 // handle pluralization 
-+ (NSString *)getORSCollectionName {
++ (NSString *)getRemoteCollectionName {
 	return @"people";
 }
 
@@ -23,7 +23,7 @@
 // this will go to the url http://localhost:3000/people/<id>/dogs
 // and return the array of dogs
 -(NSArray *) findAllDogs {
-	return [Dog findORS:[NSString stringWithFormat:@"%@/%@",personId,@"dogs",nil]];
+	return [Dog findRemote:[NSString stringWithFormat:@"%@/%@",personId,@"dogs",nil]];
 }
 
 @end

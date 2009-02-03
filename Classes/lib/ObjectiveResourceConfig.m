@@ -11,46 +11,46 @@
 @implementation ObjectiveResourceConfig
 
 + (NSString *)getSite {
-	return [self getORSSite];
+	return [self getRemoteSite];
 }
 + (void)setSite:(NSString*)siteURL {
-	[self setORSSite:siteURL];
+	[self setRemoteSite:siteURL];
 }
 + (NSString *)getUser {
-	return [self getORSUser];
+	return [self getRemoteUser];
 }
 + (void)setUser:(NSString *)user {
-	[self setORSUser:user];
+	[self setRemoteUser:user];
 }
 + (NSString *)getPassword {
-	return [self getORSPassword];
+	return [self getRemotePassword];
 }
 + (void)setPassword:(NSString *)password {
-	[self setORSPassword:password];
+	[self setRemotePassword:password];
 }
 + (SEL)getParseDataMethod {
-	return [self getORSParseDataMethod];
+	return [self getRemoteParseDataMethod];
 }
 + (void)setParseDataMethod:(SEL)parseMethod {
-	[self setORSParseDataMethod:parseMethod];
+	[self setRemoteParseDataMethod:parseMethod];
 }
 + (SEL) getSerializeMethod {
-	return [self getORSSerializeMethod];
+	return [self getRemoteSerializeMethod];
 }
 + (void) setSerializeMethod:(SEL)serializeMethod {
-	[self setORSSerializeMethod:serializeMethod];
+	[self setRemoteSerializeMethod:serializeMethod];
 }
 + (NSString *)protocolExtension {
-	return [self getORSProtocolExtension];
+	return [self getRemoteProtocolExtension];
 }
 + (void)setProtocolExtension:(NSString *)protocolExtension {
-	[self setORSProtocolExtension:protocolExtension];
+	[self setRemoteProtocolExtension:protocolExtension];
 }
 + (void)setResponseType:(ORSResponseFormat) format {
-	[self setORSResponseType:format];
+	[self setRemoteResponseType:format];
 }
 + (ORSResponseFormat)getResponseType {
-	return [self getORSResponseType];
+	return [self getRemoteResponseType];
 }
 
 @end

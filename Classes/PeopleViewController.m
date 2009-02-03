@@ -26,7 +26,7 @@
 }
 
 - (void) loadPeople {
-	self.people = [Person findAllORS];
+	self.people = [Person findAllRemote];
 	[tableView reloadData];
 }
 
@@ -76,7 +76,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
     [aTableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:YES]; 
 		
     // Deletes the object on the resource
-    [(Person *)[people objectAtIndex:indexPath.row] destroyORS];
+    [(Person *)[people objectAtIndex:indexPath.row] destroyRemote];
     [people removeObjectAtIndex:indexPath.row];
   } 
   [aTableView endUpdates];   
