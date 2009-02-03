@@ -27,5 +27,5 @@ cd lib/objective_support/Classes
 mkdir objective_resource
 cp -R lib objective_resource/objective_support
 zip -r objective_resource_lib_only objective_resource/objective_support
-rm -rf objetive_resource/objective_support
+rm -rf objective_resource/objective_support
 mv objective_resource_lib_only.zip ../../../../
