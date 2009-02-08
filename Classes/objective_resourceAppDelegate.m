@@ -19,7 +19,7 @@
 	[ObjectiveResourceConfig setSite:@"http://localhost:3000/"];
 	
 	// use json
-	//[ObjectiveResource setResponseType:JSONResponse];
+	//[ObjectiveResourceConfig setResponseType:JSONResponse];
 	
 	// use xml
 	[ObjectiveResourceConfig setResponseType:XmlResponse];
