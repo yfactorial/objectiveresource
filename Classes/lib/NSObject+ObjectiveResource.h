@@ -72,4 +72,8 @@ typedef enum {
 - (NSString *)getRemoteCollectionPath;
 - (NSString *)convertToRemoteExpectedType;
 
+//Equality test for remote enabled objects based on class name and remote id
+- (BOOL)isEqualToRemote:(id)anObject;
+- (NSUInteger)hashForRemote;
+
 @end

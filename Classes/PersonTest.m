@@ -36,7 +36,7 @@
   NSArray *people = [Person findAllRemote];
 
 	for(Person *person in people) {
-		if([toCreate isEqual:person]) {
+		if([toCreate isEqualToRemote:person]) {
 			found = YES;
 		}
 	}
@@ -50,7 +50,7 @@
   STAssertTrue(	[toUpdate saveRemote], @"Should have been true");	
 	NSArray *people = [Person findAllRemote];
 	for(Person *person in people) {
-		if([toUpdate isEqual:person] && [toUpdate.name isEqualToString:person.name]) {
+		if([toUpdate isEqualToRemote:person] && [toUpdate.name isEqualToString:person.name]) {
 			found = YES;
 		}
 	}
@@ -60,7 +60,7 @@
 -(void) testFindPerson {
   NSArray * people = [Person findAllRemote];
 	Person *toFind = (Person *)[people objectAtIndex:0];
-	STAssertTrue([toFind isEqual:[Person findRemote:toFind.personId]], @"Should of returned %@",toFind.name);	
+	STAssertTrue([toFind isEqualToRemote:[Person findRemote:toFind.personId]], @"Should of returned %@",toFind.name);	
 }
 
 

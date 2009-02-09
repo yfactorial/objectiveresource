@@ -163,11 +163,11 @@ static ORSResponseFormat _format;
 }
 
 #pragma mark default equals methods for id and class based equality
-- (BOOL)isEqual:(id)anObject {
+- (BOOL)isEqualToRemote:(id)anObject {
 	return 	[NSStringFromClass([self class]) isEqualToString:NSStringFromClass([anObject class])] &&
 	[anObject respondsToSelector:@selector(getRemoteId)] && [[anObject getRemoteId] isEqualToString:[self getRemoteId]];
 }
-- (NSUInteger)hash {
+- (NSUInteger)hashForRemote {
 	return [[self getRemoteId] intValue] + [NSStringFromClass([self class]) hash];
 }
 
