@@ -30,6 +30,9 @@
 	[tableView reloadData];
 }
 
+-(IBAction) refreshButtonWasPressed {
+	[self loadPeople];
+}
 
 -(IBAction) addButtonWasPressed {
 	AddPersonViewController *aController = [[[AddPersonViewController alloc ] initWithNibName:@"AddPersonView" bundle:nil ] autorelease];

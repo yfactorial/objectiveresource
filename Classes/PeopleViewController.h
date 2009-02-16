@@ -16,6 +16,7 @@
 }
 
 @property (nonatomic , retain) NSArray* people;
+-(IBAction) refreshButtonWasPressed;
 -(IBAction) addButtonWasPressed;
 @property(nonatomic , retain) UITableView *tableView;
 

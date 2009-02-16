@@ -68,14 +68,13 @@ static NSMutableArray *activeDelegates;
 	NSURLConnection *connection = [[[NSURLConnection alloc] initWithRequest:request delegate:connectionDelegate startImmediately:NO] autorelease];
 	connectionDelegate.connection = connection;
 
-	NSRunLoop* runLoop = [NSRunLoop mainRunLoop];
 	
-	//This needs to run in the main run loop in the default mode
-	[connection unscheduleFromRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
-	[connection scheduleInRunLoop:runLoop forMode:NSDefaultRunLoopMode];
+	//use a custom runloop
+	static NSString *runLoopMode = @"com.yfactorial.objectiveresource.connectionLoop";
+	[connection scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:runLoopMode];
 	[connection start];
 	while (![connectionDelegate isDone]) {
-		[runLoop runUntilDate:[NSDate dateWithTimeIntervalSinceNow:.3]];
+		[[NSRunLoop currentRunLoop] runMode:runLoopMode beforeDate:[NSDate dateWithTimeIntervalSinceNow:.3]];
 	}
 	Response *resp = [Response responseFrom:(NSHTTPURLResponse *)connectionDelegate.response 
 								   withBody:connectionDelegate.data 
