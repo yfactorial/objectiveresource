@@ -2,9 +2,18 @@
 
 <% form_for(@person) do |f| %>
   <%= f.error_messages %>
+
   <p>
     <%= f.label :name %><br />
     <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :some_integer %><br />
+    <%= f.text_field :some_integer %>
+  </p>
+  <p>
+    <%= f.label :some_decimal %><br />
+    <%= f.text_field :some_decimal %>
   </p>
   <p>
     <%= f.submit "Update" %>

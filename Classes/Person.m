@@ -11,7 +11,7 @@
 #import "ObjectiveResource.h"
 
 @implementation Person 
-@synthesize createdAt , updatedAt , name , personId;
+@synthesize createdAt , updatedAt , name , personId, someInteger, someDecimal;
 
 
 // handle pluralization 
@@ -25,5 +25,17 @@
 -(NSArray *) findAllDogs {
 	return [Dog findRemote:[NSString stringWithFormat:@"%@/%@",personId,@"dogs",nil]];
 }
+
+#pragma mark cleanup
+- (void) dealloc
+{
+	[createdAt release];
+	[updatedAt release];
+	[name release];
+	[someInteger release];
+	[someDecimal release];
+	[super dealloc];
+}
+
 
 @end

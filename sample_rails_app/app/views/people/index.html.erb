@@ -2,11 +2,16 @@
 
 <table>
   <tr>
+    <th>Name</th>
+    <th>Some integer</th>
+    <th>Some decimal</th>
   </tr>
 
 <% for person in @people %>
   <tr>
     <td><%=h person.name %></td>
+    <td><%=h person.some_integer %></td>
+    <td><%=h person.some_decimal %></td>
     <td><%= link_to 'Show', person %></td>
     <td><%= link_to 'Edit', edit_person_path(person) %></td>
     <td><%= link_to 'Destroy', person, :confirm => 'Are you sure?', :method => :delete %></td>

@@ -19,10 +19,11 @@
 	[ObjectiveResourceConfig setSite:@"http://localhost:3000/"];
 	
 	// use json
-	//[ObjectiveResourceConfig setResponseType:JSONResponse];
+	[ObjectiveResourceConfig setResponseType:JSONResponse];
 	
 	// use xml
-	[ObjectiveResourceConfig setResponseType:XmlResponse];
+	//[ObjectiveResourceConfig setResponseType:XmlResponse];
+
 	[window addSubview:navigationController.view];
 	
 	// Override point for customization after app launch	

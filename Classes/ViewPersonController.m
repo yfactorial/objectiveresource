@@ -33,7 +33,7 @@
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 3;
+    return 5;
 }
 
 
@@ -63,6 +63,12 @@
 			cell.text = person.personId;
 			break;
 		case 2:
+			cell.text = [NSString stringWithFormat:@"%d", [person.someInteger intValue]];
+			break;
+		case 3:
+			cell.text = [NSString stringWithFormat:@"%f", [person.someDecimal floatValue]];
+			break;
+		case 4:
 			cell.text = @"View Dogs";
 		default:
 			break;
@@ -72,7 +78,7 @@
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-  	return [[NSArray arrayWithObjects:@"Person's Name",@"Model Id",@"Dogs",nil] 
+  	return [[NSArray arrayWithObjects:@"Person's Name",@"Model Id",@"Some integer", @"Some decimal", @"Dogs",nil] 
 						objectAtIndex:section];
 }
 

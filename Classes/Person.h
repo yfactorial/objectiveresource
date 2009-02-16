@@ -14,6 +14,8 @@
   NSString *personId;
   NSDate   *updatedAt;
   NSDate   *createdAt;
+	NSNumber *someInteger;
+	NSNumber *someDecimal;
   
 }
 
@@ -21,6 +23,8 @@
 @property (nonatomic , retain) NSDate * updatedAt;
 @property (nonatomic , retain) NSString  *personId;
 @property (nonatomic , retain) NSString *name;
+@property (nonatomic , retain) NSNumber *someInteger;
+@property (nonatomic , retain) NSNumber *someDecimal;
 
 -(NSArray *) findAllDogs;
 
