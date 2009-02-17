@@ -41,7 +41,12 @@
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge {
-	[[challenge sender] useCredential:[challenge proposedCredential] forAuthenticationChallenge:challenge];
+	if ([challenge previousFailureCount] > 0) {
+		[[challenge sender] cancelAuthenticationChallenge:challenge];
+	}
+	else {
+		[[challenge sender] useCredential:[challenge proposedCredential] forAuthenticationChallenge:challenge];
+	}
 }
 - (void)connection:(NSURLConnection *)connection didCancelAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge {
 	done = YES;
