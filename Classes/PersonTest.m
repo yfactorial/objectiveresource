@@ -16,6 +16,8 @@
 -(void) setUp {
 	[ObjectiveResourceConfig setSite:@"http://localhost:36313/"];
 	[ObjectiveResourceConfig setResponseType:JSONResponse];
+	[ObjectiveResourceConfig setUser:@"Hiro"];
+	[ObjectiveResourceConfig setPassword:@"Protagonist"];
 	//[ObjectiveResourceConfig setResponseType:XmlResponse];
 }
 

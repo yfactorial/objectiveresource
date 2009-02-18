@@ -56,11 +56,20 @@ static NSMutableArray *activeDelegates;
 	NSString *escapedPassword = (NSString *)CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault, 
 								(CFStringRef)password, NULL, (CFStringRef)@"@.:", kCFStringEncodingUTF8);
 	NSURL *url = [request URL];
-	NSURL *authURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@://%@:%@@%@:%@%@?%@", [url scheme],escapedUser, escapedPassword, 
-										   [url host], [url port], [url path], [url query]]];
-	[request setURL:authURL];
+	if(escapedUser && escapedPassword) {
+		NSMutableString *urlString = [NSMutableString stringWithFormat:@"%@://%@:%@@%@",[url scheme],escapedUser,escapedPassword,[url host],nil];
+		if([url port]) {
+			[urlString appendFormat:@":%@",[url port],nil];
+		}
+		[urlString appendString:[url path]];
+		if([url query]){
+			[urlString appendFormat:@"?%@",[url query],nil];
+		}
+		[request setURL:url];
+	}
 
-	[self logRequest:request to:[authURL absoluteString]];
+
+	[self logRequest:request to:[url absoluteString]];
 	
 	ConnectionDelegate *connectionDelegate = [[[ConnectionDelegate alloc] init] autorelease];
 
