@@ -26,4 +26,13 @@
 	return [Dog findRemote:[NSString stringWithFormat:@"%@/%@",personId,@"dogs",nil]];
 }
 
+- (void) dealloc
+{
+  [createdAt release];
+  [updatedAt release];
+	[name release];
+	[personId release];
+	[super dealloc];
+}
+
 @end
