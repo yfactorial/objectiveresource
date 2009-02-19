@@ -49,14 +49,14 @@ static NSMutableArray *activeDelegates;
 	
 	//lots of servers fail to implement http basic authentication correctly, so we pass the credentials even if they are not asked for
 	//TODO make this configurable?
-	NSString *authString = [[[NSString stringWithFormat:@"%@:%@",user, password] dataUsingEncoding:NSUTF8StringEncoding] base64Encoding];
-	[request addValue:[NSString stringWithFormat:@"Basic %@", authString] forHTTPHeaderField:@"Authorization"]; 
-	NSString *escapedUser = (NSString *)CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault, 
-								(CFStringRef)user, NULL, (CFStringRef)@"@.:", kCFStringEncodingUTF8);
-	NSString *escapedPassword = (NSString *)CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault, 
-								(CFStringRef)password, NULL, (CFStringRef)@"@.:", kCFStringEncodingUTF8);
 	NSURL *url = [request URL];
-	if(escapedUser && escapedPassword) {
+	if(user && password) {
+		NSString *authString = [[[NSString stringWithFormat:@"%@:%@",user, password] dataUsingEncoding:NSUTF8StringEncoding] base64Encoding];
+		[request addValue:[NSString stringWithFormat:@"Basic %@", authString] forHTTPHeaderField:@"Authorization"]; 
+		NSString *escapedUser = (NSString *)CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault, 
+																																								(CFStringRef)user, NULL, (CFStringRef)@"@.:", kCFStringEncodingUTF8);
+		NSString *escapedPassword = (NSString *)CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault, 
+																																										(CFStringRef)password, NULL, (CFStringRef)@"@.:", kCFStringEncodingUTF8);
 		NSMutableString *urlString = [NSMutableString stringWithFormat:@"%@://%@:%@@%@",[url scheme],escapedUser,escapedPassword,[url host],nil];
 		if([url port]) {
 			[urlString appendFormat:@":%@",[url port],nil];
@@ -66,6 +66,8 @@ static NSMutableArray *activeDelegates;
 			[urlString appendFormat:@"?%@",[url query],nil];
 		}
 		[request setURL:url];
+		[escapedUser release];
+		[escapedPassword release];
 	}
 
 
@@ -90,8 +92,6 @@ static NSMutableArray *activeDelegates;
 								   andError:connectionDelegate.error];
 	[resp log];
 	
-	[escapedUser release];
-	[escapedPassword release];
 	[activeDelegates removeObject:connectionDelegate];
 	
 	//if there are no more active delegates release the array

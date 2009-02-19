@@ -20,7 +20,8 @@ static Person *owner;
 	[ObjectiveResourceConfig setSite:@"http://localhost:36313/"];
 	[ObjectiveResourceConfig setResponseType:JSONResponse];
 	//[ObjectiveResource setResponseType:XmlResponse];
-	
+	[ObjectiveResourceConfig setUser:nil];
+	[ObjectiveResourceConfig setPassword:nil];
 	owner = [Person findRemote:[NSString stringWithFormat:@"%i",DOG_OWNER]];
 }
 
