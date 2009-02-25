@@ -1,9 +1,11 @@
 class DogsController < ApplicationController
-  # GET /dogs
-  # GET /dogs.xml
-  
+  USER = "Hiro"
+  PASSWORD = "Protagonist"
+  before_filter :authenticate  
   before_filter :find_person
   
+  # GET /dogs
+  # GET /dogs.xml
   def index
     @dogs = @person.dogs.all
 
@@ -98,6 +100,14 @@ class DogsController < ApplicationController
   
   def find_person
     @person = Person.find(params[:person_id])
+  end
+  
+  private
+
+  def authenticate
+    authenticate_or_request_with_http_basic do |user_name, password|
+      user_name == USER && password == PASSWORD
+    end
   end
   
 end

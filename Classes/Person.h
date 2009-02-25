@@ -23,5 +23,5 @@
 @property (nonatomic , retain) NSString *name;
 
 -(NSArray *) findAllDogs;
-
+-(NSArray *) findAllDogsWithResponse:(NSError **)aError;
 @end

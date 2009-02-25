@@ -90,4 +90,5 @@ class PeopleController < ApplicationController
       format.json  { head :ok }
     end
   end
+  
 end

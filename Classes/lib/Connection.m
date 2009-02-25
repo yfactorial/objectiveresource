@@ -65,7 +65,7 @@ static NSMutableArray *activeDelegates;
 		if([url query]){
 			[urlString appendFormat:@"?%@",[url query],nil];
 		}
-		[request setURL:url];
+		[request setURL:[NSURL URLWithString:urlString]];
 		[escapedUser release];
 		[escapedPassword release];
 	}

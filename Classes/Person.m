@@ -26,6 +26,10 @@
 	return [Dog findRemote:[NSString stringWithFormat:@"%@/%@",personId,@"dogs",nil]];
 }
 
+-(NSArray *) findAllDogsWithResponse:(NSError **)aError {
+	return [Dog findRemote:[NSString stringWithFormat:@"%@/%@",personId,@"dogs",nil] withResponse:aError];
+}
+
 - (void) dealloc
 {
   [createdAt release];

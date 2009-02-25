@@ -20,9 +20,19 @@ static Person *owner;
 	[ObjectiveResourceConfig setSite:@"http://localhost:36313/"];
 	[ObjectiveResourceConfig setResponseType:JSONResponse];
 	//[ObjectiveResource setResponseType:XmlResponse];
-	[ObjectiveResourceConfig setUser:nil];
-	[ObjectiveResourceConfig setPassword:nil];
+	[ObjectiveResourceConfig setUser:@"Hiro"];
+	[ObjectiveResourceConfig setPassword:@"Protagonist"];
 	owner = [Person findRemote:[NSString stringWithFormat:@"%i",DOG_OWNER]];
+}
+
+-(void) testWithBadAuth {
+	[ObjectiveResourceConfig setUser:@"Fraa"];
+	[ObjectiveResourceConfig setPassword:@"Raz"];
+	NSError *aError = [[NSError alloc] init];
+	NSArray * dogs = [owner findAllDogsWithResponse:&aError];
+	STAssertTrue(dogs == nil, @"Should be nil");
+	STAssertTrue(aError.code == 401,@"Should be 401"); 
+	[aError release];
 }
 
 -(void) testDogProperties {

@@ -16,10 +16,12 @@
 -(void) setUp {
 	[ObjectiveResourceConfig setSite:@"http://localhost:36313/"];
 	[ObjectiveResourceConfig setResponseType:JSONResponse];
-	[ObjectiveResourceConfig setUser:@"Hiro"];
-	[ObjectiveResourceConfig setPassword:@"Protagonist"];
+	[ObjectiveResourceConfig setUser:nil];
+	[ObjectiveResourceConfig setPassword:nil];
 	//[ObjectiveResourceConfig setResponseType:XmlResponse];
 }
+
+
 
 -(void) testPersonDelete {
 	int count = [[Person findAllRemote]count];
