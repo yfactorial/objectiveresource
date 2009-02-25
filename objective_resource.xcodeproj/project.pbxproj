@@ -53,6 +53,58 @@
 		239D50CB0EA691DD00318802 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		239D50DA0EA6921800318802 /* DogTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 239D50D90EA6921800318802 /* DogTest.m */; };
 		23B4A6420F092B620021AB9D /* DogErrorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 23B4A6410F092B620021AB9D /* DogErrorTest.m */; };
+		23B8A4650F55EF7C00F74584 /* AddPersonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2314FF5F0F2F8060003B13AB /* AddPersonView.xib */; };
+		23B8A4660F55EF7C00F74584 /* DogViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2314FF600F2F8060003B13AB /* DogViewController.xib */; };
+		23B8A4670F55EF7C00F74584 /* EditPersonController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2314FF650F2F806D003B13AB /* EditPersonController.xib */; };
+		23B8A4690F55EF7C00F74584 /* DogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 350420F30E5E15AA00493366 /* DogViewController.m */; };
+		23B8A46A0F55EF7C00F74584 /* Dog.m in Sources */ = {isa = PBXBuildFile; fileRef = 350421280E5E1A0F00493366 /* Dog.m */; };
+		23B8A46B0F55EF7C00F74584 /* AddDogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 350421CE0E5E1EC500493366 /* AddDogViewController.m */; };
+		23B8A46C0F55EF7C00F74584 /* Connection.m in Sources */ = {isa = PBXBuildFile; fileRef = 357A919B0E9A55EF0025D9AF /* Connection.m */; };
+		23B8A46D0F55EF7C00F74584 /* Response.m in Sources */ = {isa = PBXBuildFile; fileRef = 357A91B00E9A55EF0025D9AF /* Response.m */; };
+		23B8A46E0F55EF7C00F74584 /* EditDogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23829E0B0EA393700070F0BF /* EditDogViewController.m */; };
+		23B8A46F0F55EF7C00F74584 /* ViewDogController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23829F000EA39B3B0070F0BF /* ViewDogController.m */; };
+		23B8A4700F55EF7C00F74584 /* GTMSenTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 239D4FFB0EA690BC00318802 /* GTMSenTestCase.m */; };
+		23B8A4710F55EF7C00F74584 /* GTMIPhoneUnitTestDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 239D4FE80EA6906100318802 /* GTMIPhoneUnitTestDelegate.m */; };
+		23B8A4720F55EF7C00F74584 /* GTMIPhoneUnitTestMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 239D4FE90EA6906100318802 /* GTMIPhoneUnitTestMain.m */; };
+		23B8A4730F55EF7C00F74584 /* DogTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 239D50D90EA6921800318802 /* DogTest.m */; };
+		23B8A4740F55EF7C00F74584 /* NSHTTPURLResponse+Error.m in Sources */ = {isa = PBXBuildFile; fileRef = 2377C4F40F019E67006E155F /* NSHTTPURLResponse+Error.m */; };
+		23B8A4750F55EF7C00F74584 /* DogErrorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 23B4A6410F092B620021AB9D /* DogErrorTest.m */; };
+		23B8A4760F55EF7C00F74584 /* NSMutableURLRequest+ResponseType.m in Sources */ = {isa = PBXBuildFile; fileRef = 23C922F20F25066900EDE8AF /* NSMutableURLRequest+ResponseType.m */; };
+		23B8A4770F55EF7C00F74584 /* ConnectionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CA32640F1E67A1001513AA /* ConnectionDelegate.m */; };
+		23B8A4780F55EF7C00F74584 /* NSString+InflectionSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C678FC0F2E70C2005FF6CE /* NSString+InflectionSupport.m */; };
+		23B8A4790F55EF7C00F74584 /* NSData+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C678FE0F2E70C2005FF6CE /* NSData+Additions.m */; };
+		23B8A47A0F55EF7C00F74584 /* NSObject+PropertySupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C679000F2E70C2005FF6CE /* NSObject+PropertySupport.m */; };
+		23B8A47B0F55EF7C00F74584 /* NSString+GSub.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C679020F2E70C2005FF6CE /* NSString+GSub.m */; };
+		23B8A47C0F55EF7C00F74584 /* ObjectiveResourceDateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C679040F2E70C2005FF6CE /* ObjectiveResourceDateFormatter.m */; };
+		23B8A47D0F55EF7C00F74584 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C679090F2E70C2005FF6CE /* NSObject+SBJSON.m */; };
+		23B8A47E0F55EF7C00F74584 /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C6790B0F2E70C2005FF6CE /* NSString+SBJSON.m */; };
+		23B8A47F0F55EF7C00F74584 /* SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C6790D0F2E70C2005FF6CE /* SBJSON.m */; };
+		23B8A4800F55EF7C00F74584 /* NSDictionary+JSONSerializableSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C679130F2E70C2005FF6CE /* NSDictionary+JSONSerializableSupport.m */; };
+		23B8A4810F55EF7C00F74584 /* NSObject+JSONSerializableSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C679150F2E70C2005FF6CE /* NSObject+JSONSerializableSupport.m */; };
+		23B8A4820F55EF7C00F74584 /* NSDate+Serialize.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C679170F2E70C2005FF6CE /* NSDate+Serialize.m */; };
+		23B8A4830F55EF7C00F74584 /* NSDictionary+KeyTranslation.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C679190F2E70C2005FF6CE /* NSDictionary+KeyTranslation.m */; };
+		23B8A4840F55EF7C00F74584 /* NSObject+Serialize.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C6791B0F2E70C2005FF6CE /* NSObject+Serialize.m */; };
+		23B8A4850F55EF7C00F74584 /* NSString+Serialize.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C6791D0F2E70C2005FF6CE /* NSString+Serialize.m */; };
+		23B8A4860F55EF7C00F74584 /* FromXMLElementDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C679210F2E70C2005FF6CE /* FromXMLElementDelegate.m */; };
+		23B8A4870F55EF7C00F74584 /* NSArray+XMLSerializableSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C679230F2E70C2005FF6CE /* NSArray+XMLSerializableSupport.m */; };
+		23B8A4880F55EF7C00F74584 /* NSDate+XMLSerializableSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C679250F2E70C2005FF6CE /* NSDate+XMLSerializableSupport.m */; };
+		23B8A4890F55EF7C00F74584 /* NSDictionary+XMLSerializableSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C679270F2E70C2005FF6CE /* NSDictionary+XMLSerializableSupport.m */; };
+		23B8A48A0F55EF7C00F74584 /* NSNull+XMLSerializableSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C679290F2E70C2005FF6CE /* NSNull+XMLSerializableSupport.m */; };
+		23B8A48B0F55EF7C00F74584 /* NSObject+XMLSerializableSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C6792B0F2E70C2005FF6CE /* NSObject+XMLSerializableSupport.m */; };
+		23B8A48C0F55EF7C00F74584 /* NSString+XMLSerializableSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C6792D0F2E70C2005FF6CE /* NSString+XMLSerializableSupport.m */; };
+		23B8A48D0F55EF7C00F74584 /* AddPersonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2314FF5C0F2F804C003B13AB /* AddPersonViewController.m */; };
+		23B8A48E0F55EF7C00F74584 /* EditPersonController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2314FF670F2F806D003B13AB /* EditPersonController.m */; };
+		23B8A48F0F55EF7C00F74584 /* PeopleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2314FF6D0F2F8089003B13AB /* PeopleViewController.m */; };
+		23B8A4900F55EF7C00F74584 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 2314FF6F0F2F8089003B13AB /* Person.m */; };
+		23B8A4910F55EF7C00F74584 /* ViewPersonController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2314FF750F2F8094003B13AB /* ViewPersonController.m */; };
+		23B8A4920F55EF7C00F74584 /* PersonTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2322CD640F2F968000EDF562 /* PersonTest.m */; };
+		23B8A4930F55EF7C00F74584 /* NSObject+ObjectiveResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3584DFD50F31F684008E596B /* NSObject+ObjectiveResource.m */; };
+		23B8A4940F55EF7C00F74584 /* ObjectiveResourceConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 3584E0EF0F324581008E596B /* ObjectiveResourceConfig.m */; };
+		23B8A4950F55EF7C00F74584 /* NSArray+JSONSerializableSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 23510DE70F4CB31B00B0796F /* NSArray+JSONSerializableSupport.m */; };
+		23B8A4960F55EF7C00F74584 /* NSNumber+XMLSerializableSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 23510DEB0F4CB32900B0796F /* NSNumber+XMLSerializableSupport.m */; };
+		23B8A4980F55EF7C00F74584 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
+		23B8A4990F55EF7C00F74584 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		23B8A49A0F55EF7C00F74584 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 350421860E5E1BF200493366 /* CoreGraphics.framework */; };
 		23C922F30F25066900EDE8AF /* NSMutableURLRequest+ResponseType.m in Sources */ = {isa = PBXBuildFile; fileRef = 23C922F20F25066900EDE8AF /* NSMutableURLRequest+ResponseType.m */; };
 		23C922F40F25066900EDE8AF /* NSMutableURLRequest+ResponseType.m in Sources */ = {isa = PBXBuildFile; fileRef = 23C922F20F25066900EDE8AF /* NSMutableURLRequest+ResponseType.m */; };
 		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
@@ -159,6 +211,8 @@
 		239D50D90EA6921800318802 /* DogTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DogTest.m; sourceTree = "<group>"; };
 		23B4A6400F092B620021AB9D /* DogErrorTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DogErrorTest.h; sourceTree = "<group>"; };
 		23B4A6410F092B620021AB9D /* DogErrorTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DogErrorTest.m; sourceTree = "<group>"; };
+		23B8A49E0F55EF7C00F74584 /* Unit Tests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Unit Tests.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		23B8A4A00F55EF7C00F74584 /* Unit Tests-Info copy.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Unit Tests-Info copy.plist"; sourceTree = "<group>"; };
 		23C922F10F25066900EDE8AF /* NSMutableURLRequest+ResponseType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMutableURLRequest+ResponseType.h"; path = "lib/NSMutableURLRequest+ResponseType.h"; sourceTree = "<group>"; };
 		23C922F20F25066900EDE8AF /* NSMutableURLRequest+ResponseType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutableURLRequest+ResponseType.m"; path = "lib/NSMutableURLRequest+ResponseType.m"; sourceTree = "<group>"; };
 		28AD733E0D9D9553002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
@@ -257,6 +311,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		23B8A4970F55EF7C00F74584 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				23B8A4980F55EF7C00F74584 /* Foundation.framework in Frameworks */,
+				23B8A4990F55EF7C00F74584 /* UIKit.framework in Frameworks */,
+				23B8A49A0F55EF7C00F74584 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -276,6 +340,7 @@
 			children = (
 				1D6058910D05DD3D006BFB54 /* objective_resource.app */,
 				239D4FF40EA6907E00318802 /* Unit Tests.app */,
+				23B8A49E0F55EF7C00F74584 /* Unit Tests.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -316,6 +381,7 @@
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
 				239D4FF60EA6907E00318802 /* Unit Tests-Info.plist */,
+				23B8A4A00F55EF7C00F74584 /* Unit Tests-Info copy.plist */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";
@@ -562,6 +628,24 @@
 			productReference = 239D4FF40EA6907E00318802 /* Unit Tests.app */;
 			productType = "com.apple.product-type.application";
 		};
+		23B8A4620F55EF7C00F74584 /* Coverage */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 23B8A49B0F55EF7C00F74584 /* Build configuration list for PBXNativeTarget "Coverage" */;
+			buildPhases = (
+				23B8A4630F55EF7C00F74584 /* ShellScript */,
+				23B8A4640F55EF7C00F74584 /* Resources */,
+				23B8A4680F55EF7C00F74584 /* Sources */,
+				23B8A4970F55EF7C00F74584 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Coverage;
+			productName = "Unit Tests";
+			productReference = 23B8A49E0F55EF7C00F74584 /* Unit Tests.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -576,6 +660,7 @@
 			targets = (
 				1D6058900D05DD3D006BFB54 /* objective_resource */,
 				239D4FF30EA6907E00318802 /* Unit Tests */,
+				23B8A4620F55EF7C00F74584 /* Coverage */,
 			);
 		};
 /* End PBXProject section */
@@ -605,9 +690,32 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		23B8A4640F55EF7C00F74584 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				23B8A4650F55EF7C00F74584 /* AddPersonView.xib in Resources */,
+				23B8A4660F55EF7C00F74584 /* DogViewController.xib in Resources */,
+				23B8A4670F55EF7C00F74584 /* EditPersonController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		23B8A4630F55EF7C00F74584 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd sample_rails_app\nkill `cat tmp/pids/mongrel.pid`\nrake db:migrate\nrake db:test:prepare\nrake db:populate RAILS_ENV=test\n./script/server -e test -p 36313 -d";
+		};
 		35C679680F2E7803005FF6CE /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 12;
@@ -726,6 +834,59 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		23B8A4680F55EF7C00F74584 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				23B8A4690F55EF7C00F74584 /* DogViewController.m in Sources */,
+				23B8A46A0F55EF7C00F74584 /* Dog.m in Sources */,
+				23B8A46B0F55EF7C00F74584 /* AddDogViewController.m in Sources */,
+				23B8A46C0F55EF7C00F74584 /* Connection.m in Sources */,
+				23B8A46D0F55EF7C00F74584 /* Response.m in Sources */,
+				23B8A46E0F55EF7C00F74584 /* EditDogViewController.m in Sources */,
+				23B8A46F0F55EF7C00F74584 /* ViewDogController.m in Sources */,
+				23B8A4700F55EF7C00F74584 /* GTMSenTestCase.m in Sources */,
+				23B8A4710F55EF7C00F74584 /* GTMIPhoneUnitTestDelegate.m in Sources */,
+				23B8A4720F55EF7C00F74584 /* GTMIPhoneUnitTestMain.m in Sources */,
+				23B8A4730F55EF7C00F74584 /* DogTest.m in Sources */,
+				23B8A4740F55EF7C00F74584 /* NSHTTPURLResponse+Error.m in Sources */,
+				23B8A4750F55EF7C00F74584 /* DogErrorTest.m in Sources */,
+				23B8A4760F55EF7C00F74584 /* NSMutableURLRequest+ResponseType.m in Sources */,
+				23B8A4770F55EF7C00F74584 /* ConnectionDelegate.m in Sources */,
+				23B8A4780F55EF7C00F74584 /* NSString+InflectionSupport.m in Sources */,
+				23B8A4790F55EF7C00F74584 /* NSData+Additions.m in Sources */,
+				23B8A47A0F55EF7C00F74584 /* NSObject+PropertySupport.m in Sources */,
+				23B8A47B0F55EF7C00F74584 /* NSString+GSub.m in Sources */,
+				23B8A47C0F55EF7C00F74584 /* ObjectiveResourceDateFormatter.m in Sources */,
+				23B8A47D0F55EF7C00F74584 /* NSObject+SBJSON.m in Sources */,
+				23B8A47E0F55EF7C00F74584 /* NSString+SBJSON.m in Sources */,
+				23B8A47F0F55EF7C00F74584 /* SBJSON.m in Sources */,
+				23B8A4800F55EF7C00F74584 /* NSDictionary+JSONSerializableSupport.m in Sources */,
+				23B8A4810F55EF7C00F74584 /* NSObject+JSONSerializableSupport.m in Sources */,
+				23B8A4820F55EF7C00F74584 /* NSDate+Serialize.m in Sources */,
+				23B8A4830F55EF7C00F74584 /* NSDictionary+KeyTranslation.m in Sources */,
+				23B8A4840F55EF7C00F74584 /* NSObject+Serialize.m in Sources */,
+				23B8A4850F55EF7C00F74584 /* NSString+Serialize.m in Sources */,
+				23B8A4860F55EF7C00F74584 /* FromXMLElementDelegate.m in Sources */,
+				23B8A4870F55EF7C00F74584 /* NSArray+XMLSerializableSupport.m in Sources */,
+				23B8A4880F55EF7C00F74584 /* NSDate+XMLSerializableSupport.m in Sources */,
+				23B8A4890F55EF7C00F74584 /* NSDictionary+XMLSerializableSupport.m in Sources */,
+				23B8A48A0F55EF7C00F74584 /* NSNull+XMLSerializableSupport.m in Sources */,
+				23B8A48B0F55EF7C00F74584 /* NSObject+XMLSerializableSupport.m in Sources */,
+				23B8A48C0F55EF7C00F74584 /* NSString+XMLSerializableSupport.m in Sources */,
+				23B8A48D0F55EF7C00F74584 /* AddPersonViewController.m in Sources */,
+				23B8A48E0F55EF7C00F74584 /* EditPersonController.m in Sources */,
+				23B8A48F0F55EF7C00F74584 /* PeopleViewController.m in Sources */,
+				23B8A4900F55EF7C00F74584 /* Person.m in Sources */,
+				23B8A4910F55EF7C00F74584 /* ViewPersonController.m in Sources */,
+				23B8A4920F55EF7C00F74584 /* PersonTest.m in Sources */,
+				23B8A4930F55EF7C00F74584 /* NSObject+ObjectiveResource.m in Sources */,
+				23B8A4940F55EF7C00F74584 /* ObjectiveResourceConfig.m in Sources */,
+				23B8A4950F55EF7C00F74584 /* NSArray+JSONSerializableSupport.m in Sources */,
+				23B8A4960F55EF7C00F74584 /* NSNumber+XMLSerializableSupport.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
@@ -805,6 +966,59 @@
 			};
 			name = Release;
 		};
+		23B8A49C0F55EF7C00F74584 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
+				GCC_PREPROCESSOR_DEFINITIONS = "";
+				INFOPLIST_FILE = /Users/jjburka/Documents/Projects/yfactorial/objectiveresource/Coverage.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					UIKit,
+					"-lgcov",
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = "Unit Tests";
+				SDKROOT = iphoneos2.1;
+			};
+			name = Debug;
+		};
+		23B8A49D0F55EF7C00F74584 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
+				INFOPLIST_FILE = "/Users/jjburka/Documents/Projects/yfactorial/objectiveresource/Unit Tests-Info copy.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					UIKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = "Unit Tests";
+				SDKROOT = iphoneos2.1;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
 		C01FCF4F08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -854,6 +1068,15 @@
 			buildConfigurations = (
 				239D4FF70EA6907F00318802 /* Debug */,
 				239D4FF80EA6907F00318802 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		23B8A49B0F55EF7C00F74584 /* Build configuration list for PBXNativeTarget "Coverage" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				23B8A49C0F55EF7C00F74584 /* Debug */,
+				23B8A49D0F55EF7C00F74584 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
