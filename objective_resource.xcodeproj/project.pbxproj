@@ -979,7 +979,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
 				GCC_PREPROCESSOR_DEFINITIONS = "";
-				INFOPLIST_FILE = /Users/jjburka/Documents/Projects/yfactorial/objectiveresource/Coverage.plist;
+				INFOPLIST_FILE = Coverage.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				OTHER_LDFLAGS = (
 					"-framework",
