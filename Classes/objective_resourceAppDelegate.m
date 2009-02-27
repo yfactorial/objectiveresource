@@ -18,6 +18,9 @@
 	//Configure ObjectiveResource
 	[ObjectiveResourceConfig setSite:@"http://localhost:3000/"];
 	
+	// dogs is password protected
+	[ObjectiveResourceConfig setUser:@"Hiro"];
+  [ObjectiveResourceConfig setPassword:@"Protagonist"];
 	// use json
 	//[ObjectiveResourceConfig setResponseType:JSONResponse];
 	
