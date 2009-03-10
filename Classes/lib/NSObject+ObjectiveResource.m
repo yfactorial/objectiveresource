@@ -29,7 +29,10 @@ static ORSResponseFormat _format;
 }
 
 + (void)setRemoteSite:(NSString *)siteURL {
-	_activeResourceSite = siteURL;
+	if (_activeResourceSite != siteURL) {
+		[_activeResourceSite autorelease];
+		_activeResourceSite = [siteURL copy];
+	}
 }
 
 + (NSString *)getRemoteUser {
@@ -37,7 +40,10 @@ static ORSResponseFormat _format;
 }
 
 + (void)setRemoteUser:(NSString *)user {
-	_activeResourceUser = user;
+	if (_activeResourceUser != user) {
+		[_activeResourceUser autorelease];
+		_activeResourceUser = [user copy];
+	}
 }
 
 + (NSString *)getRemotePassword {
@@ -45,7 +51,10 @@ static ORSResponseFormat _format;
 }
 
 + (void)setRemotePassword:(NSString *)password {
-	_activeResourcePassword = password;
+	if (_activeResourcePassword != password) {
+		[_activeResourcePassword autorelease];
+		_activeResourcePassword = [password copy];
+	}
 }
 
 + (void)setRemoteResponseType:(ORSResponseFormat) format {
@@ -89,7 +98,10 @@ static ORSResponseFormat _format;
 }
 
 + (void)setRemoteProtocolExtension:(NSString *)protocolExtension {
-	_activeResourceProtocolExtension = protocolExtension;
+	if (_activeResourceProtocolExtension != protocolExtension) {
+		[_activeResourceProtocolExtension autorelease];
+		_activeResourceProtocolExtension = [protocolExtension copy];
+	}
 }
 
 
