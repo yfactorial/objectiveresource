@@ -164,6 +164,8 @@
 		35CA32650F1E67A1001513AA /* ConnectionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CA32640F1E67A1001513AA /* ConnectionDelegate.m */; };
 		35CA32660F1E67A1001513AA /* ConnectionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CA32640F1E67A1001513AA /* ConnectionDelegate.m */; };
 		6679FFB00F5AF22E00412ABF /* ConnectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6679FFAF0F5AF22E00412ABF /* ConnectionManager.m */; };
+		6624BF650F676B0C006FD4EE /* NSError+Error.m in Sources */ = {isa = PBXBuildFile; fileRef = 6624BF640F676B0C006FD4EE /* NSError+Error.m */; };
+		6624BF660F676B0C006FD4EE /* NSError+Error.m in Sources */ = {isa = PBXBuildFile; fileRef = 6624BF640F676B0C006FD4EE /* NSError+Error.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -290,6 +292,8 @@
 		35CA32640F1E67A1001513AA /* ConnectionDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ConnectionDelegate.m; path = lib/ConnectionDelegate.m; sourceTree = "<group>"; };
 		6679FFAE0F5AF22E00412ABF /* ConnectionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ConnectionManager.h; path = lib/ConnectionManager.h; sourceTree = "<group>"; };
 		6679FFAF0F5AF22E00412ABF /* ConnectionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ConnectionManager.m; path = lib/ConnectionManager.m; sourceTree = "<group>"; };
+		6624BF630F676B0C006FD4EE /* NSError+Error.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+Error.h"; sourceTree = "<group>"; };
+		6624BF640F676B0C006FD4EE /* NSError+Error.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+Error.m"; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -481,6 +485,8 @@
 				357A91B00E9A55EF0025D9AF /* Response.m */,
 				23C922F10F25066900EDE8AF /* NSMutableURLRequest+ResponseType.h */,
 				23C922F20F25066900EDE8AF /* NSMutableURLRequest+ResponseType.m */,
+				6624BF630F676B0C006FD4EE /* NSError+Error.h */,
+				6624BF640F676B0C006FD4EE /* NSError+Error.m */,
 			);
 			name = Connection;
 			sourceTree = "<group>";
@@ -837,6 +843,7 @@
 				23510DE80F4CB31B00B0796F /* NSArray+JSONSerializableSupport.m in Sources */,
 				23510DEC0F4CB32900B0796F /* NSNumber+XMLSerializableSupport.m in Sources */,
 				6679FFB00F5AF22E00412ABF /* ConnectionManager.m in Sources */,
+				6624BF650F676B0C006FD4EE /* NSError+Error.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -890,6 +897,7 @@
 				23B8A4940F55EF7C00F74584 /* ObjectiveResourceConfig.m in Sources */,
 				23B8A4950F55EF7C00F74584 /* NSArray+JSONSerializableSupport.m in Sources */,
 				23B8A4960F55EF7C00F74584 /* NSNumber+XMLSerializableSupport.m in Sources */,
+				6624BF660F676B0C006FD4EE /* NSError+Error.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

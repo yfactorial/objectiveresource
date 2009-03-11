@@ -8,8 +8,8 @@
 
 @interface NSHTTPURLResponse(Error) 
 
--(NSError *) error;
+-(NSError *) errorWithBody:(NSData *)data;
 -(BOOL) isSuccess;
-+ (NSError *)buildResponseError:(int)statusCode;
-
++ (NSError *)buildResponseError:(int)statusCode withBody:(NSData *)data;
++ (NSArray *)errorArrayForBody:(NSData *)data;
 @end

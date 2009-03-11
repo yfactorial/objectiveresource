@@ -7,22 +7,31 @@
 //
 
 #import "NSHTTPURLResponse+Error.h"
+#import "ObjectiveResourceConfig.h"
 
 @implementation NSHTTPURLResponse(Error)
 
-+ (NSError *)buildResponseError:(int)statusCode{
++ (NSError *)buildResponseError:(int)statusCode withBody:(NSData *)data{
 	NSMutableDictionary *description = [NSMutableDictionary dictionary];
 	[description setObject:[NSString stringWithFormat:@"%i Error",statusCode] forKey:NSLocalizedFailureReasonErrorKey];
-	[description setObject:[[self class] localizedStringForStatusCode:statusCode] forKey:NSLocalizedDescriptionKey];	
+	[description setObject:[[self class] localizedStringForStatusCode:statusCode] forKey:NSLocalizedDescriptionKey];
+	[description setObject:[[self class] errorArrayForBody:data] forKey:NSLocalizedRecoveryOptionsErrorKey];
 	return [NSError errorWithDomain:@"com.yfactorial.objectiveresource" code:statusCode userInfo:description];
 }
 
--(NSError *) error {
++ (NSArray *)errorArrayForBody:(NSData *)data {
+	NSMutableArray *returnStrings = [NSMutableArray array];
+	NSArray *errorArrays = [[self class] performSelector:[ObjectiveResourceConfig getParseDataMethod] withObject:data];
+	for (NSArray *error in errorArrays) [returnStrings addObject:[error componentsJoinedByString:@" "]];
+	return returnStrings;
+}
+
+-(NSError *) errorWithBody:(NSData *)data {
 	if([self isSuccess]) {
 		return nil;
 	}
 	else {
-		return [[self class] buildResponseError:[self statusCode]];
+		return [[self class] buildResponseError:[self statusCode] withBody:data];
 	}
 }
 

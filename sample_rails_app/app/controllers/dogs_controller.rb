@@ -59,7 +59,7 @@ class DogsController < ApplicationController
       else
         format.html { render :action => "new" }
         format.xml  { render :xml => @dog.errors, :status => :unprocessable_entity }
-        format.json  { render :json => @dog.errors }
+        format.json  { render :json => @dog.errors, :status => :unprocessable_entity }
       end
     end
   end

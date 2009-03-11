@@ -17,11 +17,11 @@
 	return [[[self alloc] initFrom:response withBody:data andError:aError] autorelease];
 }
 
-- (void)normalizeError:(NSError *)aError {
+- (void)normalizeError:(NSError *)aError withBody:(NSData *)data{
 	switch ([aError code]) {
 		case NSURLErrorUserCancelledAuthentication:
 			self.statusCode = 401;
-			self.error = [NSHTTPURLResponse buildResponseError:401];
+			self.error = [NSHTTPURLResponse buildResponseError:401 withBody:data];
 			break;
 		default:
 			self.error = aError;
@@ -35,10 +35,10 @@
 	if(response) {
 		self.statusCode = [response statusCode];
 		self.headers = [response allHeaderFields];
-		self.error = [response error];		
+		self.error = [response errorWithBody:data];
 	}
 	else {
-		[self normalizeError:aError];
+		[self normalizeError:aError withBody:data];
 	}
 	return self;
 }

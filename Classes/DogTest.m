@@ -35,6 +35,36 @@ static Person *owner;
 	[aError release];
 }
 
+-(void) testWithValidationError{
+	NSError *aError = nil;
+	Dog * aDog = [[Dog alloc] init];
+	aDog.personId = owner.personId;
+
+	aDog.name = @"ReservedName";
+	BOOL success = [aDog saveRemoteWithResponse:&aError];
+
+	STAssertTrue(success == NO,@"Should not have been successful");
+	STAssertTrue([[aError errors] count] == 1,@"Should have one error");
+	STAssertTrue([[[aError errors] objectAtIndex:0] isEqualToString:@"name is reserved"],@"Should equal: name is reserved");
+	STAssertTrue(aError.code == 422,@"Should be 422");
+
+	[aDog release];
+}
+
+-(void) testWithNoErrors{
+	NSError *aError = nil;
+	Dog * aDog = [[Dog alloc] init];
+	aDog.personId = owner.personId;
+
+	aDog.name = @"AllowedName";
+	BOOL success = [aDog saveRemoteWithResponse:&aError];
+
+	STAssertTrue(success == YES,@"Should have been successful");
+	STAssertTrue([[aError errors] count] == 0,@"Should have no errors");
+
+	[aDog release];
+}
+
 -(void) testDogProperties {
  
   Dog * aDog = [[Dog alloc] init];

@@ -8,3 +8,4 @@
 
 #import "NSObject+ObjectiveResource.h"
 #import "ObjectiveResourceConfig.h"
+#import "NSError+Error.h"
