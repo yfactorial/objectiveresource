@@ -168,11 +168,10 @@ static ORSResponseFormat _format;
 }
 
 // Converts the object to the data format expected by the server
-- (NSString *)convertToRemoteExpectedType {
-	// exclude id , created_at , updated_at
-	NSArray	 *defaultExclusions = [NSArray arrayWithObjects:[self getRemoteClassIdName],@"createdAt",@"updatedAt",nil];
-	return [self performSelector:[[self class] getRemoteSerializeMethod] withObject:defaultExclusions];
+- (NSString *)convertToRemoteExpectedType {	  
+  return [self performSelector:[[self class] getRemoteSerializeMethod] withObject:[self excludedPropertyNames]];
 }
+
 
 #pragma mark default equals methods for id and class based equality
 - (BOOL)isEqualToRemote:(id)anObject {
@@ -318,5 +317,22 @@ static ORSResponseFormat _format;
 	NSError *error;
 	return [self saveRemoteWithResponse:&error];
 }
+
+/*
+ Override this in your model class to extend or replace the excluded properties
+ eg.
+ - (NSArray *)excludedPropertyNames
+ {
+  NSArray *exclusions = [NSArray arrayWithObjects:@"extraPropertyToExclude", nil];
+  return [[super excludedPropertyNames] arrayByAddingObjectsFromArray:exclusions];
+ }
+*/
+
+- (NSArray *)excludedPropertyNames
+{
+  // exclude id , created_at , updated_at
+  return [NSArray arrayWithObjects:[self getRemoteClassIdName],@"createdAt",@"updatedAt",nil]; 
+}
+
 
 @end

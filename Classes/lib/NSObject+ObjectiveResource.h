@@ -76,4 +76,6 @@ typedef enum {
 - (BOOL)isEqualToRemote:(id)anObject;
 - (NSUInteger)hashForRemote;
 
+- (NSArray *)excludedPropertyNames;
+
 @end
