@@ -21,7 +21,7 @@
 }
 
 @property(nonatomic , retain) Person *owner;
-@property(nonatomic , retain) NSArray *dogs;
+@property(nonatomic , retain) NSMutableArray *dogs;
 @property(nonatomic , retain) AddDogViewController *addController;
 @property(nonatomic , retain) UITableView *tableView;
 

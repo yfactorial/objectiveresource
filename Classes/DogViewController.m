@@ -31,7 +31,7 @@
 }
 
 - (void) loadDogs {
-	self.dogs = [owner findAllDogs];
+	self.dogs = [NSMutableArray arrayWithArray:[owner findAllDogs]];
 	[tableView reloadData];
 }
 

@@ -16,7 +16,4 @@ sample_rails_app/log/*.log
 sample_rails_app/tmp/**/*
 sample_rails_app/doc/api
 sample_rails_app/doc/app
-sample_rails_app/db/*.sqlite3
-
-
-
+*.sqlite3

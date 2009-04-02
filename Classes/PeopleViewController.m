@@ -26,7 +26,7 @@
 }
 
 - (void) loadPeople {
-	self.people = [Person findAllRemote];
+	self.people = [NSMutableArray arrayWithArray:[Person findAllRemote]];
 	[tableView reloadData];
 }
 
