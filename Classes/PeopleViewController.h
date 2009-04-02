@@ -15,7 +15,7 @@
   IBOutlet UIBarButtonItem * addButton;
 }
 
-@property (nonatomic , retain) NSArray* people;
+@property (nonatomic , retain) NSMutableArray* people;
 -(IBAction) refreshButtonWasPressed;
 -(IBAction) addButtonWasPressed;
 @property(nonatomic , retain) UITableView *tableView;
