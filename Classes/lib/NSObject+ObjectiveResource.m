@@ -20,6 +20,8 @@ static SEL _activeResourceParseDataMethod = nil;
 static SEL _activeResourceSerializeMethod = nil;
 static NSString *_activeResourceProtocolExtension = @".xml";
 static ORSResponseFormat _format;
+static NSString *_activeResourcePrefix = nil;
+
 
 @implementation NSObject (ObjectiveResource)
 
@@ -104,6 +106,17 @@ static ORSResponseFormat _format;
 	}
 }
 
+// Prefix additions
++ (NSString *)getLocalClassesPrefix {
+	return _activeResourcePrefix;
+}
+
++ (void)setLocalClassesPrefix:(NSString *)prefix {
+	if (prefix != _activeResourcePrefix) {
+		[_activeResourcePrefix autorelease];
+		_activeResourcePrefix = [prefix copy];
+	}
+}
 
 // Find all items 
 + (NSArray *)findAllRemoteWithResponse:(NSError **)aError {
@@ -133,8 +146,14 @@ static ORSResponseFormat _format;
 }
 
 + (NSString *)getRemoteElementName {
-	return [[NSStringFromClass([self class]) stringByReplacingCharactersInRange:NSMakeRange(0, 1) 
-			 withString:[[NSStringFromClass([self class]) substringWithRange:NSMakeRange(0,1)] lowercaseString]] underscore];
+	NSString * remoteElementName = NSStringFromClass([self class]);
+	if (_activeResourcePrefix != nil) {
+		remoteElementName = [remoteElementName substringFromIndex:[_activeResourcePrefix length]];
+	}
+	return [[remoteElementName stringByReplacingCharactersInRange:NSMakeRange(0, 1) 
+													   withString:[[remoteElementName substringWithRange:NSMakeRange(0, 1)] 
+																   lowercaseString]] 
+			underscore];
 }
 
 + (NSString *)getRemoteCollectionName {

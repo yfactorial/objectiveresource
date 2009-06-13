@@ -33,6 +33,9 @@ typedef enum {
 + (void)setRemoteResponseType:(ORSResponseFormat) format;
 + (ORSResponseFormat)getRemoteResponseType;
 
+// Prefix additions
++ (NSString *)getLocalClassesPrefix;
++ (void)setLocalClassesPrefix:(NSString *)prefix;
 
 // Finders
 + (NSArray *)findAllRemote;
