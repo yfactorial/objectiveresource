@@ -222,11 +222,13 @@ static NSString *_activeResourcePrefix = nil;
 
 
 - (NSString *)getRemoteClassIdName {
-	
-	return [NSString stringWithFormat:@"%@Id",
-			[NSStringFromClass([self class]) stringByReplacingCharactersInRange:NSMakeRange(0, 1) 
-			 withString:[[NSStringFromClass([self class]) substringWithRange:NSMakeRange(0,1)] lowercaseString]]];
-	
+	NSString * remoteElementName = NSStringFromClass([self class]);
+	if (_activeResourcePrefix != nil) {
+		remoteElementName = [remoteElementName substringFromIndex:[_activeResourcePrefix length]];
+	}
+	return [NSString stringWithFormat:@"%@Id", 
+			[remoteElementName stringByReplacingCharactersInRange:NSMakeRange(0, 1) 
+													   withString:[[remoteElementName substringWithRange:NSMakeRange(0,1)] lowercaseString]]];
 }
 
 - (BOOL)createRemoteAtPath:(NSString *)path withResponse:(NSError **)aError {
