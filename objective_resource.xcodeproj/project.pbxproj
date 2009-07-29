@@ -116,6 +116,8 @@
 		35603F41102044E400650D4D /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35603F40102044E400650D4D /* MapKit.framework */; };
 		35603F42102044E400650D4D /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35603F40102044E400650D4D /* MapKit.framework */; };
 		35603F43102044E400650D4D /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35603F40102044E400650D4D /* MapKit.framework */; };
+		356040331020543C00650D4D /* PrefixedPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 356040321020543C00650D4D /* PrefixedPerson.m */; };
+		356040341020543C00650D4D /* PrefixedPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 356040321020543C00650D4D /* PrefixedPerson.m */; };
 		357A91B60E9A55EF0025D9AF /* Connection.m in Sources */ = {isa = PBXBuildFile; fileRef = 357A919B0E9A55EF0025D9AF /* Connection.m */; };
 		357A91C00E9A55EF0025D9AF /* Response.m in Sources */ = {isa = PBXBuildFile; fileRef = 357A91B00E9A55EF0025D9AF /* Response.m */; };
 		3584DFD60F31F684008E596B /* NSObject+ObjectiveResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3584DFD50F31F684008E596B /* NSObject+ObjectiveResource.m */; };
@@ -233,6 +235,8 @@
 		354A12291020375E00063B90 /* GTMIPhoneUnitTestDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTMIPhoneUnitTestDelegate.m; path = google_toolbox/UnitTesting/GTMIPhoneUnitTestDelegate.m; sourceTree = SOURCE_ROOT; };
 		354A122A1020375E00063B90 /* GTMIPhoneUnitTestMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTMIPhoneUnitTestMain.m; path = google_toolbox/UnitTesting/GTMIPhoneUnitTestMain.m; sourceTree = SOURCE_ROOT; };
 		35603F40102044E400650D4D /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		356040311020543C00650D4D /* PrefixedPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixedPerson.h; sourceTree = "<group>"; };
+		356040321020543C00650D4D /* PrefixedPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrefixedPerson.m; sourceTree = "<group>"; };
 		357A91970E9A55EF0025D9AF /* ObjectiveResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ObjectiveResource.h; path = lib/ObjectiveResource.h; sourceTree = "<group>"; };
 		357A919A0E9A55EF0025D9AF /* Connection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Connection.h; path = lib/Connection.h; sourceTree = "<group>"; };
 		357A919B0E9A55EF0025D9AF /* Connection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Connection.m; path = lib/Connection.m; sourceTree = "<group>"; };
@@ -382,6 +386,8 @@
 				2322CD630F2F968000EDF562 /* PersonTest.h */,
 				2322CD640F2F968000EDF562 /* PersonTest.m */,
 				2322CD890F2F9F3D00EDF562 /* ItemIds.h */,
+				356040311020543C00650D4D /* PrefixedPerson.h */,
+				356040321020543C00650D4D /* PrefixedPerson.m */,
 			);
 			name = UnitTests;
 			sourceTree = "<group>";
@@ -852,6 +858,7 @@
 				354A12251020374100063B90 /* GTMSenTestCase.m in Sources */,
 				354A122B1020375E00063B90 /* GTMIPhoneUnitTestDelegate.m in Sources */,
 				354A122C1020375E00063B90 /* GTMIPhoneUnitTestMain.m in Sources */,
+				356040331020543C00650D4D /* PrefixedPerson.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -906,6 +913,7 @@
 				354A12271020374100063B90 /* GTMSenTestCase.m in Sources */,
 				354A122F1020375E00063B90 /* GTMIPhoneUnitTestDelegate.m in Sources */,
 				354A12301020375E00063B90 /* GTMIPhoneUnitTestMain.m in Sources */,
+				356040341020543C00650D4D /* PrefixedPerson.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,7 +9,7 @@
 #import "PersonTest.h"
 #import "Person.h"
 #import "ItemIds.h"
-
+#import "PrefixedPerson.h"
 
 @implementation PersonTest
 
@@ -67,6 +67,17 @@
 	STAssertTrue([toFind isEqualToRemote:[Person findRemote:toFind.personId]], @"Should of returned %@",toFind.name);	
 }
 
+- (void) testPrefixedPerson {
+	NSArray *people = [Person findAllRemote];
+	
+	int shouldBe = [people count];
+	[ObjectiveResourceConfig setLocalClassesPrefix:@"Prefixed"];
+	people = [PrefixedPerson findAllRemote];
+	
+	STAssertTrue(shouldBe == [people count], @"Should have %i people , %d found" , 
+				 shouldBe ,[people count]);
+	[ObjectiveResourceConfig setLocalClassesPrefix:nil];
+}
 
 
 @end
