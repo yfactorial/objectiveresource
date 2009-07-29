@@ -123,8 +123,11 @@ static NSString *_activeResourcePrefix = nil;
 	Response *res = [Connection get:[self getRemoteCollectionPath] withUser:[[self class] getRemoteUser] andPassword:[[self class]  getRemotePassword]];
 	if([res isError] && aError) {
 		*aError = res.error;
+		return nil;
 	}
-	return [self performSelector:[self getRemoteParseDataMethod] withObject:res.body];
+	else {
+		return [self performSelector:[self getRemoteParseDataMethod] withObject:res.body];
+	}
 }
 
 + (NSArray *)findAllRemote {

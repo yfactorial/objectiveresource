@@ -15,15 +15,25 @@
 	NSMutableDictionary *description = [NSMutableDictionary dictionary];
 	[description setObject:[NSString stringWithFormat:@"%i Error",statusCode] forKey:NSLocalizedFailureReasonErrorKey];
 	[description setObject:[[self class] localizedStringForStatusCode:statusCode] forKey:NSLocalizedDescriptionKey];
-	[description setObject:[[self class] errorArrayForBody:data] forKey:NSLocalizedRecoveryOptionsErrorKey];
+	NSArray *errorArray = [[self class] errorArrayForBody:data];
+	if (nil != errorArray) {
+		[description setObject:errorArray forKey:NSLocalizedRecoveryOptionsErrorKey];
+	}
 	return [NSError errorWithDomain:@"com.yfactorial.objectiveresource" code:statusCode userInfo:description];
 }
 
 + (NSArray *)errorArrayForBody:(NSData *)data {
-	NSMutableArray *returnStrings = [NSMutableArray array];
-	NSArray *errorArrays = [[self class] performSelector:[ObjectiveResourceConfig getParseDataMethod] withObject:data];
-	for (NSArray *error in errorArrays) [returnStrings addObject:[error componentsJoinedByString:@" "]];
-	return returnStrings;
+	if (@selector(fromJSONData:) == [ObjectiveResourceConfig getParseDataMethod]) {
+		NSMutableArray *returnStrings = [NSMutableArray array];
+		NSArray *errorArrays = [[self class] performSelector:[ObjectiveResourceConfig getParseDataMethod] withObject:data];
+		for (NSArray *error in errorArrays) {
+			[returnStrings addObject:[error componentsJoinedByString:@" "]];
+		}
+		return returnStrings;
+	}
+	else {
+		return nil;
+	}
 }
 
 -(NSError *) errorWithBody:(NSData *)data {
