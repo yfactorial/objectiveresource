@@ -113,6 +113,9 @@
 		354A122C1020375E00063B90 /* GTMIPhoneUnitTestMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 354A122A1020375E00063B90 /* GTMIPhoneUnitTestMain.m */; };
 		354A122F1020375E00063B90 /* GTMIPhoneUnitTestDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 354A12291020375E00063B90 /* GTMIPhoneUnitTestDelegate.m */; };
 		354A12301020375E00063B90 /* GTMIPhoneUnitTestMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 354A122A1020375E00063B90 /* GTMIPhoneUnitTestMain.m */; };
+		35603F41102044E400650D4D /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35603F40102044E400650D4D /* MapKit.framework */; };
+		35603F42102044E400650D4D /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35603F40102044E400650D4D /* MapKit.framework */; };
+		35603F43102044E400650D4D /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35603F40102044E400650D4D /* MapKit.framework */; };
 		357A91B60E9A55EF0025D9AF /* Connection.m in Sources */ = {isa = PBXBuildFile; fileRef = 357A919B0E9A55EF0025D9AF /* Connection.m */; };
 		357A91C00E9A55EF0025D9AF /* Response.m in Sources */ = {isa = PBXBuildFile; fileRef = 357A91B00E9A55EF0025D9AF /* Response.m */; };
 		3584DFD60F31F684008E596B /* NSObject+ObjectiveResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3584DFD50F31F684008E596B /* NSObject+ObjectiveResource.m */; };
@@ -229,6 +232,7 @@
 		354A12281020375E00063B90 /* GTMIPhoneUnitTestDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTMIPhoneUnitTestDelegate.h; path = google_toolbox/UnitTesting/GTMIPhoneUnitTestDelegate.h; sourceTree = SOURCE_ROOT; };
 		354A12291020375E00063B90 /* GTMIPhoneUnitTestDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTMIPhoneUnitTestDelegate.m; path = google_toolbox/UnitTesting/GTMIPhoneUnitTestDelegate.m; sourceTree = SOURCE_ROOT; };
 		354A122A1020375E00063B90 /* GTMIPhoneUnitTestMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTMIPhoneUnitTestMain.m; path = google_toolbox/UnitTesting/GTMIPhoneUnitTestMain.m; sourceTree = SOURCE_ROOT; };
+		35603F40102044E400650D4D /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		357A91970E9A55EF0025D9AF /* ObjectiveResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ObjectiveResource.h; path = lib/ObjectiveResource.h; sourceTree = "<group>"; };
 		357A919A0E9A55EF0025D9AF /* Connection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Connection.h; path = lib/Connection.h; sourceTree = "<group>"; };
 		357A919B0E9A55EF0025D9AF /* Connection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Connection.m; path = lib/Connection.m; sourceTree = "<group>"; };
@@ -305,6 +309,7 @@
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				350421870E5E1BF200493366 /* CoreGraphics.framework in Frameworks */,
+				35603F42102044E400650D4D /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,6 +320,7 @@
 				239D50CB0EA691DD00318802 /* Foundation.framework in Frameworks */,
 				239D50830EA691DB00318802 /* UIKit.framework in Frameworks */,
 				239D504D0EA691D800318802 /* CoreGraphics.framework in Frameworks */,
+				35603F41102044E400650D4D /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,6 +331,7 @@
 				23B8A4980F55EF7C00F74584 /* Foundation.framework in Frameworks */,
 				23B8A4990F55EF7C00F74584 /* UIKit.framework in Frameworks */,
 				23B8A49A0F55EF7C00F74584 /* CoreGraphics.framework in Frameworks */,
+				35603F43102044E400650D4D /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,6 +427,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				35603F40102044E400650D4D /* MapKit.framework */,
 				350421860E5E1BF200493366 /* CoreGraphics.framework */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
