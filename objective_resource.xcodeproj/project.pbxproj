@@ -38,9 +38,6 @@
 		23829E0E0EA393DA0070F0BF /* EditDogViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23829E0D0EA393DA0070F0BF /* EditDogViewController.xib */; };
 		23829F010EA39B3B0070F0BF /* ViewDogController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23829F000EA39B3B0070F0BF /* ViewDogController.m */; };
 		23829F120EA39C430070F0BF /* ViewDogController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23829F110EA39C430070F0BF /* ViewDogController.xib */; };
-		239D4FFC0EA690BC00318802 /* GTMSenTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 239D4FFB0EA690BC00318802 /* GTMSenTestCase.m */; };
-		239D50010EA690E600318802 /* GTMIPhoneUnitTestDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 239D4FE80EA6906100318802 /* GTMIPhoneUnitTestDelegate.m */; };
-		239D50020EA690E600318802 /* GTMIPhoneUnitTestMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 239D4FE90EA6906100318802 /* GTMIPhoneUnitTestMain.m */; };
 		239D501A0EA691AC00318802 /* DogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 350420F30E5E15AA00493366 /* DogViewController.m */; };
 		239D501B0EA691AC00318802 /* Dog.m in Sources */ = {isa = PBXBuildFile; fileRef = 350421280E5E1A0F00493366 /* Dog.m */; };
 		239D501C0EA691AC00318802 /* AddDogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 350421CE0E5E1EC500493366 /* AddDogViewController.m */; };
@@ -63,9 +60,6 @@
 		23B8A46D0F55EF7C00F74584 /* Response.m in Sources */ = {isa = PBXBuildFile; fileRef = 357A91B00E9A55EF0025D9AF /* Response.m */; };
 		23B8A46E0F55EF7C00F74584 /* EditDogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23829E0B0EA393700070F0BF /* EditDogViewController.m */; };
 		23B8A46F0F55EF7C00F74584 /* ViewDogController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23829F000EA39B3B0070F0BF /* ViewDogController.m */; };
-		23B8A4700F55EF7C00F74584 /* GTMSenTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 239D4FFB0EA690BC00318802 /* GTMSenTestCase.m */; };
-		23B8A4710F55EF7C00F74584 /* GTMIPhoneUnitTestDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 239D4FE80EA6906100318802 /* GTMIPhoneUnitTestDelegate.m */; };
-		23B8A4720F55EF7C00F74584 /* GTMIPhoneUnitTestMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 239D4FE90EA6906100318802 /* GTMIPhoneUnitTestMain.m */; };
 		23B8A4730F55EF7C00F74584 /* DogTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 239D50D90EA6921800318802 /* DogTest.m */; };
 		23B8A4740F55EF7C00F74584 /* NSHTTPURLResponse+Error.m in Sources */ = {isa = PBXBuildFile; fileRef = 2377C4F40F019E67006E155F /* NSHTTPURLResponse+Error.m */; };
 		23B8A4750F55EF7C00F74584 /* DogErrorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 23B4A6410F092B620021AB9D /* DogErrorTest.m */; };
@@ -113,6 +107,12 @@
 		350421870E5E1BF200493366 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 350421860E5E1BF200493366 /* CoreGraphics.framework */; };
 		350421CB0E5E1E0900493366 /* AddDogView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 350421CA0E5E1E0900493366 /* AddDogView.xib */; };
 		350421CF0E5E1EC500493366 /* AddDogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 350421CE0E5E1EC500493366 /* AddDogViewController.m */; };
+		354A12251020374100063B90 /* GTMSenTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 354A12241020374100063B90 /* GTMSenTestCase.m */; };
+		354A12271020374100063B90 /* GTMSenTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 354A12241020374100063B90 /* GTMSenTestCase.m */; };
+		354A122B1020375E00063B90 /* GTMIPhoneUnitTestDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 354A12291020375E00063B90 /* GTMIPhoneUnitTestDelegate.m */; };
+		354A122C1020375E00063B90 /* GTMIPhoneUnitTestMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 354A122A1020375E00063B90 /* GTMIPhoneUnitTestMain.m */; };
+		354A122F1020375E00063B90 /* GTMIPhoneUnitTestDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 354A12291020375E00063B90 /* GTMIPhoneUnitTestDelegate.m */; };
+		354A12301020375E00063B90 /* GTMIPhoneUnitTestMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 354A122A1020375E00063B90 /* GTMIPhoneUnitTestMain.m */; };
 		357A91B60E9A55EF0025D9AF /* Connection.m in Sources */ = {isa = PBXBuildFile; fileRef = 357A919B0E9A55EF0025D9AF /* Connection.m */; };
 		357A91C00E9A55EF0025D9AF /* Response.m in Sources */ = {isa = PBXBuildFile; fileRef = 357A91B00E9A55EF0025D9AF /* Response.m */; };
 		3584DFD60F31F684008E596B /* NSObject+ObjectiveResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3584DFD50F31F684008E596B /* NSObject+ObjectiveResource.m */; };
@@ -202,14 +202,8 @@
 		23829EFF0EA39B3B0070F0BF /* ViewDogController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewDogController.h; sourceTree = "<group>"; };
 		23829F000EA39B3B0070F0BF /* ViewDogController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewDogController.m; sourceTree = "<group>"; };
 		23829F110EA39C430070F0BF /* ViewDogController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewDogController.xib; sourceTree = "<group>"; };
-		239D4FE70EA6906100318802 /* GTMIPhoneUnitTestDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTMIPhoneUnitTestDelegate.h; path = google_toolbar/UnitTesting/GTMIPhoneUnitTestDelegate.h; sourceTree = SOURCE_ROOT; };
-		239D4FE80EA6906100318802 /* GTMIPhoneUnitTestDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTMIPhoneUnitTestDelegate.m; path = google_toolbar/UnitTesting/GTMIPhoneUnitTestDelegate.m; sourceTree = SOURCE_ROOT; };
-		239D4FE90EA6906100318802 /* GTMIPhoneUnitTestMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTMIPhoneUnitTestMain.m; path = google_toolbar/UnitTesting/GTMIPhoneUnitTestMain.m; sourceTree = SOURCE_ROOT; };
 		239D4FF40EA6907E00318802 /* Unit Tests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Unit Tests.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		239D4FF60EA6907E00318802 /* Unit Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Unit Tests-Info.plist"; sourceTree = "<group>"; };
-		239D4FFA0EA690BC00318802 /* GTMSenTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTMSenTestCase.h; path = google_toolbar/UnitTesting/GTMSenTestCase.h; sourceTree = SOURCE_ROOT; };
-		239D4FFB0EA690BC00318802 /* GTMSenTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTMSenTestCase.m; path = google_toolbar/UnitTesting/GTMSenTestCase.m; sourceTree = SOURCE_ROOT; };
-		239D4FFD0EA690D700318802 /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTMDefines.h; path = google_toolbar/GTMDefines.h; sourceTree = SOURCE_ROOT; };
 		239D50D80EA6921800318802 /* DogTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DogTest.h; sourceTree = "<group>"; };
 		239D50D90EA6921800318802 /* DogTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DogTest.m; sourceTree = "<group>"; };
 		23B4A6400F092B620021AB9D /* DogErrorTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DogErrorTest.h; sourceTree = "<group>"; };
@@ -229,6 +223,12 @@
 		350421CA0E5E1E0900493366 /* AddDogView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddDogView.xib; sourceTree = "<group>"; };
 		350421CD0E5E1EC500493366 /* AddDogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddDogViewController.h; sourceTree = "<group>"; };
 		350421CE0E5E1EC500493366 /* AddDogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddDogViewController.m; sourceTree = "<group>"; };
+		354A12221020372800063B90 /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTMDefines.h; path = google_toolbox/GTMDefines.h; sourceTree = SOURCE_ROOT; };
+		354A12231020374100063B90 /* GTMSenTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTMSenTestCase.h; path = google_toolbox/UnitTesting/GTMSenTestCase.h; sourceTree = SOURCE_ROOT; };
+		354A12241020374100063B90 /* GTMSenTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTMSenTestCase.m; path = google_toolbox/UnitTesting/GTMSenTestCase.m; sourceTree = SOURCE_ROOT; };
+		354A12281020375E00063B90 /* GTMIPhoneUnitTestDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTMIPhoneUnitTestDelegate.h; path = google_toolbox/UnitTesting/GTMIPhoneUnitTestDelegate.h; sourceTree = SOURCE_ROOT; };
+		354A12291020375E00063B90 /* GTMIPhoneUnitTestDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTMIPhoneUnitTestDelegate.m; path = google_toolbox/UnitTesting/GTMIPhoneUnitTestDelegate.m; sourceTree = SOURCE_ROOT; };
+		354A122A1020375E00063B90 /* GTMIPhoneUnitTestMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTMIPhoneUnitTestMain.m; path = google_toolbox/UnitTesting/GTMIPhoneUnitTestMain.m; sourceTree = SOURCE_ROOT; };
 		357A91970E9A55EF0025D9AF /* ObjectiveResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ObjectiveResource.h; path = lib/ObjectiveResource.h; sourceTree = "<group>"; };
 		357A919A0E9A55EF0025D9AF /* Connection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Connection.h; path = lib/Connection.h; sourceTree = "<group>"; };
 		357A919B0E9A55EF0025D9AF /* Connection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Connection.m; path = lib/Connection.m; sourceTree = "<group>"; };
@@ -355,12 +355,12 @@
 		239D4FE30EA68FAC00318802 /* GoogleTestUnit */ = {
 			isa = PBXGroup;
 			children = (
-				239D4FFD0EA690D700318802 /* GTMDefines.h */,
-				239D4FFA0EA690BC00318802 /* GTMSenTestCase.h */,
-				239D4FFB0EA690BC00318802 /* GTMSenTestCase.m */,
-				239D4FE70EA6906100318802 /* GTMIPhoneUnitTestDelegate.h */,
-				239D4FE80EA6906100318802 /* GTMIPhoneUnitTestDelegate.m */,
-				239D4FE90EA6906100318802 /* GTMIPhoneUnitTestMain.m */,
+				354A12281020375E00063B90 /* GTMIPhoneUnitTestDelegate.h */,
+				354A12291020375E00063B90 /* GTMIPhoneUnitTestDelegate.m */,
+				354A122A1020375E00063B90 /* GTMIPhoneUnitTestMain.m */,
+				354A12231020374100063B90 /* GTMSenTestCase.h */,
+				354A12241020374100063B90 /* GTMSenTestCase.m */,
+				354A12221020372800063B90 /* GTMDefines.h */,
 			);
 			name = GoogleTestUnit;
 			sourceTree = "<group>";
@@ -803,9 +803,6 @@
 				239D502A0EA691AC00318802 /* Response.m in Sources */,
 				239D502B0EA691AC00318802 /* EditDogViewController.m in Sources */,
 				239D502C0EA691AC00318802 /* ViewDogController.m in Sources */,
-				239D4FFC0EA690BC00318802 /* GTMSenTestCase.m in Sources */,
-				239D50010EA690E600318802 /* GTMIPhoneUnitTestDelegate.m in Sources */,
-				239D50020EA690E600318802 /* GTMIPhoneUnitTestMain.m in Sources */,
 				239D50DA0EA6921800318802 /* DogTest.m in Sources */,
 				2377C4F60F019E67006E155F /* NSHTTPURLResponse+Error.m in Sources */,
 				23B4A6420F092B620021AB9D /* DogErrorTest.m in Sources */,
@@ -844,6 +841,9 @@
 				23510DEC0F4CB32900B0796F /* NSNumber+XMLSerializableSupport.m in Sources */,
 				6679FFB00F5AF22E00412ABF /* ConnectionManager.m in Sources */,
 				6624BF650F676B0C006FD4EE /* NSError+Error.m in Sources */,
+				354A12251020374100063B90 /* GTMSenTestCase.m in Sources */,
+				354A122B1020375E00063B90 /* GTMIPhoneUnitTestDelegate.m in Sources */,
+				354A122C1020375E00063B90 /* GTMIPhoneUnitTestMain.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -858,9 +858,6 @@
 				23B8A46D0F55EF7C00F74584 /* Response.m in Sources */,
 				23B8A46E0F55EF7C00F74584 /* EditDogViewController.m in Sources */,
 				23B8A46F0F55EF7C00F74584 /* ViewDogController.m in Sources */,
-				23B8A4700F55EF7C00F74584 /* GTMSenTestCase.m in Sources */,
-				23B8A4710F55EF7C00F74584 /* GTMIPhoneUnitTestDelegate.m in Sources */,
-				23B8A4720F55EF7C00F74584 /* GTMIPhoneUnitTestMain.m in Sources */,
 				23B8A4730F55EF7C00F74584 /* DogTest.m in Sources */,
 				23B8A4740F55EF7C00F74584 /* NSHTTPURLResponse+Error.m in Sources */,
 				23B8A4750F55EF7C00F74584 /* DogErrorTest.m in Sources */,
@@ -898,6 +895,9 @@
 				23B8A4950F55EF7C00F74584 /* NSArray+JSONSerializableSupport.m in Sources */,
 				23B8A4960F55EF7C00F74584 /* NSNumber+XMLSerializableSupport.m in Sources */,
 				6624BF660F676B0C006FD4EE /* NSError+Error.m in Sources */,
+				354A12271020374100063B90 /* GTMSenTestCase.m in Sources */,
+				354A122F1020375E00063B90 /* GTMIPhoneUnitTestDelegate.m in Sources */,
+				354A12301020375E00063B90 /* GTMIPhoneUnitTestMain.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
