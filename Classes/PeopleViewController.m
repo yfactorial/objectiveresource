@@ -60,7 +60,7 @@
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
     }
-    cell.text = ((Person *)[people objectAtIndex:indexPath.row]).name;
+    cell.textLabel.text = ((Person *)[people objectAtIndex:indexPath.row]).name;
     return cell;
 }
 

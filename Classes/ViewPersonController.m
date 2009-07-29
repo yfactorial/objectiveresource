@@ -57,13 +57,13 @@
   
 	switch (indexPath.section) {
 		case 0:
-			cell.text = person.name;
+			cell.textLabel.text = person.name;
 			break;
 		case 1:
-			cell.text = person.personId;
+			cell.textLabel.text = person.personId;
 			break;
 		case 2:
-			cell.text = @"View Dogs";
+			cell.textLabel.text = @"View Dogs";
 		default:
 			break;
 	}

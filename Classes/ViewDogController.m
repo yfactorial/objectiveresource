@@ -74,16 +74,16 @@
   
     switch (indexPath.section) {
       case 0:
-        cell.text = dog.name;
+        cell.textLabel.text = dog.name;
         break;
       case 1:
-        cell.text = dog.dogId;
+        cell.textLabel.text = dog.dogId;
         break;
       case 2:
-        cell.text = [dateFormatter stringFromDate:dog.createdAt];
+        cell.textLabel.text = [dateFormatter stringFromDate:dog.createdAt];
         break;
       case 3:
-        cell.text = [dateFormatter stringFromDate:dog.updatedAt];
+        cell.textLabel.text = [dateFormatter stringFromDate:dog.updatedAt];
         break;        
       default:
         break;

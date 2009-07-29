@@ -59,8 +59,6 @@ static int MethodSort(const void *a, const void *b) {
 // test completion.
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
   [self runTests];
-  // Using private call to end our tests
-  [[UIApplication sharedApplication] terminate];
 }
 
 // Run through all the registered classes and run test methods on any

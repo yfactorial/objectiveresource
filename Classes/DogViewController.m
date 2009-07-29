@@ -64,7 +64,7 @@
 		cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero] autorelease];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 	}
-	cell.text = ((Dog *)[dogs objectAtIndex:indexPath.row]).name;
+	cell.textLabel.text = ((Dog *)[dogs objectAtIndex:indexPath.row]).name;
 	return cell;
 }
 
