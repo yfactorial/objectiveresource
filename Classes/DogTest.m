@@ -17,7 +17,9 @@
 static Person *owner;
 
 -(void) setUp {
-	[ObjectiveResourceConfig setSite:@"http://localhost:36313/"];
+	NSString *site = [[NSString alloc] initWithString:@"http://localhost:36313/"];
+	[ObjectiveResourceConfig setSite:site];
+	[site release];
 	[ObjectiveResourceConfig setResponseType:JSONResponse];
 	//[ObjectiveResource setResponseType:XmlResponse];
 	[ObjectiveResourceConfig setUser:@"Hiro"];
