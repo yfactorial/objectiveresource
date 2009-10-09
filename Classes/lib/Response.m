@@ -66,6 +66,7 @@
 {
 	[body release];
 	[headers release];
+  [error release];
 	[super dealloc];
 }
 
